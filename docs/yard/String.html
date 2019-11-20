@@ -1,0 +1,2909 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: String
+  
+    &mdash; Documentation by YARD 0.9.20
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  pathId = "String";
+  relpath = '';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="_index.html">Index (S)</a> &raquo;
+    
+    
+    <span class="title">String</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Class: String
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">String</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/ctf_party/rot.rb<span class="defines">,<br />
+  lib/ctf_party/flag.rb,<br /> lib/ctf_party/base64.rb,<br /> lib/ctf_party/digest.rb</span>
+</dd>
+  </dl>
+  
+</div>
+
+
+  
+    <h2>
+      Constant Summary
+      <small><a href="#" class="constants_summary_toggle">collapse</a></small>
+    </h2>
+
+    <dl class="constants">
+      
+        <dt id="flag-classvariable" class="">@@flag =
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>The flag configuration hash. See <span class='object_link'><a href="#flag=-class_method" title="String.flag= (method)">flag=</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='lbrace'>{</span>
+  <span class='label'>prefix:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+  <span class='label'>suffix:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+  <span class='label'>enclosing:</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>{</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>}</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
+  <span class='label'>digest:</span> <span class='kw'>nil</span>
+<span class='rbrace'>}</span></pre></dd>
+      
+    </dl>
+  
+
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#flag-class_method" title="flag (class method)">.<strong>flag</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Show the actual flag configuration.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#flag=-class_method" title="flag= (class method)">.<strong>flag=</strong>(hash)  &#x21d2; Hash </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Update the flag configuration.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#b64%3F-instance_method" title="#b64? (instance method)">#<strong>b64?</strong>(opts = {})  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Is the string encoded in base64?.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#flag-instance_method" title="#flag (instance method)">#<strong>flag</strong>  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Format the current string into the configured flag format.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#flag!-instance_method" title="#flag! (instance method)">#<strong>flag!</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Format the current string into the configured flag format in place as described for <span class='object_link'><a href="#flag-instance_method" title="String#flag (method)">#flag</a></span>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#flag%3F-instance_method" title="#flag? (instance method)">#<strong>flag?</strong>  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Check if the string respect the defined flag format.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#from_b64-instance_method" title="#from_b64 (instance method)">#<strong>from_b64</strong>(opts = {})  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Decode the string from base64.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#from_b64!-instance_method" title="#from_b64! (instance method)">#<strong>from_b64!</strong>(opts = {})  &#x21d2; nil </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Decode the string from base64 in place as described for <span class='object_link'><a href="#from_b64-instance_method" title="String#from_b64 (method)">#from_b64</a></span>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#md5-instance_method" title="#md5 (instance method)">#<strong>md5</strong>  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Calculate the md5 hash of the string.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#md5!-instance_method" title="#md5! (instance method)">#<strong>md5!</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Calculate the md5 hash of the string in place as described for <span class='object_link'><a href="#md5-instance_method" title="String#md5 (method)">#md5</a></span>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#rmd160-instance_method" title="#rmd160 (instance method)">#<strong>rmd160</strong>  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Calculate the RIPEMD-160 hash of the string.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#rmd160!-instance_method" title="#rmd160! (instance method)">#<strong>rmd160!</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Calculate the RIPEMD-160 hash of the string in place as described for <span class='object_link'><a href="#rmd160-instance_method" title="String#rmd160 (method)">#rmd160</a></span>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#rot-instance_method" title="#rot (instance method)">#<strong>rot</strong>(opts = {})  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>“Encrypt / Decrypt” the string with Caesar cipher.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#rot!-instance_method" title="#rot! (instance method)">#<strong>rot!</strong>(opts = {})  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>“Encrypt / Decrypt” the string with Caesar cipher in place as described for <span class='object_link'><a href="#rot-instance_method" title="String#rot (method)">#rot</a></span>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#rot13-instance_method" title="#rot13 (instance method)">#<strong>rot13</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Alias for <span class='object_link'><a href="#rot-instance_method" title="String#rot (method)">#rot</a></span> with default value ( <tt>rot(shift: 13)</tt> ).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#rot13!-instance_method" title="#rot13! (instance method)">#<strong>rot13!</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Alias for <span class='object_link'><a href="#rot!-instance_method" title="String#rot! (method)">#rot!</a></span> with default value ( <tt>rot!(shift: 13)</tt> ).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#sha1-instance_method" title="#sha1 (instance method)">#<strong>sha1</strong>  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Calculate the sha1 hash of the string.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#sha1!-instance_method" title="#sha1! (instance method)">#<strong>sha1!</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Calculate the sha1 hash of the string in place as described for <span class='object_link'><a href="#sha1-instance_method" title="String#sha1 (method)">#sha1</a></span>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#sha2-instance_method" title="#sha2 (instance method)">#<strong>sha2</strong>(opts = {})  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Calculate the sha2 hash of the string.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#sha2!-instance_method" title="#sha2! (instance method)">#<strong>sha2!</strong>(opts = {})  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Calculate the sha2 hash of the string in place as described for <span class='object_link'><a href="#sha2-instance_method" title="String#sha2 (method)">#sha2</a></span>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#sha2_256-instance_method" title="#sha2_256 (instance method)">#<strong>sha2_256</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Alias for <span class='object_link'><a href="#sha2-instance_method" title="String#sha2 (method)">#sha2</a></span> with default value ( <tt>sha2(bitlen: 256)</tt> ).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#sha2_256!-instance_method" title="#sha2_256! (instance method)">#<strong>sha2_256!</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Alias for <span class='object_link'><a href="#sha2!-instance_method" title="String#sha2! (method)">#sha2!</a></span> with default value ( <tt>sha2!(bitlen: 256)</tt> ).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#sha2_384-instance_method" title="#sha2_384 (instance method)">#<strong>sha2_384</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Alias for <span class='object_link'><a href="#sha2-instance_method" title="String#sha2 (method)">#sha2</a></span> with default value ( <tt>sha2(bitlen: 384)</tt> ).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#sha2_384!-instance_method" title="#sha2_384! (instance method)">#<strong>sha2_384!</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Alias for <span class='object_link'><a href="#sha2!-instance_method" title="String#sha2! (method)">#sha2!</a></span> with default value ( <tt>sha2!(bitlen: 384)</tt> ).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#sha2_512-instance_method" title="#sha2_512 (instance method)">#<strong>sha2_512</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Alias for <span class='object_link'><a href="#sha2-instance_method" title="String#sha2 (method)">#sha2</a></span> with default value ( <tt>sha2(bitlen: 512)</tt> ).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#sha2_512!-instance_method" title="#sha2_512! (instance method)">#<strong>sha2_512!</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Alias for <span class='object_link'><a href="#sha2!-instance_method" title="String#sha2! (method)">#sha2!</a></span> with default value ( <tt>sha2!(bitlen: 512)</tt> ).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_b64-instance_method" title="#to_b64 (instance method)">#<strong>to_b64</strong>(opts = {})  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Encode the string into base64.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_b64!-instance_method" title="#to_b64! (instance method)">#<strong>to_b64!</strong>(opts = {})  &#x21d2; nil </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Encode the string into base64 in place as described for <span class='object_link'><a href="#to_b64-instance_method" title="String#to_b64 (method)">#to_b64</a></span>.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="flag-class_method">
+  
+    .<strong>flag</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Show the actual flag configuration. See <span class='object_link'><a href="#flag=-class_method" title="String.flag= (method)">flag=</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+15
+16
+17</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/flag.rb', line 15</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_flag'>flag</span>
+  <span class='cvar'>@@flag</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="flag=-class_method">
+  
+    .<strong>flag=</strong>(hash)  &#x21d2; <tt>Hash</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>You can provide the full hash or only the key to update.</p>
+</div>
+  </div>
+
+
+<p>Update the flag configuration.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='const'><span class='object_link'><a href="" title="String (class)">String</a></span></span><span class='period'>.</span><span class='id identifier rubyid_flag'><span class='object_link'><a href="#flag-class_method" title="String.flag (method)">flag</a></span></span> <span class='comment'># =&gt; {:prefix=&gt;&quot;&quot;, :suffix=&gt;&quot;&quot;, :enclosing=&gt;[&quot;{&quot;, &quot;}&quot;], :digest=&gt;nil}
+</span><span class='const'><span class='object_link'><a href="" title="String (class)">String</a></span></span><span class='period'>.</span><span class='id identifier rubyid_flag'><span class='object_link'><a href="#flag-class_method" title="String.flag (method)">flag</a></span></span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='label'>prefix:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>sigsegv</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='label'>digest:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>md5</span><span class='tstring_end'>&#39;</span></span><span class='rbrace'>}</span>
+<span class='const'><span class='object_link'><a href="" title="String (class)">String</a></span></span><span class='period'>.</span><span class='id identifier rubyid_flag'><span class='object_link'><a href="#flag-class_method" title="String.flag (method)">flag</a></span></span> <span class='comment'># =&gt; {:prefix=&gt;&quot;sigsegv&quot;, :suffix=&gt;&quot;&quot;, :enclosing=&gt;[&quot;{&quot;, &quot;}&quot;], :digest=&gt;&quot;md5&quot;}
+</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>this_1s_a_fl4g</span><span class='tstring_end'>&#39;</span></span><span class='period'>.</span><span class='id identifier rubyid_flag'>flag</span> <span class='comment'># =&gt; &quot;sigsegv{a5bec9e2a86b6b70d288451eb38dfec8}&quot;</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>hash</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>flag configuration</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  
+    
+    
+    <p class="tag_title">Options Hash (<tt>hash</tt>):</p>
+    <ul class="option">
+      
+        <li>
+          <span class="name">:prefix</span>
+          <span class="type">(<tt><span class='object_link'><a href="" title="String (class)">String</a></span></tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>prefix of the flag. Default: none.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:suffix</span>
+          <span class="type">(<tt><span class='object_link'><a href="" title="String (class)">String</a></span></tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>suffix of the flag. Default: none.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:enclosing</span>
+          <span class="type">(<tt>Array&lt;<span class='object_link'><a href="" title="String (class)">String</a></span>&gt;</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>the characters used to surround the flag. Default are curly braces: <tt>{</tt>, <tt>}</tt>. The array must contain exactly 2 elements.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:digest</span>
+          <span class="type">(<tt><span class='object_link'><a href="" title="String (class)">String</a></span></tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>the hash algorithm to apply on the flag. Default: none. Allowed values: md5, sha1, sha2_256, sha2_384, sha2_512, rmd160.</p>
+</div>
+          
+        </li>
+      
+    </ul>
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>hash of the updated options.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+38
+39
+40
+41</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/flag.rb', line 38</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_flag='>flag=</span><span class='lparen'>(</span><span class='id identifier rubyid_hash'>hash</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_hash'>hash</span><span class='period'>.</span><span class='id identifier rubyid_select!'>select!</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_k'>k</span><span class='comma'>,</span> <span class='id identifier rubyid__v'>_v</span><span class='op'>|</span> <span class='cvar'>@@flag</span><span class='period'>.</span><span class='id identifier rubyid_key?'>key?</span><span class='lparen'>(</span><span class='id identifier rubyid_k'>k</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
+  <span class='cvar'>@@flag</span><span class='period'>.</span><span class='id identifier rubyid_merge!'>merge!</span><span class='lparen'>(</span><span class='id identifier rubyid_hash'>hash</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="b64?-instance_method">
+  
+    #<strong>b64?</strong>(opts = {})  &#x21d2; <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Is the string encoded in base64?</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>SGVsbG8gd29ybGQh</span><span class='tstring_end'>&#39;</span></span><span class='period'>.</span><span class='id identifier rubyid_b64?'>b64?</span> <span class='comment'># =&gt; true
+</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>SGVsbG8g@@d29ybGQh</span><span class='tstring_end'>&#39;</span></span><span class='period'>.</span><span class='id identifier rubyid_b64?'>b64?</span> <span class='comment'># =&gt; false</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>opts</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>optional parameters</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  
+    
+    
+    <p class="tag_title">Options Hash (<tt>opts</tt>):</p>
+    <ul class="option">
+      
+        <li>
+          <span class="name">:mode</span>
+          <span class="type">(<tt>Symbol</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Default value: <code>:strict</code>. Other values are <code>:strict</code> (<code>:rfc4648</code>) or <code>:urlsafe</code>.</p>
+</div>
+          
+        </li>
+      
+    </ul>
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p><code>true</code> if the string is a valid base64 string, <code>false</code> else.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><a href="https://ruby-doc.org/stdlib-2.6.5/libdoc/base64/rdoc/Base64.html" target="_parent" title="https://ruby-doc.org/stdlib-2.6.5/libdoc/base64/rdoc/Base64.html">https://ruby-doc.org/stdlib-2.6.5/libdoc/base64/rdoc/Base64.html</a></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/base64.rb', line 77</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_b64?'>b64?</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:mode</span><span class='rbracket'>]</span> <span class='op'>||=</span> <span class='symbol'>:strict</span>
+  <span class='id identifier rubyid_b64'>b64</span> <span class='op'>=</span> <span class='kw'>false</span>
+  <span class='comment'># https://www.rexegg.com/regex-ruby.html
+</span>  <span class='id identifier rubyid_reg1'>reg1</span> <span class='op'>=</span> <span class='tstring'><span class='regexp_beg'>%r{</span><span class='tstring_content'>\A(?:[a-zA-Z0-9+/]{4})*(?:|(?:[a-zA-Z0-9+/]{3}=)|
+            (?:[a-zA-Z0-9+/]{2}==)|(?:[a-zA-Z0-9+/]{1}===))\Z</span><span class='regexp_end'>}xn</span></span>
+  <span class='id identifier rubyid_reg3'>reg3</span> <span class='op'>=</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\A(?:[a-zA-Z0-9\-_]{4})*(?:|(?:[a-zA-Z0-9\-_]{3}=)|
+          (?:[a-zA-Z0-9\-_]{2}==)|(?:[a-zA-Z0-9\-_]{1}===))\Z</span><span class='regexp_end'>/xn</span></span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:mode</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='symbol'>:strict</span> <span class='op'>||</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:mode</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='symbol'>:rfc4648</span>
+    <span class='id identifier rubyid_b64'>b64</span> <span class='op'>=</span> <span class='kw'>true</span> <span class='kw'>if</span> <span class='id identifier rubyid_reg1'>reg1</span><span class='period'>.</span><span class='id identifier rubyid_match?'>match?</span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span>
+  <span class='kw'>elsif</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:mode</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='symbol'>:rfc2045</span>
+    <span class='id identifier rubyid_b64'>b64</span> <span class='op'>=</span> <span class='kw'>true</span>
+    <span class='id identifier rubyid_split'>split</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_s'>s</span><span class='op'>|</span>
+      <span class='id identifier rubyid_b64'>b64</span> <span class='op'>=</span> <span class='kw'>false</span> <span class='kw'>unless</span> <span class='id identifier rubyid_reg1'>reg1</span><span class='period'>.</span><span class='id identifier rubyid_match?'>match?</span><span class='lparen'>(</span><span class='id identifier rubyid_s'>s</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+  <span class='kw'>elsif</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:mode</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='symbol'>:urlsafe</span>
+    <span class='id identifier rubyid_b64'>b64</span> <span class='op'>=</span> <span class='kw'>true</span> <span class='kw'>if</span> <span class='id identifier rubyid_reg3'>reg3</span><span class='period'>.</span><span class='id identifier rubyid_match?'>match?</span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Wrong mode</span><span class='tstring_end'>&#39;</span></span>
+  <span class='kw'>end</span>
+  <span class='kw'>return</span> <span class='id identifier rubyid_b64'>b64</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="flag-instance_method">
+  
+    #<strong>flag</strong>  &#x21d2; <tt><span class='object_link'><a href="" title="String (class)">String</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Format the current string into the configured flag format. See <span class='object_link'><a href="#flag=-class_method" title="String.flag= (method)">flag=</a></span> example.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the format flag.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/flag.rb', line 48</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_flag'>flag</span>
+  <span class='id identifier rubyid_flag'>flag</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+  <span class='id identifier rubyid_flag'>flag</span> <span class='op'>+=</span> <span class='cvar'>@@flag</span><span class='lbracket'>[</span><span class='symbol'>:prefix</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_flag'>flag</span> <span class='op'>+=</span> <span class='cvar'>@@flag</span><span class='lbracket'>[</span><span class='symbol'>:enclosing</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
+  <span class='kw'>if</span> <span class='cvar'>@@flag</span><span class='lbracket'>[</span><span class='symbol'>:digest</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='id identifier rubyid_flag'>flag</span> <span class='op'>+=</span> <span class='kw'>self</span>
+  <span class='kw'>else</span>
+    <span class='kw'>case</span> <span class='cvar'>@@flag</span><span class='lbracket'>[</span><span class='symbol'>:digest</span><span class='rbracket'>]</span>
+    <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>md5</span><span class='tstring_end'>&#39;</span></span>
+      <span class='id identifier rubyid_flag'>flag</span> <span class='op'>+=</span> <span class='id identifier rubyid_md5'>md5</span>
+    <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>sha1</span><span class='tstring_end'>&#39;</span></span>
+      <span class='id identifier rubyid_flag'>flag</span> <span class='op'>+=</span> <span class='id identifier rubyid_sha1'>sha1</span>
+    <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>sha2_256</span><span class='tstring_end'>&#39;</span></span>
+      <span class='id identifier rubyid_flag'>flag</span> <span class='op'>+=</span> <span class='id identifier rubyid_sha2_256'>sha2_256</span>
+    <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>sha2_384</span><span class='tstring_end'>&#39;</span></span>
+      <span class='id identifier rubyid_flag'>flag</span> <span class='op'>+=</span> <span class='id identifier rubyid_sha2_384'>sha2_384</span>
+    <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>sha2_512</span><span class='tstring_end'>&#39;</span></span>
+      <span class='id identifier rubyid_flag'>flag</span> <span class='op'>+=</span> <span class='id identifier rubyid_sha2_512'>sha2_512</span>
+    <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>rmd160</span><span class='tstring_end'>&#39;</span></span>
+      <span class='id identifier rubyid_flag'>flag</span> <span class='op'>+=</span> <span class='id identifier rubyid_rmd160'>rmd160</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_flag'>flag</span> <span class='op'>+=</span> <span class='cvar'>@@flag</span><span class='lbracket'>[</span><span class='symbol'>:enclosing</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_flag'>flag</span> <span class='op'>+</span> <span class='cvar'>@@flag</span><span class='lbracket'>[</span><span class='symbol'>:suffix</span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="flag!-instance_method">
+  
+    #<strong>flag!</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Format the current string into the configured flag format in place as described for <span class='object_link'><a href="#flag-instance_method" title="String#flag (method)">#flag</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+76
+77
+78</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/flag.rb', line 76</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_flag!'>flag!</span>
+  <span class='id identifier rubyid_replace'>replace</span><span class='lparen'>(</span><span class='id identifier rubyid_flag'>flag</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="flag?-instance_method">
+  
+    #<strong>flag?</strong>  &#x21d2; <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Check if the string respect the defined flag format.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='const'><span class='object_link'><a href="" title="String (class)">String</a></span></span><span class='period'>.</span><span class='id identifier rubyid_flag'><span class='object_link'><a href="#flag-class_method" title="String.flag (method)">flag</a></span></span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='label'>prefix:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>flag</span><span class='tstring_end'>&#39;</span></span><span class='rbrace'>}</span>
+<span class='id identifier rubyid_flag'>flag</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Brav0!</span><span class='tstring_end'>&#39;</span></span>
+<span class='id identifier rubyid_flag'>flag</span><span class='period'>.</span><span class='id identifier rubyid_flag!'>flag!</span> <span class='comment'># =&gt; &quot;flag{Brav0!}&quot;
+</span><span class='id identifier rubyid_flag'>flag</span><span class='period'>.</span><span class='id identifier rubyid_flag?'>flag?</span> <span class='comment'># =&gt; true
+</span><span class='id identifier rubyid_flag'>flag</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ctf{Brav0!}</span><span class='tstring_end'>&#39;</span></span>
+<span class='id identifier rubyid_flag'>flag</span><span class='period'>.</span><span class='id identifier rubyid_flag?'>flag?</span> <span class='comment'># =&gt; false</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>true if it respects the configured flag format. but it does not check digest used.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+90
+91
+92
+93</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/flag.rb', line 90</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_flag?'>flag?</span>
+  <span class='tstring'><span class='regexp_beg'>/</span><span class='embexpr_beg'>#{</span><span class='cvar'>@@flag</span><span class='lbracket'>[</span><span class='symbol'>:prefix</span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='embexpr_beg'>#{</span><span class='cvar'>@@flag</span><span class='lbracket'>[</span><span class='symbol'>:enclosing</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_content'>[[:print:]]+
+    </span><span class='embexpr_beg'>#{</span><span class='cvar'>@@flag</span><span class='lbracket'>[</span><span class='symbol'>:enclosing</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='embexpr_beg'>#{</span><span class='cvar'>@@flag</span><span class='lbracket'>[</span><span class='symbol'>:suffix</span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='regexp_end'>/ox</span></span><span class='period'>.</span><span class='id identifier rubyid_match?'>match?</span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="from_b64-instance_method">
+  
+    #<strong>from_b64</strong>(opts = {})  &#x21d2; <tt><span class='object_link'><a href="" title="String (class)">String</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Decode the string from base64</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>UnVieQ==</span><span class='tstring_end'>&#39;</span></span><span class='period'>.</span><span class='id identifier rubyid_from_b64'>from_b64</span> <span class='comment'># =&gt; &quot;Ruby&quot;</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>opts</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>optional parameters</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  
+    
+    
+    <p class="tag_title">Options Hash (<tt>opts</tt>):</p>
+    <ul class="option">
+      
+        <li>
+          <span class="name">:mode</span>
+          <span class="type">(<tt>Symbol</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Default value: <code>:strict</code>. Other values are <code>:strict</code> (<code>:rfc4648</code>) or <code>:urlsafe</code>.</p>
+</div>
+          
+        </li>
+      
+    </ul>
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the Base64 decoded string</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><a href="https://ruby-doc.org/stdlib-2.6.5/libdoc/base64/rdoc/Base64.html" target="_parent" title="https://ruby-doc.org/stdlib-2.6.5/libdoc/base64/rdoc/Base64.html">https://ruby-doc.org/stdlib-2.6.5/libdoc/base64/rdoc/Base64.html</a></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+45
+46
+47
+48
+49
+50
+51</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/base64.rb', line 45</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_from_b64'>from_b64</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:mode</span><span class='rbracket'>]</span> <span class='op'>||=</span> <span class='symbol'>:strict</span>
+  <span class='kw'>return</span> <span class='const'>Base64</span><span class='period'>.</span><span class='id identifier rubyid_strict_decode64'>strict_decode64</span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:mode</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='symbol'>:strict</span> <span class='op'>||</span>
+                                         <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:mode</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='symbol'>:rfc4648</span>
+  <span class='kw'>return</span> <span class='const'>Base64</span><span class='period'>.</span><span class='id identifier rubyid_decode64'>decode64</span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:mode</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='symbol'>:rfc2045</span>
+  <span class='kw'>return</span> <span class='const'>Base64</span><span class='period'>.</span><span class='id identifier rubyid_urlsafe_decode64'>urlsafe_decode64</span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:mode</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='symbol'>:urlsafe</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="from_b64!-instance_method">
+  
+    #<strong>from_b64!</strong>(opts = {})  &#x21d2; <tt>nil</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Decode the string from base64 in place as described for <span class='object_link'><a href="#from_b64-instance_method" title="String#from_b64 (method)">#from_b64</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_a'>a</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>SGVsbG8gd29ybGQh</span><span class='tstring_end'>&#39;</span></span> <span class='comment'># =&gt; &quot;SGVsbG8gd29ybGQh&quot;
+</span><span class='id identifier rubyid_a'>a</span><span class='period'>.</span><span class='id identifier rubyid_from_b64!'>from_b64!</span> <span class='comment'># =&gt; nil
+</span><span class='id identifier rubyid_a'>a</span> <span class='comment'># =&gt; &quot;Hello world!&quot;</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+59
+60
+61
+62
+63
+64
+65</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/base64.rb', line 59</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_from_b64!'>from_b64!</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:mode</span><span class='rbracket'>]</span> <span class='op'>||=</span> <span class='symbol'>:strict</span>
+  <span class='id identifier rubyid_replace'>replace</span><span class='lparen'>(</span><span class='id identifier rubyid_from_b64'>from_b64</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:mode</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='symbol'>:strict</span> <span class='op'>||</span>
+                       <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:mode</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='symbol'>:rfc4648</span>
+  <span class='id identifier rubyid_replace'>replace</span><span class='lparen'>(</span><span class='id identifier rubyid_from_b64'>from_b64</span><span class='lparen'>(</span><span class='label'>mode:</span> <span class='symbol'>:rfc2045</span><span class='rparen'>)</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:mode</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='symbol'>:rfc2045</span>
+  <span class='id identifier rubyid_replace'>replace</span><span class='lparen'>(</span><span class='id identifier rubyid_from_b64'>from_b64</span><span class='lparen'>(</span><span class='label'>mode:</span> <span class='symbol'>:urlsafe</span><span class='rparen'>)</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:mode</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='symbol'>:urlsafe</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="md5-instance_method">
+  
+    #<strong>md5</strong>  &#x21d2; <tt><span class='object_link'><a href="" title="String (class)">String</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Calculate the md5 hash of the string.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>noraj</span><span class='tstring_end'>&#39;</span></span><span class='period'>.</span><span class='id identifier rubyid_md5'>md5</span> <span class='comment'># =&gt; &quot;556cc23863fef20fab5c456db166bc6e&quot;</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>md5 hash</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><a href="https://ruby-doc.org/stdlib-2.6.1/libdoc/digest/rdoc/Digest/MD5.html" target="_parent" title="https://ruby-doc.org/stdlib-2.6.1/libdoc/digest/rdoc/Digest/MD5.html">https://ruby-doc.org/stdlib-2.6.1/libdoc/digest/rdoc/Digest/MD5.html</a></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+12
+13
+14</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/digest.rb', line 12</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_md5'>md5</span>
+  <span class='const'>Digest</span><span class='op'>::</span><span class='const'>MD5</span><span class='period'>.</span><span class='id identifier rubyid_hexdigest'>hexdigest</span> <span class='kw'>self</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="md5!-instance_method">
+  
+    #<strong>md5!</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Calculate the md5 hash of the string in place as described for <span class='object_link'><a href="#md5-instance_method" title="String#md5 (method)">#md5</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_a'>a</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>\o/</span><span class='tstring_end'>&#39;</span></span> <span class='comment'># =&gt; &quot;\\o/&quot;
+</span><span class='id identifier rubyid_a'>a</span><span class='period'>.</span><span class='id identifier rubyid_md5!'>md5!</span> <span class='comment'># =&gt; &quot;881419964e480e66162da521ccc25ebf&quot;
+</span><span class='id identifier rubyid_a'>a</span> <span class='comment'># =&gt; &quot;881419964e480e66162da521ccc25ebf&quot;</span></code></pre>
+    
+  </div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+21
+22
+23</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/digest.rb', line 21</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_md5!'>md5!</span>
+  <span class='id identifier rubyid_replace'>replace</span><span class='lparen'>(</span><span class='id identifier rubyid_md5'>md5</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="rmd160-instance_method">
+  
+    #<strong>rmd160</strong>  &#x21d2; <tt><span class='object_link'><a href="" title="String (class)">String</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Calculate the RIPEMD-160 hash of the string.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>payload</span><span class='tstring_end'>&#39;</span></span><span class='period'>.</span><span class='id identifier rubyid_rmd160'>rmd160</span> <span class='comment'># =&gt; &quot;3c6255c112d409dafdb84d5b0edba98dfd27b44f&quot;</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>RIPEMD-160 hash</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><a href="https://ruby-doc.org/stdlib-2.6.1/libdoc/digest/rdoc/Digest/RMD160.html" target="_parent" title="https://ruby-doc.org/stdlib-2.6.1/libdoc/digest/rdoc/Digest/RMD160.html">https://ruby-doc.org/stdlib-2.6.1/libdoc/digest/rdoc/Digest/RMD160.html</a></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+102
+103
+104</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/digest.rb', line 102</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_rmd160'>rmd160</span>
+  <span class='const'>Digest</span><span class='op'>::</span><span class='const'>RMD160</span><span class='period'>.</span><span class='id identifier rubyid_hexdigest'>hexdigest</span> <span class='kw'>self</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="rmd160!-instance_method">
+  
+    #<strong>rmd160!</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Calculate the RIPEMD-160 hash of the string in place as described for <span class='object_link'><a href="#rmd160-instance_method" title="String#rmd160 (method)">#rmd160</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_pl'>pl</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>payload</span><span class='tstring_end'>&#39;</span></span> <span class='comment'># =&gt; &quot;payload&quot;
+</span><span class='id identifier rubyid_pl'>pl</span><span class='period'>.</span><span class='id identifier rubyid_rmd160!'>rmd160!</span> <span class='comment'># =&gt; &quot;3c6255c112d409dafdb84d5b0edba98dfd27b44f&quot;
+</span><span class='id identifier rubyid_pl'>pl</span> <span class='comment'># =&gt; &quot;3c6255c112d409dafdb84d5b0edba98dfd27b44f&quot;</span></code></pre>
+    
+  </div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+112
+113
+114</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/digest.rb', line 112</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_rmd160!'>rmd160!</span>
+  <span class='id identifier rubyid_replace'>replace</span><span class='lparen'>(</span><span class='id identifier rubyid_rmd160'>rmd160</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="rot-instance_method">
+  
+    #<strong>rot</strong>(opts = {})  &#x21d2; <tt><span class='object_link'><a href="" title="String (class)">String</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>“Encrypt / Decrypt” the string with Caesar cipher. This will shift the alphabet letters by <code>n</code>, where <code>n</code> is the integer key. The same function is used for encryption / decryption.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Hello world!</span><span class='tstring_end'>&#39;</span></span><span class='period'>.</span><span class='id identifier rubyid_rot'>rot</span> <span class='comment'># =&gt; &quot;Uryyb jbeyq!&quot;
+</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Hello world!</span><span class='tstring_end'>&#39;</span></span><span class='period'>.</span><span class='id identifier rubyid_rot'>rot</span><span class='lparen'>(</span><span class='label'>shift:</span> <span class='int'>11</span><span class='rparen'>)</span> <span class='comment'># =&gt; &quot;Spwwz hzcwo!&quot;
+</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Uryyb jbeyq!</span><span class='tstring_end'>&#39;</span></span><span class='period'>.</span><span class='id identifier rubyid_rot'>rot</span> <span class='comment'># =&gt; &quot;Hello world!&quot;
+</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Spwwz hzcwo!</span><span class='tstring_end'>&#39;</span></span><span class='period'>.</span><span class='id identifier rubyid_rot'>rot</span><span class='lparen'>(</span><span class='label'>shift:</span> <span class='int'>26</span><span class='op'>-</span><span class='int'>11</span><span class='rparen'>)</span> <span class='comment'># =&gt; &quot;Hello world!&quot;</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>opts</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>optional parameters</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  
+    
+    
+    <p class="tag_title">Options Hash (<tt>opts</tt>):</p>
+    <ul class="option">
+      
+        <li>
+          <span class="name">:shift</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>The shift key. Default value: 13.</p>
+</div>
+          
+        </li>
+      
+    </ul>
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the (de)ciphered string</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><a href="https://en.wikipedia.org/wiki/Caesar_cipher" target="_parent" title="https://en.wikipedia.org/wiki/Caesar_cipher">https://en.wikipedia.org/wiki/Caesar_cipher</a></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+16
+17
+18
+19
+20
+21
+22
+23
+24</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/rot.rb', line 16</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_rot'>rot</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:shift</span><span class='rbracket'>]</span> <span class='op'>||=</span> <span class='int'>13</span>
+  <span class='id identifier rubyid_alphabet'>alphabet</span> <span class='op'>=</span> <span class='const'>Array</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>a</span><span class='tstring_end'>&#39;</span></span><span class='op'>..</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>z</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_lowercase'>lowercase</span> <span class='op'>=</span> <span class='const'>Hash</span><span class='lbracket'>[</span><span class='id identifier rubyid_alphabet'>alphabet</span><span class='period'>.</span><span class='id identifier rubyid_zip'>zip</span><span class='lparen'>(</span><span class='id identifier rubyid_alphabet'>alphabet</span><span class='period'>.</span><span class='id identifier rubyid_rotate'>rotate</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:shift</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='rparen'>)</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_alphabet'>alphabet</span> <span class='op'>=</span> <span class='const'>Array</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>A</span><span class='tstring_end'>&#39;</span></span><span class='op'>..</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Z</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_uppercasecase'>uppercasecase</span> <span class='op'>=</span> <span class='const'>Hash</span><span class='lbracket'>[</span><span class='id identifier rubyid_alphabet'>alphabet</span><span class='period'>.</span><span class='id identifier rubyid_zip'>zip</span><span class='lparen'>(</span><span class='id identifier rubyid_alphabet'>alphabet</span><span class='period'>.</span><span class='id identifier rubyid_rotate'>rotate</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:shift</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='rparen'>)</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_encrypter'>encrypter</span> <span class='op'>=</span> <span class='id identifier rubyid_lowercase'>lowercase</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='id identifier rubyid_uppercasecase'>uppercasecase</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_chars'>chars</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_c'>c</span><span class='op'>|</span> <span class='id identifier rubyid_encrypter'>encrypter</span><span class='period'>.</span><span class='id identifier rubyid_fetch'>fetch</span><span class='lparen'>(</span><span class='id identifier rubyid_c'>c</span><span class='comma'>,</span> <span class='id identifier rubyid_c'>c</span><span class='rparen'>)</span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="rot!-instance_method">
+  
+    #<strong>rot!</strong>(opts = {})  &#x21d2; <tt><span class='object_link'><a href="" title="String (class)">String</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>“Encrypt / Decrypt” the string with Caesar cipher in place as described for <span class='object_link'><a href="#rot-instance_method" title="String#rot (method)">#rot</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_a'>a</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Bonjour le monde !</span><span class='tstring_end'>&#39;</span></span> <span class='comment'># =&gt; &quot;Bonjour le monde !&quot;
+</span><span class='id identifier rubyid_a'>a</span><span class='period'>.</span><span class='id identifier rubyid_rot!'>rot!</span> <span class='comment'># =&gt; &quot;Obawbhe yr zbaqr !&quot;
+</span><span class='id identifier rubyid_a'>a</span> <span class='comment'># =&gt; &quot;Obawbhe yr zbaqr !&quot;</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the (de)ciphered string as well as changing changing the object in place.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+34
+35
+36</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/rot.rb', line 34</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_rot!'>rot!</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_replace'>replace</span><span class='lparen'>(</span><span class='id identifier rubyid_rot'>rot</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="rot13-instance_method">
+  
+    #<strong>rot13</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Alias for <span class='object_link'><a href="#rot-instance_method" title="String#rot (method)">#rot</a></span> with default value ( <tt>rot(shift: 13)</tt> ).</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+39
+40
+41</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/rot.rb', line 39</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_rot13'>rot13</span>
+  <span class='id identifier rubyid_rot'>rot</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="rot13!-instance_method">
+  
+    #<strong>rot13!</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Alias for <span class='object_link'><a href="#rot!-instance_method" title="String#rot! (method)">#rot!</a></span> with default value ( <tt>rot!(shift: 13)</tt> ).</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+44
+45
+46</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/rot.rb', line 44</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_rot13!'>rot13!</span>
+  <span class='id identifier rubyid_rot!'>rot!</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="sha1-instance_method">
+  
+    #<strong>sha1</strong>  &#x21d2; <tt><span class='object_link'><a href="" title="String (class)">String</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Calculate the sha1 hash of the string.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ctf-party</span><span class='tstring_end'>&#39;</span></span><span class='period'>.</span><span class='id identifier rubyid_sha1'>sha1</span> <span class='comment'># =&gt; &quot;5a64f3bc491d0977e1e3578a48c65a89a16a5fe8&quot;</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>sha1 hash</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><a href="https://ruby-doc.org/stdlib-2.6.1/libdoc/digest/rdoc/Digest/SHA1.html" target="_parent" title="https://ruby-doc.org/stdlib-2.6.1/libdoc/digest/rdoc/Digest/SHA1.html">https://ruby-doc.org/stdlib-2.6.1/libdoc/digest/rdoc/Digest/SHA1.html</a></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+30
+31
+32</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/digest.rb', line 30</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_sha1'>sha1</span>
+  <span class='const'>Digest</span><span class='op'>::</span><span class='const'>SHA1</span><span class='period'>.</span><span class='id identifier rubyid_hexdigest'>hexdigest</span> <span class='kw'>self</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="sha1!-instance_method">
+  
+    #<strong>sha1!</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Calculate the sha1 hash of the string in place as described for <span class='object_link'><a href="#sha1-instance_method" title="String#sha1 (method)">#sha1</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_bob'>bob</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>alice</span><span class='tstring_end'>&#39;</span></span> <span class='comment'># =&gt; &quot;alice&quot;
+</span><span class='id identifier rubyid_bob'>bob</span><span class='period'>.</span><span class='id identifier rubyid_sha1!'>sha1!</span> <span class='comment'># =&gt; &quot;522b276a356bdf39013dfabea2cd43e141ecc9e8&quot;
+</span><span class='id identifier rubyid_bob'>bob</span> <span class='comment'># =&gt; &quot;522b276a356bdf39013dfabea2cd43e141ecc9e8&quot;</span></code></pre>
+    
+  </div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+39
+40
+41</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/digest.rb', line 39</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_sha1!'>sha1!</span>
+  <span class='id identifier rubyid_replace'>replace</span><span class='lparen'>(</span><span class='id identifier rubyid_sha1'>sha1</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="sha2-instance_method">
+  
+    #<strong>sha2</strong>(opts = {})  &#x21d2; <tt><span class='object_link'><a href="" title="String (class)">String</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Calculate the sha2 hash of the string.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>try harder</span><span class='tstring_end'>&#39;</span></span><span class='period'>.</span><span class='id identifier rubyid_sha2'>sha2</span> <span class='comment'># =&gt; &quot;5321ff2d4b1389b3a350dfe8ca77e3889dc6259bb233ad...&quot;
+</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>try harder</span><span class='tstring_end'>&#39;</span></span><span class='period'>.</span><span class='id identifier rubyid_sha2'>sha2</span><span class='lparen'>(</span><span class='label'>bitlen:</span> <span class='int'>512</span><span class='rparen'>)</span> <span class='comment'># =&gt; &quot;a7b73a98c095b22e25407b15c4dec128c...&quot;</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>opts</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>optional parameters</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  
+    
+    
+    <p class="tag_title">Options Hash (<tt>opts</tt>):</p>
+    <ul class="option">
+      
+        <li>
+          <span class="name">:bitlen</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Defines the bit lenght of the digest. Default value: 256 (SHA2-256). other valid vales are 384 (SHA2-384) and 512 (SHA2-512).</p>
+</div>
+          
+        </li>
+      
+    </ul>
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>sha hash</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><a href="https://ruby-doc.org/stdlib-2.6.1/libdoc/digest/rdoc/Digest/SHA2.html" target="_parent" title="https://ruby-doc.org/stdlib-2.6.1/libdoc/digest/rdoc/Digest/SHA2.html">https://ruby-doc.org/stdlib-2.6.1/libdoc/digest/rdoc/Digest/SHA2.html</a></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+53
+54
+55
+56</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/digest.rb', line 53</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_sha2'>sha2</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:bitlen</span><span class='rbracket'>]</span> <span class='op'>||=</span> <span class='int'>256</span>
+  <span class='const'>Digest</span><span class='op'>::</span><span class='const'>SHA2</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:bitlen</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_hexdigest'>hexdigest</span> <span class='kw'>self</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="sha2!-instance_method">
+  
+    #<strong>sha2!</strong>(opts = {})  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Calculate the sha2 hash of the string in place as described for <span class='object_link'><a href="#sha2-instance_method" title="String#sha2 (method)">#sha2</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_th'>th</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>try harder</span><span class='tstring_end'>&#39;</span></span> <span class='comment'># =&gt; &quot;try harder&quot;
+</span><span class='id identifier rubyid_th'>th</span><span class='period'>.</span><span class='id identifier rubyid_sha2!'>sha2!</span><span class='lparen'>(</span><span class='label'>bitlen:</span> <span class='int'>384</span><span class='rparen'>)</span> <span class='comment'># =&gt; &quot;bb7f60b9562a19c3a83c23791440af11591c42ede9...&quot;
+</span><span class='id identifier rubyid_th'>th</span> <span class='comment'># =&gt; &quot;bb7f60b9562a19c3a83c23791440af11591c42ede9988334cdfd7efa4261a...&quot;</span></code></pre>
+    
+  </div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+63
+64
+65</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/digest.rb', line 63</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_sha2!'>sha2!</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_replace'>replace</span><span class='lparen'>(</span><span class='id identifier rubyid_sha2'>sha2</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="sha2_256-instance_method">
+  
+    #<strong>sha2_256</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Alias for <span class='object_link'><a href="#sha2-instance_method" title="String#sha2 (method)">#sha2</a></span> with default value ( <tt>sha2(bitlen: 256)</tt> ).</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+68
+69
+70</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/digest.rb', line 68</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_sha2_256'>sha2_256</span>
+  <span class='id identifier rubyid_sha2'>sha2</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="sha2_256!-instance_method">
+  
+    #<strong>sha2_256!</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Alias for <span class='object_link'><a href="#sha2!-instance_method" title="String#sha2! (method)">#sha2!</a></span> with default value ( <tt>sha2!(bitlen: 256)</tt> ).</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+73
+74
+75</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/digest.rb', line 73</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_sha2_256!'>sha2_256!</span>
+  <span class='id identifier rubyid_replace'>replace</span><span class='lparen'>(</span><span class='id identifier rubyid_sha2'>sha2</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="sha2_384-instance_method">
+  
+    #<strong>sha2_384</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Alias for <span class='object_link'><a href="#sha2-instance_method" title="String#sha2 (method)">#sha2</a></span> with default value ( <tt>sha2(bitlen: 384)</tt> ).</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+78
+79
+80</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/digest.rb', line 78</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_sha2_384'>sha2_384</span>
+  <span class='id identifier rubyid_sha2'>sha2</span><span class='lparen'>(</span><span class='label'>bitlen:</span> <span class='int'>384</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="sha2_384!-instance_method">
+  
+    #<strong>sha2_384!</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Alias for <span class='object_link'><a href="#sha2!-instance_method" title="String#sha2! (method)">#sha2!</a></span> with default value ( <tt>sha2!(bitlen: 384)</tt> ).</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+83
+84
+85</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/digest.rb', line 83</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_sha2_384!'>sha2_384!</span>
+  <span class='id identifier rubyid_replace'>replace</span><span class='lparen'>(</span><span class='id identifier rubyid_sha2'>sha2</span><span class='lparen'>(</span><span class='label'>bitlen:</span> <span class='int'>384</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="sha2_512-instance_method">
+  
+    #<strong>sha2_512</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Alias for <span class='object_link'><a href="#sha2-instance_method" title="String#sha2 (method)">#sha2</a></span> with default value ( <tt>sha2(bitlen: 512)</tt> ).</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+88
+89
+90</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/digest.rb', line 88</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_sha2_512'>sha2_512</span>
+  <span class='id identifier rubyid_sha2'>sha2</span><span class='lparen'>(</span><span class='label'>bitlen:</span> <span class='int'>512</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="sha2_512!-instance_method">
+  
+    #<strong>sha2_512!</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Alias for <span class='object_link'><a href="#sha2!-instance_method" title="String#sha2! (method)">#sha2!</a></span> with default value ( <tt>sha2!(bitlen: 512)</tt> ).</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+93
+94
+95</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/digest.rb', line 93</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_sha2_512!'>sha2_512!</span>
+  <span class='id identifier rubyid_replace'>replace</span><span class='lparen'>(</span><span class='id identifier rubyid_sha2'>sha2</span><span class='lparen'>(</span><span class='label'>bitlen:</span> <span class='int'>512</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_b64-instance_method">
+  
+    #<strong>to_b64</strong>(opts = {})  &#x21d2; <tt><span class='object_link'><a href="" title="String (class)">String</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Encode the string into base64</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Super lib!</span><span class='tstring_end'>&#39;</span></span><span class='period'>.</span><span class='id identifier rubyid_to_b64'>to_b64</span> <span class='comment'># =&gt; &quot;U3VwZXIgbGliIQ==&quot;</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>opts</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>optional parameters</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  
+    
+    
+    <p class="tag_title">Options Hash (<tt>opts</tt>):</p>
+    <ul class="option">
+      
+        <li>
+          <span class="name">:mode</span>
+          <span class="type">(<tt>Symbol</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Default value: <code>:strict</code>. Other values are <code>:strict</code> (<code>:rfc4648</code>) or <code>:urlsafe</code>.</p>
+</div>
+          
+        </li>
+      
+    </ul>
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the Base64 encoded string</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><a href="https://ruby-doc.org/stdlib-2.6.5/libdoc/base64/rdoc/Base64.html" target="_parent" title="https://ruby-doc.org/stdlib-2.6.5/libdoc/base64/rdoc/Base64.html">https://ruby-doc.org/stdlib-2.6.5/libdoc/base64/rdoc/Base64.html</a></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+15
+16
+17
+18
+19
+20
+21</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/base64.rb', line 15</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_to_b64'>to_b64</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:mode</span><span class='rbracket'>]</span> <span class='op'>||=</span> <span class='symbol'>:strict</span>
+  <span class='kw'>return</span> <span class='const'>Base64</span><span class='period'>.</span><span class='id identifier rubyid_strict_encode64'>strict_encode64</span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:mode</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='symbol'>:strict</span> <span class='op'>||</span>
+                                         <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:mode</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='symbol'>:rfc4648</span>
+  <span class='kw'>return</span> <span class='const'>Base64</span><span class='period'>.</span><span class='id identifier rubyid_encode64'>encode64</span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:mode</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='symbol'>:rfc2045</span>
+  <span class='kw'>return</span> <span class='const'>Base64</span><span class='period'>.</span><span class='id identifier rubyid_urlsafe_encode64'>urlsafe_encode64</span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:mode</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='symbol'>:urlsafe</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_b64!-instance_method">
+  
+    #<strong>to_b64!</strong>(opts = {})  &#x21d2; <tt>nil</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Encode the string into base64 in place as described for <span class='object_link'><a href="#to_b64-instance_method" title="String#to_b64 (method)">#to_b64</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_myStr'>myStr</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Ruby</span><span class='tstring_end'>&#39;</span></span> <span class='comment'># =&gt; &quot;Ruby&quot;
+</span><span class='id identifier rubyid_myStr'>myStr</span><span class='period'>.</span><span class='id identifier rubyid_to_b64!'>to_b64!</span> <span class='comment'># =&gt; nil
+</span><span class='id identifier rubyid_myStr'>myStr</span> <span class='comment'># =&gt; &quot;UnVieQ==&quot;</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+29
+30
+31
+32
+33
+34
+35</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/base64.rb', line 29</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_to_b64!'>to_b64!</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:mode</span><span class='rbracket'>]</span> <span class='op'>||=</span> <span class='symbol'>:strict</span>
+  <span class='id identifier rubyid_replace'>replace</span><span class='lparen'>(</span><span class='id identifier rubyid_to_b64'>to_b64</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:mode</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='symbol'>:strict</span> <span class='op'>||</span>
+                     <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:mode</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='symbol'>:rfc4648</span>
+  <span class='id identifier rubyid_replace'>replace</span><span class='lparen'>(</span><span class='id identifier rubyid_to_b64'>to_b64</span><span class='lparen'>(</span><span class='label'>mode:</span> <span class='symbol'>:rfc2045</span><span class='rparen'>)</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:mode</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='symbol'>:rfc2045</span>
+  <span class='id identifier rubyid_replace'>replace</span><span class='lparen'>(</span><span class='id identifier rubyid_to_b64'>to_b64</span><span class='lparen'>(</span><span class='label'>mode:</span> <span class='symbol'>:urlsafe</span><span class='rparen'>)</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:mode</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='symbol'>:urlsafe</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Wed Nov 20 19:33:26 2019 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.20 (ruby-2.6.2).
+</div>
+
+    </div>
+  </body>
+</html>
