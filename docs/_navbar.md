@@ -1,3 +1,3 @@
 - [Home](/)
 - [Doc](https://orange-cyberdefense.github.io/ctf-party/yard/)
-- [Source](https://github.com/Orange-Cyberdefense/ctf-rabid/)
+- [Source](https://github.com/Orange-Cyberdefense/ctf-party/)

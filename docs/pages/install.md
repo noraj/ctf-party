@@ -32,17 +32,17 @@ Manually:
 
 ```
 $ git clone https://aur.archlinux.org/ruby-ctf-party.git
-$ cd ruby-ctf-rabid
+$ cd ruby-ctf-party
 $ makepkg -sic
 ```
 
 With an AUR helper ([Pacman wrappers](https://wiki.archlinux.org/index.php/AUR_helpers#Pacman_wrappers)), eg. pikaur:
 
 ```
-$ pikaur -S ruby-ctf-rabid
+$ pikaur -S ruby-ctf-party
 ```
 
-AUR: [ruby-ctf-rabid](https://aur.archlinux.org/packages/ruby-ctf-rabid/)
+AUR: [ruby-ctf-party](https://aur.archlinux.org/packages/ruby-ctf-party/)
 
 ## Development
 
@@ -59,7 +59,7 @@ $ gem install --development ctf-party
 Just replace `x.x.x` with the gem version you see after `gem build`.
 
 ```
-$ git clone https://github.com/Orange-Cyberdefense/ctf-party.git rabid
+$ git clone https://github.com/Orange-Cyberdefense/ctf-party.git ctf-party
 $ cd ctf-party
 $ gem install bundler
 $ bundler install

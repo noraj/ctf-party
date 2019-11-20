@@ -35,7 +35,7 @@ myvar = Base64.strict_encode64(myvar)
 Just write (shorter and easier to remember):
 
 ```ruby
-require 'ctf_library'
+require 'ctf_party'
 
 myvar = 'string'
 myvar.to_b64!
