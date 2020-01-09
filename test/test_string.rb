@@ -131,4 +131,43 @@ class CTFPartyTest < Minitest::Test
   def test_rot_rot13!
     # skip
   end
+
+  def test_hex_hex2dec
+    assert_equal('255', 'ff'.hex2dec)
+    assert_equal('243', '\xf3'.hex2dec(prefix: '\x'))
+  end
+
+  def test_hex_hex2dec!
+    # skip
+  end
+
+  def test_hex_dec2hex
+    assert_equal('ff', '255'.dec2hex)
+    assert_equal('0xFF', '255'.dec2hex(prefix: '0x', case: :upper))
+  end
+
+  def test_hex_dec2hex!
+    # skip
+  end
+
+  def test_hex_to_hex
+    assert_equal('6e6f72616a', 'noraj'.to_hex)
+    assert_equal('0x6e6f72616a', 'noraj'.to_hex(prefix: '0x'))
+    assert_equal('6E6F72616A', 'noraj'.to_hex(case: :upper))
+    assert_equal('e6f62716a6', 'noraj'.to_hex(nibble: :low))
+  end
+
+  def test_hex_to_hex!
+    # skip
+  end
+
+  def test_hex_from_hex
+    assert_equal('noraj', '6e6f72616a'.from_hex)
+    assert_equal('noraj', '0x6e6f72616a'.from_hex(prefix: '0x'))
+    assert_equal('noraj', 'e6f62716a6'.from_hex(nibble: :low))
+  end
+
+  def test_hex_from_hex!
+    # skip
+  end
 end

@@ -13,7 +13,7 @@ class String
     Digest::MD5.hexdigest self
   end
 
-  # Calculate the md5 hash of the string in place as described for {#md5}.
+  # Calculate the md5 hash of the string in place as described for {String#md5}.
   # @example
   #   a = '\o/' # => "\\o/"
   #   a.md5! # => "881419964e480e66162da521ccc25ebf"
@@ -31,7 +31,8 @@ class String
     Digest::SHA1.hexdigest self
   end
 
-  # Calculate the sha1 hash of the string in place as described for {#sha1}.
+  # Calculate the sha1 hash of the string in place as described for
+  #   {String#sha1}.
   # @example
   #   bob = 'alice' # => "alice"
   #   bob.sha1! # => "522b276a356bdf39013dfabea2cd43e141ecc9e8"
@@ -55,7 +56,8 @@ class String
     Digest::SHA2.new(opts[:bitlen]).hexdigest self
   end
 
-  # Calculate the sha2 hash of the string in place as described for {#sha2}.
+  # Calculate the sha2 hash of the string in place as described for
+  #   {String#sha2}.
   # @example
   #   th = 'try harder' # => "try harder"
   #   th.sha2!(bitlen: 384) # => "bb7f60b9562a19c3a83c23791440af11591c42ede9..."
@@ -64,32 +66,32 @@ class String
     replace(sha2(opts))
   end
 
-  # Alias for {#sha2} with default value ( +sha2(bitlen: 256)+ ).
+  # Alias for {String#sha2} with default value ( +sha2(bitlen: 256)+ ).
   def sha2_256
     sha2
   end
 
-  # Alias for {#sha2!} with default value ( +sha2!(bitlen: 256)+ ).
+  # Alias for {String#sha2!} with default value ( +sha2!(bitlen: 256)+ ).
   def sha2_256!
     replace(sha2)
   end
 
-  # Alias for {#sha2} with default value ( +sha2(bitlen: 384)+ ).
+  # Alias for {String#sha2} with default value ( +sha2(bitlen: 384)+ ).
   def sha2_384
     sha2(bitlen: 384)
   end
 
-  # Alias for {#sha2!} with default value ( +sha2!(bitlen: 384)+ ).
+  # Alias for {String#sha2!} with default value ( +sha2!(bitlen: 384)+ ).
   def sha2_384!
     replace(sha2(bitlen: 384))
   end
 
-  # Alias for {#sha2} with default value ( +sha2(bitlen: 512)+ ).
+  # Alias for {String#sha2} with default value ( +sha2(bitlen: 512)+ ).
   def sha2_512
     sha2(bitlen: 512)
   end
 
-  # Alias for {#sha2!} with default value ( +sha2!(bitlen: 512)+ ).
+  # Alias for {String#sha2!} with default value ( +sha2!(bitlen: 512)+ ).
   def sha2_512!
     replace(sha2(bitlen: 512))
   end
@@ -104,7 +106,7 @@ class String
   end
 
   # Calculate the RIPEMD-160 hash of the string in place as described for
-  # {#rmd160}.
+  # {String#rmd160}.
   # @example
   #   pl = 'payload' # => "payload"
   #   pl.rmd160! # => "3c6255c112d409dafdb84d5b0edba98dfd27b44f"

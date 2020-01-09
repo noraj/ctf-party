@@ -41,12 +41,12 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = '~> 2.4'
 
-  s.add_development_dependency('bundler', '~> 2.0')
+  s.add_development_dependency('bundler', '~> 2.1')
   s.add_development_dependency('commonmarker', '~> 0.20') # for GMF support in YARD
   s.add_development_dependency('github-markup', '~> 3.0') # for GMF support in YARD
-  s.add_development_dependency('minitest', '~> 5.11')
+  s.add_development_dependency('minitest', '~> 5')
   s.add_development_dependency('rake', '~> 13.0')
-  s.add_development_dependency('redcarpet', '~> 3.4') # for GMF support in YARD
-  s.add_development_dependency('rubocop', '~> 0.63')
+  s.add_development_dependency('redcarpet', '~> 3.5') # for GMF support in YARD
+  s.add_development_dependency('rubocop', '~> 0.79')
   s.add_development_dependency('yard', '~> 0.9')
 end

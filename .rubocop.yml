@@ -2,7 +2,10 @@
 AllCops:
   TargetRubyVersion: 2.4
 
-Layout/AlignHash:
+Layout/HashAlignment:
+  Include:
+    - 'lib/**/*.rb'
+Layout/LineLength:
   Include:
     - 'lib/**/*.rb'
 Metrics/AbcSize:
@@ -11,9 +14,6 @@ Metrics/ClassLength:
   Max: 200
 Metrics/CyclomaticComplexity:
   Enabled: false
-Metrics/LineLength:
-  Include:
-    - 'lib/**/*.rb'
 Metrics/BlockNesting:
   Exclude:
     - 'bin/*'

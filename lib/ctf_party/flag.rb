@@ -72,7 +72,7 @@ class String
   end
 
   # Format the current string into the configured flag format in place as
-  # described for {#flag}.
+  # described for {String#flag}.
   def flag!
     replace(flag)
   end

@@ -35,12 +35,12 @@ class String
     replace(rot(opts))
   end
 
-  # Alias for {#rot} with default value ( +rot(shift: 13)+ ).
+  # Alias for {String#rot} with default value ( +rot(shift: 13)+ ).
   def rot13
     rot
   end
 
-  # Alias for {#rot!} with default value ( +rot!(shift: 13)+ ).
+  # Alias for {String#rot!} with default value ( +rot!(shift: 13)+ ).
   def rot13!
     rot!
   end

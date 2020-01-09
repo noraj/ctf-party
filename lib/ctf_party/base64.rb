@@ -27,11 +27,7 @@ class String
   #   myStr.to_b64! # => nil
   #   myStr # => "UnVieQ=="
   def to_b64!(opts = {})
-    opts[:mode] ||= :strict
-    replace(to_b64) if opts[:mode] == :strict ||
-                       opts[:mode] == :rfc4648
-    replace(to_b64(mode: :rfc2045)) if opts[:mode] == :rfc2045
-    replace(to_b64(mode: :urlsafe)) if opts[:mode] == :urlsafe
+    replace(to_b64(opts))
   end
 
   # Decode the string from base64
@@ -57,11 +53,7 @@ class String
   #   a.from_b64! # => nil
   #   a # => "Hello world!"
   def from_b64!(opts = {})
-    opts[:mode] ||= :strict
-    replace(from_b64) if opts[:mode] == :strict ||
-                         opts[:mode] == :rfc4648
-    replace(from_b64(mode: :rfc2045)) if opts[:mode] == :rfc2045
-    replace(from_b64(mode: :urlsafe)) if opts[:mode] == :urlsafe
+    replace(from_b64(opts))
   end
 
   # Is the string encoded in base64?
