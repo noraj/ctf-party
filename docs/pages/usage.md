@@ -2,7 +2,7 @@
 
 ## Examples of usage
 
-For base64 encoding instead of writting:
+For base64 encoding instead of writing:
 
 ```ruby
 require 'base64'
@@ -20,7 +20,7 @@ myvar = 'string'
 myvar.to_b64!
 ```
 
-For base64 verification instead of writting:
+For base64 verification instead of writing:
 
 ```ruby
 reg = %r{\A(?:[a-zA-Z0-9+/]{4})*(?:|(?:[a-zA-Z0-9+/]{3}=)|
@@ -34,7 +34,7 @@ Just write:
 'SGVsbG8gd29ybGQh'.b64?
 ```
 
-For hash/digest instead of writting:
+For hash/digest instead of writing:
 
 ```ruby
 Digest::SHA2.new(512).hexdigest('mystr')
