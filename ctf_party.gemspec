@@ -9,9 +9,9 @@ Gem::Specification.new do |s|
   s.version       = Version::VERSION
   s.platform      = Gem::Platform::RUBY
   s.date          = '2019-11-19'
-  s.summary       = 'A library to enhance and speed up script/exploit writting'\
+  s.summary       = 'A library to enhance and speed up script/exploit writing'\
                     ' for CTF players'
-  s.description   = 'A library to enhance and speed up script/exploit writting'\
+  s.description   = 'A library to enhance and speed up script/exploit writing'\
                     'for CTF players (or security researchers, bug bounty'\
                     'hunters, pentesters but mostly focused on CTF) by'\
                     'patching the String class to add a short syntax of usual'\
