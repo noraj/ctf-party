@@ -9,7 +9,7 @@
 
 ## What it is
 
-A library to enhance and speed up script/exploit writting for CTF players (or
+A library to enhance and speed up script/exploit writing for CTF players (or
 security researchers, bug bounty hunters, pentesters but mostly focused on CTF)
 by patching the String class to add a short syntax of usual code patterns.
 The philosophy is also to keep the library to be pure ruby (no dependencies)
@@ -18,7 +18,7 @@ and not to re-implement what another library is already doing well
 
 [xorcist]:https://github.com/fny/xorcist
 
-For example instead of writting:
+For example instead of writing:
 
 ```ruby
 require 'base64'
