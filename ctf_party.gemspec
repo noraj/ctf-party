@@ -1,14 +1,12 @@
 # frozen_string_literal: true
 
-lib = File.expand_path('lib', __dir__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'ctf_party/version'
+require_relative 'lib/ctf_party/version'
 
 Gem::Specification.new do |s|
   s.name          = 'ctf-party'
   s.version       = Version::VERSION
   s.platform      = Gem::Platform::RUBY
-  s.date          = '2019-11-19'
+  s.date          = '2020-02-03'
   s.summary       = 'A library to enhance and speed up script/exploit writing'\
                     ' for CTF players'
   s.description   = 'A library to enhance and speed up script/exploit writing'\
@@ -21,13 +19,9 @@ Gem::Specification.new do |s|
   s.homepage      = 'https://orange-cyberdefense.github.io/ctf-party/'
   s.license       = 'MIT'
 
-  s.files         = Dir['docs/**/*'] + Dir['lib/**/*.rb'] + Dir['test/*.rb']
-  s.files         += Dir['bin/*'] + ['docs/.nojekyll', 'Rakefile']
-  s.files         += ['README.md', 'LICENSE.txt', 'Gemfile.lock', 'Gemfile']
-  s.files         += ['.yardopts-dev', '.yardopts', '.rubocop.yml']
+  s.files         = Dir['lib/**/*.rb'] + Dir['bin/*'] + ['LICENSE.txt']
   s.bindir        = 'bin'
   s.executables   = s.files.grep(%r{^bin/}) { |f| File.basename(f) }
-  s.test_files    = s.files.grep(%r{^(test)/})
   s.require_paths = ['lib']
 
   s.metadata = {
@@ -47,6 +41,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency('minitest', '~> 5')
   s.add_development_dependency('rake', '~> 13.0')
   s.add_development_dependency('redcarpet', '~> 3.5') # for GMF support in YARD
-  s.add_development_dependency('rubocop', '~> 0.79')
+  s.add_development_dependency('rubocop', '~> 0.80')
   s.add_development_dependency('yard', '~> 0.9')
 end

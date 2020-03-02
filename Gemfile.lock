@@ -47,7 +47,7 @@ DEPENDENCIES
   minitest (~> 5)
   rake (~> 13.0)
   redcarpet (~> 3.5)
-  rubocop (~> 0.79)
+  rubocop (~> 0.80)
   yard (~> 0.9)
 
 BUNDLED WITH
