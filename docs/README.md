@@ -42,7 +42,7 @@ myvar.to_b64!
 - digest: `md5`, `md5!`, `sha1`, `sha1!`, etc.
 - flag: `flag`, `flag!`, `flag?` (apply/check a flag format)
 - rot: `rot`, `rot!`, `rot13`, `rot13!`
-- hex: `hex2dec`, `dec2hex`, `to_hex`, `from_hex` and bang versions
+- hex: `hex2dec`, `dec2hex`, `to_hex`, `from_hex`, `hex2bin`, `bin2hex` and bang versions
 
 ## References
 

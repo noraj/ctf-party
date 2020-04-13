@@ -8,6 +8,10 @@ Layout/HashAlignment:
 Layout/LineLength:
   Include:
     - 'lib/**/*.rb'
+Lint/RaiseException:
+  Enabled: true
+Lint/StructNewOverride:
+  Enabled: true
 Metrics/AbcSize:
   Enabled: false
 Metrics/ClassLength:

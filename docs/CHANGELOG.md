@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.2.0]
+
+- new hexadecimal methods:
+  - normal: `hex2bin`, `bin2hex`
+  - in-place: `hex2bin!`, `bin2hex!`
+
+**Chore**
+
+- Updated dependencies
+- Updated rubocop rules
+
 ## [1.1.0]
 
 **Features**

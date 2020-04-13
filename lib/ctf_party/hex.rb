@@ -131,4 +131,61 @@ class String
   def from_hex!(opts = {})
     replace(from_hex(opts))
   end
+
+  # Encode an hexadecimal string to a binary string
+  # @param opts [Hash] optional parameters
+  # @option opts [String] :prefix Prefix of the input. Default value is a void
+  #   string. Example of values: +0x+, +\x+.
+  # @return [String] the binary encoded string
+  # @example
+  #   'ab'.hex2bin # => "10101011"
+  #   '\xf3'.hex2bin(prefix: '\x') # => "11110011"
+  def hex2bin(opts = {})
+    opts[:prefix] ||= ''
+    # remove prefix
+    out = sub(opts[:prefix], '')
+    # convert
+    return out.to_i(16).to_s(2)
+  end
+
+  # Encode an hexadecimal string to a binary string in place as described
+  # for {String#hex2bin}.
+  # @example
+  #   a = 'ff'
+  #   a.hex2bin!
+  #   a # => => "11111111"
+  def hex2bin!(opts = {})
+    replace(hex2bin(opts))
+  end
+
+  # Encode an binary string to a hexadecimal string
+  # @param opts [Hash] optional parameters
+  # @option opts [String] :prefix Prefix of the output. Default value is a void
+  #   string. Example of values: +0x+, +\x+.
+  # @option opts [Symbol] :case Char case of the ouput. Default value +:lower+.
+  #   Other valid value +:upper+.
+  # @return [String] the hexadecimal encoded string
+  # @example
+  #   '11110011'.bin2hex # => "f3"
+  #   '11110011'.bin2hex({prefix: '0x', case: :upper}) # => "0xF3"
+  def bin2hex(opts = {})
+    opts[:prefix] ||= ''
+    opts[:case] ||= :lower
+    # convert
+    out = to_i(2).to_s(16)
+    # char case management
+    out = out.upcase if opts[:case] == :upper
+    # adding prefix must be done after case change
+    return opts[:prefix] + out
+  end
+
+  # Encode an binary string to a hexadecimal string in place as described
+  # for {String#bin2hex}.
+  # @example
+  #   a = '11110011'
+  #   a.bin2hex!
+  #   a # => "f3"
+  def bin2hex!(opts = {})
+    replace(bin2hex(opts))
+  end
 end

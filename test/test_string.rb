@@ -170,4 +170,22 @@ class CTFPartyTest < Minitest::Test
   def test_hex_from_hex!
     # skip
   end
+
+  def test_hex_hex2bin
+    assert_equal('10101011', 'ab'.hex2bin)
+    assert_equal('11110011', '\xf3'.hex2bin(prefix: '\x'))
+  end
+
+  def test_hex_hex2bin!
+    # skip
+  end
+
+  def test_hex_bin2hex
+    assert_equal('f3', '11110011'.bin2hex)
+    assert_equal('0xF3', '11110011'.bin2hex(prefix: '0x', case: :upper))
+  end
+
+  def test_hex_bin2hex!
+    # skip
+  end
 end
