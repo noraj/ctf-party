@@ -74,14 +74,15 @@ class String
               (?:[a-zA-Z0-9+/]{2}==)|(?:[a-zA-Z0-9+/]{1}===))\Z}xn
     reg3 = /\A(?:[a-zA-Z0-9\-_]{4})*(?:|(?:[a-zA-Z0-9\-_]{3}=)|
             (?:[a-zA-Z0-9\-_]{2}==)|(?:[a-zA-Z0-9\-_]{1}===))\Z/xn
-    if opts[:mode] == :strict || opts[:mode] == :rfc4648
+    case opts[:mode]
+    when :strict, :rfc4648
       b64 = true if reg1.match?(self)
-    elsif opts[:mode] == :rfc2045
+    when :rfc2045
       b64 = true
       split("\n").each do |s|
         b64 = false unless reg1.match?(s)
       end
-    elsif opts[:mode] == :urlsafe
+    when :urlsafe
       b64 = true if reg3.match?(self)
     else
       raise ArgumentError 'Wrong mode'

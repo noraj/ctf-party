@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.2.1]
+
+- lib: code lint
+- repo: From from [Orange-Cyberdefense/rabid](https://github.com/Orange-Cyberdefense/rabid) to [noraj/rabid](https://github.com/noraj/rabid/)
+- dependencies: update
+- rubocop: new rules for new cops
+- deprecation: now requires ruby 2.7+ instead of 2.4+
+
 ## [1.2.0]
 
 - new hexadecimal methods:

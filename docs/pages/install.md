@@ -59,7 +59,7 @@ $ gem install --development ctf-party
 Just replace `x.x.x` with the gem version you see after `gem build`.
 
 ```
-$ git clone https://github.com/Orange-Cyberdefense/ctf-party.git ctf-party
+$ git clone https://github.com/noraj/ctf-party.git ctf-party
 $ cd ctf-party
 $ gem install bundler
 $ bundler install

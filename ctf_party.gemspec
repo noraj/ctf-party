@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.name          = 'ctf-party'
   s.version       = Version::VERSION
   s.platform      = Gem::Platform::RUBY
-  s.date          = '2020-02-03'
+  s.date          = '2020-07-13'
   s.summary       = 'A library to enhance and speed up script/exploit writing'\
                     ' for CTF players'
   s.description   = 'A library to enhance and speed up script/exploit writing'\
@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
                     ' code patterns.'
   s.authors       = ['Alexandre ZANNI']
   s.email         = 'alexandre.zanni@engineer.com'
-  s.homepage      = 'https://orange-cyberdefense.github.io/ctf-party/'
+  s.homepage      = 'https://noraj.github.io/ctf-party/'
   s.license       = 'MIT'
 
   s.files         = Dir['lib/**/*.rb'] + Dir['bin/*'] + ['LICENSE.txt']
@@ -26,14 +26,14 @@ Gem::Specification.new do |s|
 
   s.metadata = {
     'yard.run'          => 'yard',
-    'bug_tracker_uri'   => 'https://github.com/Orange-Cyberdefense/ctf-party/issues',
-    'changelog_uri'     => 'https://github.com/Orange-Cyberdefense/ctf-party/blob/master/docs/CHANGELOG.md',
-    'documentation_uri' => 'https://orange-cyberdefense.github.io/ctf-party/',
-    'homepage_uri'      => 'https://orange-cyberdefense.github.io/ctf-party/',
-    'source_code_uri'   => 'https://github.com/Orange-Cyberdefense/ctf-party/'
+    'bug_tracker_uri'   => 'https://github.com/noraj/ctf-party/issues',
+    'changelog_uri'     => 'https://github.com/noraj/ctf-party/blob/master/docs/CHANGELOG.md',
+    'documentation_uri' => 'https://noraj.github.io/ctf-party/',
+    'homepage_uri'      => 'https://noraj.github.io/ctf-party/',
+    'source_code_uri'   => 'https://github.com/noraj/ctf-party/'
   }
 
-  s.required_ruby_version = '~> 2.4'
+  s.required_ruby_version = '~> 2.7'
 
   s.add_development_dependency('bundler', '~> 2.1')
   s.add_development_dependency('commonmarker', '~> 0.20') # for GMF support in YARD

@@ -6,7 +6,7 @@
 <title>
   Class: String
   
-    &mdash; Documentation by YARD 0.9.24
+    &mdash; Documentation by YARD 0.9.25
   
 </title>
 
@@ -1311,13 +1311,13 @@
       <pre class="lines">
 
 
+36
+37
 38
-39
-40
-41</pre>
+39</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ctf_party/flag.rb', line 38</span>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/flag.rb', line 36</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_flag='>flag=</span><span class='lparen'>(</span><span class='id identifier rubyid_hash'>hash</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_hash'>hash</span><span class='period'>.</span><span class='id identifier rubyid_select!'>select!</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_k'>k</span><span class='comma'>,</span> <span class='id identifier rubyid__v'>_v</span><span class='op'>|</span> <span class='cvar'>@@flag</span><span class='period'>.</span><span class='id identifier rubyid_key?'>key?</span><span class='lparen'>(</span><span class='id identifier rubyid_k'>k</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
@@ -1459,27 +1459,29 @@
 87
 88
 89
-90</pre>
+90
+91</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/ctf_party/base64.rb', line 69</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_b64?'>b64?</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:mode</span><span class='rbracket'>]</span> <span class='op'>||=</span> <span class='symbol'>:strict</span>
-  <span class='id identifier rubyid_b64'>b64</span> <span class='op'>=</span> <span class='kw'>false</span>  <span class='comment'># https://www.rexegg.com/regex-ruby.html
-</span>
-  <span class='id identifier rubyid_reg1'>reg1</span> <span class='op'>=</span> <span class='tstring'><span class='regexp_beg'>%r{</span><span class='tstring_content'>\A(?:[a-zA-Z0-9+/]{4})*(?:|(?:[a-zA-Z0-9+/]{3}=)|
+  <span class='id identifier rubyid_b64'>b64</span> <span class='op'>=</span> <span class='kw'>false</span>
+  <span class='comment'># https://www.rexegg.com/regex-ruby.html
+</span>  <span class='id identifier rubyid_reg1'>reg1</span> <span class='op'>=</span> <span class='tstring'><span class='regexp_beg'>%r{</span><span class='tstring_content'>\A(?:[a-zA-Z0-9+/]{4})*(?:|(?:[a-zA-Z0-9+/]{3}=)|
             (?:[a-zA-Z0-9+/]{2}==)|(?:[a-zA-Z0-9+/]{1}===))\Z</span><span class='regexp_end'>}xn</span></span>
   <span class='id identifier rubyid_reg3'>reg3</span> <span class='op'>=</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\A(?:[a-zA-Z0-9\-_]{4})*(?:|(?:[a-zA-Z0-9\-_]{3}=)|
           (?:[a-zA-Z0-9\-_]{2}==)|(?:[a-zA-Z0-9\-_]{1}===))\Z</span><span class='regexp_end'>/xn</span></span>
-  <span class='kw'>if</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:mode</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='symbol'>:strict</span> <span class='op'>||</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:mode</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='symbol'>:rfc4648</span>
+  <span class='kw'>case</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:mode</span><span class='rbracket'>]</span>
+  <span class='kw'>when</span> <span class='symbol'>:strict</span><span class='comma'>,</span> <span class='symbol'>:rfc4648</span>
     <span class='id identifier rubyid_b64'>b64</span> <span class='op'>=</span> <span class='kw'>true</span> <span class='kw'>if</span> <span class='id identifier rubyid_reg1'>reg1</span><span class='period'>.</span><span class='id identifier rubyid_match?'>match?</span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span>
-  <span class='kw'>elsif</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:mode</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='symbol'>:rfc2045</span>
+  <span class='kw'>when</span> <span class='symbol'>:rfc2045</span>
     <span class='id identifier rubyid_b64'>b64</span> <span class='op'>=</span> <span class='kw'>true</span>
     <span class='id identifier rubyid_split'>split</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_s'>s</span><span class='op'>|</span>
       <span class='id identifier rubyid_b64'>b64</span> <span class='op'>=</span> <span class='kw'>false</span> <span class='kw'>unless</span> <span class='id identifier rubyid_reg1'>reg1</span><span class='period'>.</span><span class='id identifier rubyid_match?'>match?</span><span class='lparen'>(</span><span class='id identifier rubyid_s'>s</span><span class='rparen'>)</span>
     <span class='kw'>end</span>
-  <span class='kw'>elsif</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:mode</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='symbol'>:urlsafe</span>
+  <span class='kw'>when</span> <span class='symbol'>:urlsafe</span>
     <span class='id identifier rubyid_b64'>b64</span> <span class='op'>=</span> <span class='kw'>true</span> <span class='kw'>if</span> <span class='id identifier rubyid_reg3'>reg3</span><span class='period'>.</span><span class='id identifier rubyid_match?'>match?</span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span>
   <span class='kw'>else</span>
     <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Wrong mode</span><span class='tstring_end'>&#39;</span></span>
@@ -1601,7 +1603,6 @@
       <pre class="lines">
 
 
-171
 172
 173
 174
@@ -1610,20 +1611,21 @@
 177
 178
 179
-180</pre>
+180
+181</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ctf_party/hex.rb', line 171</span>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/hex.rb', line 172</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_bin2hex'>bin2hex</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:prefix</span><span class='rbracket'>]</span> <span class='op'>||=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
-  <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:case</span><span class='rbracket'>]</span> <span class='op'>||=</span> <span class='symbol'>:lower</span>  <span class='comment'># convert
-</span>
-  <span class='id identifier rubyid_out'>out</span> <span class='op'>=</span> <span class='id identifier rubyid_to_i'>to_i</span><span class='lparen'>(</span><span class='int'>2</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='lparen'>(</span><span class='int'>16</span><span class='rparen'>)</span>  <span class='comment'># char case management
-</span>
-  <span class='id identifier rubyid_out'>out</span> <span class='op'>=</span> <span class='id identifier rubyid_out'>out</span><span class='period'>.</span><span class='id identifier rubyid_upcase'>upcase</span> <span class='kw'>if</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:case</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='symbol'>:upper</span>  <span class='comment'># adding prefix must be done after case change
-</span>
-  <span class='kw'>return</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:prefix</span><span class='rbracket'>]</span> <span class='op'>+</span> <span class='id identifier rubyid_out'>out</span>
+  <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:case</span><span class='rbracket'>]</span> <span class='op'>||=</span> <span class='symbol'>:lower</span>
+  <span class='comment'># convert
+</span>  <span class='id identifier rubyid_out'>out</span> <span class='op'>=</span> <span class='id identifier rubyid_to_i'>to_i</span><span class='lparen'>(</span><span class='int'>2</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='lparen'>(</span><span class='int'>16</span><span class='rparen'>)</span>
+  <span class='comment'># char case management
+</span>  <span class='id identifier rubyid_out'>out</span> <span class='op'>=</span> <span class='id identifier rubyid_out'>out</span><span class='period'>.</span><span class='id identifier rubyid_upcase'>upcase</span> <span class='kw'>if</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:case</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='symbol'>:upper</span>
+  <span class='comment'># adding prefix must be done after case change
+</span>  <span class='kw'>return</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:prefix</span><span class='rbracket'>]</span> <span class='op'>+</span> <span class='id identifier rubyid_out'>out</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1666,12 +1668,12 @@
       <pre class="lines">
 
 
-188
 189
-190</pre>
+190
+191</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ctf_party/hex.rb', line 188</span>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/hex.rb', line 189</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_bin2hex!'>bin2hex!</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_replace'>replace</span><span class='lparen'>(</span><span class='id identifier rubyid_bin2hex'>bin2hex</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span><span class='rparen'>)</span>
@@ -1807,13 +1809,13 @@
 
 <span class='kw'>def</span> <span class='id identifier rubyid_dec2hex'>dec2hex</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:prefix</span><span class='rbracket'>]</span> <span class='op'>||=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
-  <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:case</span><span class='rbracket'>]</span> <span class='op'>||=</span> <span class='symbol'>:lower</span>  <span class='comment'># convert
-</span>
-  <span class='id identifier rubyid_out'>out</span> <span class='op'>=</span> <span class='id identifier rubyid_to_i'>to_i</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='lparen'>(</span><span class='int'>16</span><span class='rparen'>)</span>  <span class='comment'># char case management
-</span>
-  <span class='id identifier rubyid_out'>out</span> <span class='op'>=</span> <span class='id identifier rubyid_out'>out</span><span class='period'>.</span><span class='id identifier rubyid_upcase'>upcase</span> <span class='kw'>if</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:case</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='symbol'>:upper</span>  <span class='comment'># adding prefix must be done after case change
-</span>
-  <span class='kw'>return</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:prefix</span><span class='rbracket'>]</span> <span class='op'>+</span> <span class='id identifier rubyid_out'>out</span>
+  <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:case</span><span class='rbracket'>]</span> <span class='op'>||=</span> <span class='symbol'>:lower</span>
+  <span class='comment'># convert
+</span>  <span class='id identifier rubyid_out'>out</span> <span class='op'>=</span> <span class='id identifier rubyid_to_i'>to_i</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='lparen'>(</span><span class='int'>16</span><span class='rparen'>)</span>
+  <span class='comment'># char case management
+</span>  <span class='id identifier rubyid_out'>out</span> <span class='op'>=</span> <span class='id identifier rubyid_out'>out</span><span class='period'>.</span><span class='id identifier rubyid_upcase'>upcase</span> <span class='kw'>if</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:case</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='symbol'>:upper</span>
+  <span class='comment'># adding prefix must be done after case change
+</span>  <span class='kw'>return</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:prefix</span><span class='rbracket'>]</span> <span class='op'>+</span> <span class='id identifier rubyid_out'>out</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1915,6 +1917,10 @@
       <pre class="lines">
 
 
+44
+45
+46
+47
 48
 49
 50
@@ -1935,14 +1941,10 @@
 65
 66
 67
-68
-69
-70
-71
-72</pre>
+68</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ctf_party/flag.rb', line 48</span>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/flag.rb', line 44</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_flag'>flag</span>
   <span class='id identifier rubyid_flag'>flag</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
@@ -2000,12 +2002,12 @@
       <pre class="lines">
 
 
-76
-77
-78</pre>
+72
+73
+74</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ctf_party/flag.rb', line 76</span>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/flag.rb', line 72</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_flag!'>flag!</span>
   <span class='id identifier rubyid_replace'>replace</span><span class='lparen'>(</span><span class='id identifier rubyid_flag'>flag</span><span class='rparen'>)</span>
@@ -2072,13 +2074,13 @@
       <pre class="lines">
 
 
-90
-91
-92
-93</pre>
+86
+87
+88
+89</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ctf_party/flag.rb', line 90</span>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/flag.rb', line 86</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_flag?'>flag?</span>
   <span class='tstring'><span class='regexp_beg'>/</span><span class='embexpr_beg'>#{</span><span class='cvar'>@@flag</span><span class='lbracket'>[</span><span class='symbol'>:prefix</span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='embexpr_beg'>#{</span><span class='cvar'>@@flag</span><span class='lbracket'>[</span><span class='symbol'>:enclosing</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_content'>[[:print:]]+
@@ -2390,7 +2392,6 @@
       <pre class="lines">
 
 
-113
 114
 115
 116
@@ -2400,18 +2401,19 @@
 120
 121
 122
-123</pre>
+123
+124</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ctf_party/hex.rb', line 113</span>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/hex.rb', line 114</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_from_hex'>from_hex</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:prefix</span><span class='rbracket'>]</span> <span class='op'>||=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
-  <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:nibble</span><span class='rbracket'>]</span> <span class='op'>||=</span> <span class='symbol'>:high</span>  <span class='comment'># remove prefix
-</span>
-  <span class='id identifier rubyid_out'>out</span> <span class='op'>=</span> <span class='id identifier rubyid_sub'>sub</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:prefix</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>  <span class='comment'># convert
-</span>
-  <span class='kw'>return</span> <span class='const'>Array</span><span class='lparen'>(</span><span class='id identifier rubyid_out'>out</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_pack'>pack</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>H*</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:nibble</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='symbol'>:high</span>
+  <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:nibble</span><span class='rbracket'>]</span> <span class='op'>||=</span> <span class='symbol'>:high</span>
+  <span class='comment'># remove prefix
+</span>  <span class='id identifier rubyid_out'>out</span> <span class='op'>=</span> <span class='id identifier rubyid_sub'>sub</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:prefix</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+  <span class='comment'># convert
+</span>  <span class='kw'>return</span> <span class='const'>Array</span><span class='lparen'>(</span><span class='id identifier rubyid_out'>out</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_pack'>pack</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>H*</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:nibble</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='symbol'>:high</span>
   <span class='kw'>return</span> <span class='const'>Array</span><span class='lparen'>(</span><span class='id identifier rubyid_out'>out</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_pack'>pack</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>h*</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:nibble</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='symbol'>:low</span>
 
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>:nibble expects :high or :low</span><span class='tstring_end'>&#39;</span></span>
@@ -2457,12 +2459,12 @@
       <pre class="lines">
 
 
-131
 132
-133</pre>
+133
+134</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ctf_party/hex.rb', line 131</span>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/hex.rb', line 132</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_from_hex!'>from_hex!</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_replace'>replace</span><span class='lparen'>(</span><span class='id identifier rubyid_from_hex'>from_hex</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span><span class='rparen'>)</span>
@@ -2569,23 +2571,23 @@
       <pre class="lines">
 
 
-143
 144
 145
 146
 147
 148
-149</pre>
+149
+150</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ctf_party/hex.rb', line 143</span>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/hex.rb', line 144</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_hex2bin'>hex2bin</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:prefix</span><span class='rbracket'>]</span> <span class='op'>||=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>  <span class='comment'># remove prefix
-</span>
-  <span class='id identifier rubyid_out'>out</span> <span class='op'>=</span> <span class='id identifier rubyid_sub'>sub</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:prefix</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>  <span class='comment'># convert
-</span>
-  <span class='kw'>return</span> <span class='id identifier rubyid_out'>out</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='lparen'>(</span><span class='int'>16</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='lparen'>(</span><span class='int'>2</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:prefix</span><span class='rbracket'>]</span> <span class='op'>||=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+  <span class='comment'># remove prefix
+</span>  <span class='id identifier rubyid_out'>out</span> <span class='op'>=</span> <span class='id identifier rubyid_sub'>sub</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:prefix</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+  <span class='comment'># convert
+</span>  <span class='kw'>return</span> <span class='id identifier rubyid_out'>out</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='lparen'>(</span><span class='int'>16</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='lparen'>(</span><span class='int'>2</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -2628,12 +2630,12 @@
       <pre class="lines">
 
 
-157
 158
-159</pre>
+159
+160</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ctf_party/hex.rb', line 157</span>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/hex.rb', line 158</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_hex2bin!'>hex2bin!</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_replace'>replace</span><span class='lparen'>(</span><span class='id identifier rubyid_hex2bin'>hex2bin</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span><span class='rparen'>)</span>
@@ -2752,11 +2754,11 @@
       <pre class="code"><span class="info file"># File 'lib/ctf_party/hex.rb', line 12</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_hex2dec'>hex2dec</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:prefix</span><span class='rbracket'>]</span> <span class='op'>||=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>  <span class='comment'># remove prefix
-</span>
-  <span class='id identifier rubyid_out'>out</span> <span class='op'>=</span> <span class='id identifier rubyid_sub'>sub</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:prefix</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>  <span class='comment'># convert
-</span>
-  <span class='kw'>return</span> <span class='id identifier rubyid_out'>out</span><span class='period'>.</span><span class='id identifier rubyid_hex'>hex</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
+  <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:prefix</span><span class='rbracket'>]</span> <span class='op'>||=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+  <span class='comment'># remove prefix
+</span>  <span class='id identifier rubyid_out'>out</span> <span class='op'>=</span> <span class='id identifier rubyid_sub'>sub</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:prefix</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+  <span class='comment'># convert
+</span>  <span class='kw'>return</span> <span class='id identifier rubyid_out'>out</span><span class='period'>.</span><span class='id identifier rubyid_hex'>hex</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -4227,7 +4229,8 @@
 87
 88
 89
-90</pre>
+90
+91</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/ctf_party/hex.rb', line 75</span>
@@ -4235,18 +4238,19 @@
 <span class='kw'>def</span> <span class='id identifier rubyid_to_hex'>to_hex</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:prefix</span><span class='rbracket'>]</span> <span class='op'>||=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
   <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:case</span><span class='rbracket'>]</span> <span class='op'>||=</span> <span class='symbol'>:lower</span>
-  <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:nibble</span><span class='rbracket'>]</span> <span class='op'>||=</span> <span class='symbol'>:high</span>  <span class='comment'># convert
-</span>
-  <span class='id identifier rubyid_out'>out</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
-  <span class='kw'>if</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:nibble</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='symbol'>:high</span>
+  <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:nibble</span><span class='rbracket'>]</span> <span class='op'>||=</span> <span class='symbol'>:high</span>
+  <span class='comment'># convert
+</span>  <span class='id identifier rubyid_out'>out</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+  <span class='kw'>case</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:nibble</span><span class='rbracket'>]</span>
+  <span class='kw'>when</span> <span class='symbol'>:high</span>
     <span class='id identifier rubyid_out'>out</span> <span class='op'>=</span> <span class='id identifier rubyid_unpack1'>unpack1</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>H*</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
-  <span class='kw'>elsif</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:nibble</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='symbol'>:low</span>
+  <span class='kw'>when</span> <span class='symbol'>:low</span>
     <span class='id identifier rubyid_out'>out</span> <span class='op'>=</span> <span class='id identifier rubyid_unpack1'>unpack1</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>h*</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
-  <span class='kw'>end</span>  <span class='comment'># char case management
-</span>
-  <span class='id identifier rubyid_out'>out</span> <span class='op'>=</span> <span class='id identifier rubyid_out'>out</span><span class='period'>.</span><span class='id identifier rubyid_upcase'>upcase</span> <span class='kw'>if</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:case</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='symbol'>:upper</span>  <span class='comment'># adding prefix must be done after case change
-</span>
-  <span class='kw'>return</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:prefix</span><span class='rbracket'>]</span> <span class='op'>+</span> <span class='id identifier rubyid_out'>out</span>
+  <span class='kw'>end</span>
+  <span class='comment'># char case management
+</span>  <span class='id identifier rubyid_out'>out</span> <span class='op'>=</span> <span class='id identifier rubyid_out'>out</span><span class='period'>.</span><span class='id identifier rubyid_upcase'>upcase</span> <span class='kw'>if</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:case</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='symbol'>:upper</span>
+  <span class='comment'># adding prefix must be done after case change
+</span>  <span class='kw'>return</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:prefix</span><span class='rbracket'>]</span> <span class='op'>+</span> <span class='id identifier rubyid_out'>out</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -4289,12 +4293,12 @@
       <pre class="lines">
 
 
-98
 99
-100</pre>
+100
+101</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ctf_party/hex.rb', line 98</span>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/hex.rb', line 99</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_hex!'>to_hex!</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_replace'>replace</span><span class='lparen'>(</span><span class='id identifier rubyid_to_hex'>to_hex</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span><span class='rparen'>)</span>
@@ -4309,9 +4313,9 @@
 </div>
 
       <div id="footer">
-  Generated on Mon Apr 13 15:28:37 2020 by
+  Generated on Mon Jul 13 23:37:25 2020 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.24 (ruby-2.7.0).
+  0.9.25 (ruby-2.7.1).
 </div>
 
     </div>

@@ -78,9 +78,10 @@ class String
     opts[:nibble] ||= :high
     # convert
     out = ''
-    if opts[:nibble] == :high
+    case opts[:nibble]
+    when :high
       out = unpack1('H*')
-    elsif opts[:nibble] == :low
+    when :low
       out = unpack1('h*')
     end
     # char case management

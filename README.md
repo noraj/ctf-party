@@ -1,15 +1,15 @@
 # ctf-party
 
 [![Gem Version](https://badge.fury.io/rb/ctf-party.svg)](https://badge.fury.io/rb/ctf-party)
-![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/Orange-Cyberdefense/ctf-party)
-[![GitHub forks](https://img.shields.io/github/forks/Orange-Cyberdefense/ctf-party)](https://github.com/Orange-Cyberdefense/ctf-party/network)
-[![GitHub stars](https://img.shields.io/github/stars/Orange-Cyberdefense/ctf-party)](https://github.com/Orange-Cyberdefense/ctf-party/stargazers)
-[![GitHub license](https://img.shields.io/github/license/Orange-Cyberdefense/ctf-party)](https://github.com/Orange-Cyberdefense/ctf-party/blob/master/LICENSE.txt)
+![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/noraj/ctf-party)
+[![GitHub forks](https://img.shields.io/github/forks/noraj/ctf-party)](https://github.com/noraj/ctf-party/network)
+[![GitHub stars](https://img.shields.io/github/stars/noraj/ctf-party)](https://github.com/noraj/ctf-party/stargazers)
+[![GitHub license](https://img.shields.io/github/license/noraj/ctf-party)](https://github.com/noraj/ctf-party/blob/master/LICENSE.txt)
 [![Rawsec's CyberSecurity Inventory](https://inventory.rawsec.ml/img/badges/Rawsec-inventoried-FF5050_flat.svg)](https://inventory.rawsec.ml/tools.html#ctf-party)
 
 [![Packaging status](https://repology.org/badge/vertical-allrepos/ruby:ctf-party.svg)](https://repology.org/project/ruby:ctf-party/versions)
 
-![](https://orange-cyberdefense.github.io/ctf-party/_media/logo.png)
+![](https://noraj.github.io/ctf-party/_media/logo.png)
 
 
 ## What it is
@@ -51,8 +51,8 @@ myvar.to_b64!
 
 ## References
 
-Homepage / Documentation: https://orange-cyberdefense.github.io/ctf-party/
+Homepage / Documentation: https://noraj.github.io/ctf-party/
 
 ## Author
 
-Made by Alexandre ZANNI ([@noraj](https://github.com/noraj)), pentester from Orange Cyberdefense.
+Made by Alexandre ZANNI ([@noraj](https://pwn.by/noraj/)).

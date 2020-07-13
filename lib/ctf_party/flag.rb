@@ -16,8 +16,6 @@ class String
     @@flag
   end
 
-  # rubocop:disable Metrics/LineLength
-
   # Update the flag configuration.
   # @param hash [Hash] flag configuration
   # @option hash [String] :prefix prefix of the flag. Default: none.
@@ -39,8 +37,6 @@ class String
     hash.select! { |k, _v| @@flag.key?(k) }
     @@flag.merge!(hash)
   end
-
-  # rubocop:enable Metrics/LineLength
 
   # Format the current string into the configured flag format. See {.flag=}
   # example.
