@@ -188,4 +188,23 @@ class CTFPartyTest < Minitest::Test
   def test_hex_bin2hex!
     # skip
   end
+
+  def test_case_randomcase
+    my_str = 'SELECT * FROM'
+    refute_equal(my_str, my_str.randomcase)
+  end
+
+  def test_case_randomcase!
+    # shkip
+  end
+
+  def test_case_alternatecase
+    my_str = 'SELECT * FROM'
+    assert_equal('sElEcT * FrOm', my_str.alternatecase)
+    assert_equal('SeLeCt * fRoM', my_str.alternatecase(1))
+  end
+
+  def test_case_alternatecase!
+    # skip
+  end
 end

@@ -22,7 +22,7 @@ class String
   # @example
   #   a = 'ff'
   #   a.hex2dec!
-  #   a # => => "255"
+  #   a # => "255"
   def hex2dec!(opts = {})
     replace(hex2dec(opts))
   end

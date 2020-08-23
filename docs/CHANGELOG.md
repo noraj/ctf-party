@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.3.0]
+
+- new case methods:
+  - normal: `randomcase`, `alternatecase`
+  - in-place: `randomcase!`, `alternatecase!`
+
 ## [1.2.1]
 
 - lib: code lint

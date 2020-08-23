@@ -95,7 +95,7 @@
   <dl>
     <dt>Defined in:</dt>
     <dd>lib/ctf_party/hex.rb<span class="defines">,<br />
-  lib/ctf_party/rot.rb,<br /> lib/ctf_party/flag.rb,<br /> lib/ctf_party/base64.rb,<br /> lib/ctf_party/digest.rb</span>
+  lib/ctf_party/rot.rb,<br /> lib/ctf_party/case.rb,<br /> lib/ctf_party/flag.rb,<br /> lib/ctf_party/base64.rb,<br /> lib/ctf_party/digest.rb</span>
 </dd>
   </dl>
   
@@ -204,6 +204,54 @@
     </h2>
 
     <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#alternatecase-instance_method" title="#alternatecase (instance method)">#<strong>alternatecase</strong>(shift = 0)  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Change one characte on two upcase and the other downcase.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#alternatecase!-instance_method" title="#alternatecase! (instance method)">#<strong>alternatecase!</strong>(shift = 0)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Change one characte on two upcase and the other downcase in place as described for <span class='object_link'><a href="#alternatecase-instance_method" title="String#alternatecase (method)">#alternatecase</a></span>.</p>
+</div></span>
+  
+</li>
+
       
         <li class="public ">
   <span class="summary_signature">
@@ -632,6 +680,54 @@
   
     <span class="summary_desc"><div class='inline'>
 <p>Calculate the md5 hash of the string in place as described for <span class='object_link'><a href="#md5-instance_method" title="String#md5 (method)">#md5</a></span>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#randomcase-instance_method" title="#randomcase (instance method)">#<strong>randomcase</strong>  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Change the case of characters randomly.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#randomcase!-instance_method" title="#randomcase! (instance method)">#<strong>randomcase!</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Change the case of characters randomly in place as described for <span class='object_link'><a href="#randomcase-instance_method" title="String#randomcase (method)">#randomcase</a></span>.</p>
 </div></span>
   
 </li>
@@ -1335,7 +1431,138 @@
 
     
       <div class="method_details first">
-  <h3 class="signature first" id="b64?-instance_method">
+  <h3 class="signature first" id="alternatecase-instance_method">
+  
+    #<strong>alternatecase</strong>(shift = 0)  &#x21d2; <tt><span class='object_link'><a href="" title="String (class)">String</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Change one characte on two upcase and the other downcase</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>SELECT * FROM</span><span class='tstring_end'>&#39;</span></span><span class='period'>.</span><span class='id identifier rubyid_alternatecase'>alternatecase</span> <span class='comment'># =&gt; &quot;sElEcT * FrOm&quot;
+</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>SELECT * FROM</span><span class='tstring_end'>&#39;</span></span><span class='period'>.</span><span class='id identifier rubyid_alternatecase'>alternatecase</span><span class='lparen'>(</span><span class='int'>1</span><span class='rparen'>)</span> <span class='comment'># =&gt; &quot;SeLeCt * fRoM&quot;</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>shift</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>0</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>0: 1st character will be downcase, 1: 1st character will be upcase</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the case modified string</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+26
+27
+28</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/case.rb', line 26</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_alternatecase'>alternatecase</span><span class='lparen'>(</span><span class='id identifier rubyid_shift'>shift</span> <span class='op'>=</span> <span class='int'>0</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_chars'>chars</span><span class='period'>.</span><span class='id identifier rubyid_each_with_index'>each_with_index</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_c'>c</span><span class='comma'>,</span> <span class='id identifier rubyid_i'>i</span><span class='op'>|</span> <span class='lparen'>(</span><span class='id identifier rubyid_i'>i</span> <span class='op'>+</span> <span class='id identifier rubyid_shift'>shift</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_even?'>even?</span> <span class='op'>?</span> <span class='id identifier rubyid_c'>c</span><span class='period'>.</span><span class='id identifier rubyid_downcase'>downcase</span> <span class='op'>:</span> <span class='id identifier rubyid_c'>c</span><span class='period'>.</span><span class='id identifier rubyid_upcase'>upcase</span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="alternatecase!-instance_method">
+  
+    #<strong>alternatecase!</strong>(shift = 0)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Change one characte on two upcase and the other downcase in place as described for <span class='object_link'><a href="#alternatecase-instance_method" title="String#alternatecase (method)">#alternatecase</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+32
+33
+34</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/case.rb', line 32</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_alternatecase!'>alternatecase!</span><span class='lparen'>(</span><span class='id identifier rubyid_shift'>shift</span> <span class='op'>=</span> <span class='int'>0</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_replace'>replace</span><span class='lparen'>(</span><span class='id identifier rubyid_alternatecase'>alternatecase</span><span class='lparen'>(</span><span class='id identifier rubyid_shift'>shift</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="b64?-instance_method">
   
     #<strong>b64?</strong>(opts = {})  &#x21d2; <tt>Boolean</tt> 
   
@@ -2790,7 +3017,7 @@
       
       <pre class="example code"><code><span class='id identifier rubyid_a'>a</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ff</span><span class='tstring_end'>&#39;</span></span>
 <span class='id identifier rubyid_a'>a</span><span class='period'>.</span><span class='id identifier rubyid_hex2dec!'>hex2dec!</span>
-<span class='id identifier rubyid_a'>a</span> <span class='comment'># =&gt; =&gt; &quot;255&quot;</span></code></pre>
+<span class='id identifier rubyid_a'>a</span> <span class='comment'># =&gt; &quot;255&quot;</span></code></pre>
     
   </div>
 
@@ -2935,6 +3162,115 @@
 
 <span class='kw'>def</span> <span class='id identifier rubyid_md5!'>md5!</span>
   <span class='id identifier rubyid_replace'>replace</span><span class='lparen'>(</span><span class='id identifier rubyid_md5'>md5</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="randomcase-instance_method">
+  
+    #<strong>randomcase</strong>  &#x21d2; <tt><span class='object_link'><a href="" title="String (class)">String</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Change the case of characters randomly</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>SELECT * FROM</span><span class='tstring_end'>&#39;</span></span><span class='period'>.</span><span class='id identifier rubyid_randomcase'>randomcase</span> <span class='comment'># =&gt; &quot;SElECt * frOm&quot;
+</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>SELECT * FROM</span><span class='tstring_end'>&#39;</span></span><span class='period'>.</span><span class='id identifier rubyid_randomcase'>randomcase</span> <span class='comment'># =&gt; &quot;selECT * FROm&quot;</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the case modified string</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+9
+10
+11</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/case.rb', line 9</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_randomcase'>randomcase</span>
+  <span class='id identifier rubyid_chars'>chars</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_c'>c</span><span class='op'>|</span> <span class='id identifier rubyid_rand'>rand</span><span class='lparen'>(</span><span class='int'>0</span><span class='op'>..</span><span class='int'>1</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_zero?'>zero?</span> <span class='op'>?</span> <span class='id identifier rubyid_c'>c</span><span class='period'>.</span><span class='id identifier rubyid_downcase'>downcase</span> <span class='op'>:</span> <span class='id identifier rubyid_c'>c</span><span class='period'>.</span><span class='id identifier rubyid_upcase'>upcase</span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="randomcase!-instance_method">
+  
+    #<strong>randomcase!</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Change the case of characters randomly in place as described for <span class='object_link'><a href="#randomcase-instance_method" title="String#randomcase (method)">#randomcase</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+15
+16
+17</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/case.rb', line 15</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_randomcase!'>randomcase!</span>
+  <span class='id identifier rubyid_replace'>replace</span><span class='lparen'>(</span><span class='id identifier rubyid_randomcase'>randomcase</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -4313,7 +4649,7 @@
 </div>
 
       <div id="footer">
-  Generated on Mon Jul 13 23:37:25 2020 by
+  Generated on Sun Aug 23 16:51:45 2020 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.25 (ruby-2.7.1).
 </div>

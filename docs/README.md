@@ -38,11 +38,12 @@ myvar.to_b64!
 
 ## Features
 
-- base64: `to_b64`, `to_b64!`, `from_b64`, `from_b64!`, `b64?`
-- digest: `md5`, `md5!`, `sha1`, `sha1!`, etc.
+- base64: `to_b64`, `from_b64`, `b64?` and bang versions
+- digest: `md5`, `sha1`, etc. and bang versions
 - flag: `flag`, `flag!`, `flag?` (apply/check a flag format)
-- rot: `rot`, `rot!`, `rot13`, `rot13!`
+- rot: `rot`, `rot13` and bang versions
 - hex: `hex2dec`, `dec2hex`, `to_hex`, `from_hex`, `hex2bin`, `bin2hex` and bang versions
+- case: `randomcase`, `alternatecase` and bang versions
 
 ## References
 
