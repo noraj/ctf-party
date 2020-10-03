@@ -207,4 +207,22 @@ class CTFPartyTest < Minitest::Test
   def test_case_alternatecase!
     # skip
   end
+
+  def test_hex_str2hex
+    my_str = 'AAAA'
+    assert_equal(my_str.to_hex, my_str.str2hex)
+  end
+
+  def test_hex_str2hex!
+    # skip
+  end
+
+  def test_hex_hex2str
+    my_str = '41414141'
+    assert_equal(my_str.hex2str, my_str.hex2str)
+  end
+
+  def test_hex_hex2str!
+    # skip
+  end
 end

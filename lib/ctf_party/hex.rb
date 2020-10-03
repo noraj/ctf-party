@@ -90,6 +90,11 @@ class String
     return opts[:prefix] + out
   end
 
+  # Alias for {String#to_hex}.
+  def str2hex(opts = {})
+    to_hex(opts)
+  end
+
   # Encode a string into hexadecimal in place as described
   # for {String#to_hex}.
   # @example
@@ -98,6 +103,11 @@ class String
   #   a # => "6e6f72616a"
   def to_hex!(opts = {})
     replace(to_hex(opts))
+  end
+
+  # Alias for {String#to_hex!}.
+  def str2hex!(opts = {})
+    to_hex!(opts)
   end
 
   # Decode a hexadecimal string
@@ -123,6 +133,11 @@ class String
     raise ArgumentError ':nibble expects :high or :low'
   end
 
+  # Alias for {String#from_hex}.
+  def hex2str(opts = {})
+    from_hex(opts)
+  end
+
   # Decode a hexadecimal string in place as described
   # for {String#from_hex}.
   # @example
@@ -131,6 +146,11 @@ class String
   #   a # => "noraj"
   def from_hex!(opts = {})
     replace(from_hex(opts))
+  end
+
+  # Alias for {String#from_hex!}.
+  def hex2str!(opts = {})
+    from_hex!(opts)
   end
 
   # Encode an hexadecimal string to a binary string
