@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.3.1]
+
+- hex: add aliases
+  - `str2hex` for `to_hex`, idem for bang version
+  - `hex2str` for `from_hex`, idem for bang version
+
 ## [1.3.0]
 
 - new case methods:
