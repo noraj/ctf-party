@@ -44,6 +44,7 @@ myvar.to_b64!
 - rot: `rot`, `rot13` and bang versions
 - hex: `hex2dec`, `dec2hex`, `to_hex`, `from_hex`, `hex2bin`, `bin2hex` and bang versions
 - case: `randomcase`, `alternatecase` and bang versions
+- cgi: `urlencode`, `urldecode`, `htmlescape`, `htmlunescape` and bang versions
 
 ## References
 

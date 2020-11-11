@@ -195,7 +195,7 @@ class CTFPartyTest < Minitest::Test
   end
 
   def test_case_randomcase!
-    # shkip
+    # skip
   end
 
   def test_case_alternatecase
@@ -219,10 +219,46 @@ class CTFPartyTest < Minitest::Test
 
   def test_hex_hex2str
     my_str = '41414141'
-    assert_equal(my_str.hex2str, my_str.hex2str)
+    assert_equal(my_str.from_hex, my_str.hex2str)
   end
 
   def test_hex_hex2str!
+    # skip
+  end
+
+  def test_cgi_urlencode
+    my_str = "'Stop!' said Fred"
+    assert_equal('%27Stop%21%27+said+Fred', my_str.urlencode)
+  end
+
+  def test_cgi_urlencode!
+    # skip
+  end
+
+  def test_cgi_urldecode
+    my_str = '%27Stop%21%27+said+Fred'
+    assert_equal("'Stop!' said Fred", my_str.urldecode)
+  end
+
+  def test_cgi_urldecode!
+    # skip
+  end
+
+  def test_cgi_htmlescape
+    my_str = 'Usage: foo "bar" <baz>'
+    assert_equal('Usage: foo &quot;bar&quot; &lt;baz&gt;', my_str.htmlescape)
+  end
+
+  def test_cgi_htmlescape!
+    # skip
+  end
+
+  def test_cgi_htmlunescape
+    my_str = 'Usage: foo &quot;bar&quot; &lt;baz&gt;'
+    assert_equal('Usage: foo "bar" <baz>', my_str.htmlunescape)
+  end
+
+  def test_cgi_htmlunescape!
     # skip
   end
 end

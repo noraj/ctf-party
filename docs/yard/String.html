@@ -94,8 +94,8 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>lib/ctf_party/hex.rb<span class="defines">,<br />
-  lib/ctf_party/rot.rb,<br /> lib/ctf_party/case.rb,<br /> lib/ctf_party/flag.rb,<br /> lib/ctf_party/base64.rb,<br /> lib/ctf_party/digest.rb</span>
+    <dd>lib/ctf_party/cgi.rb<span class="defines">,<br />
+  lib/ctf_party/hex.rb,<br /> lib/ctf_party/rot.rb,<br /> lib/ctf_party/case.rb,<br /> lib/ctf_party/flag.rb,<br /> lib/ctf_party/base64.rb,<br /> lib/ctf_party/digest.rb</span>
 </dd>
   </dl>
   
@@ -680,6 +680,102 @@
   
     <span class="summary_desc"><div class='inline'>
 <p>Alias for <span class='object_link'><a href="#from_hex!-instance_method" title="String#from_hex! (method)">#from_hex!</a></span>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#htmlescape-instance_method" title="#htmlescape (instance method)">#<strong>htmlescape</strong>  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>HTML escape the string.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#htmlescape!-instance_method" title="#htmlescape! (instance method)">#<strong>htmlescape!</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>HTML escape the string in place as described for <span class='object_link'><a href="#htmlescape-instance_method" title="String#htmlescape (method)">#htmlescape</a></span>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#htmlunescape-instance_method" title="#htmlunescape (instance method)">#<strong>htmlunescape</strong>  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>HTML unescape the string.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#htmlunescape!-instance_method" title="#htmlunescape! (instance method)">#<strong>htmlunescape!</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>HTML unescape the string in place as described for <span class='object_link'><a href="#htmlunescape-instance_method" title="String#htmlunescape (method)">#htmlunescape</a></span>.</p>
 </div></span>
   
 </li>
@@ -1304,6 +1400,102 @@
   
     <span class="summary_desc"><div class='inline'>
 <p>Encode a string into hexadecimal in place as described for <span class='object_link'><a href="#to_hex-instance_method" title="String#to_hex (method)">#to_hex</a></span>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#urldecode-instance_method" title="#urldecode (instance method)">#<strong>urldecode</strong>  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>URL-decode the string.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#urldecode!-instance_method" title="#urldecode! (instance method)">#<strong>urldecode!</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>URL-decode the string in place as described for <span class='object_link'><a href="#urldecode-instance_method" title="String#urldecode (method)">#urldecode</a></span>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#urlencode-instance_method" title="#urlencode (instance method)">#<strong>urlencode</strong>  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>URL-encode the string.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#urlencode!-instance_method" title="#urlencode! (instance method)">#<strong>urlencode!</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>URL-encode the string in place as described for <span class='object_link'><a href="#urlencode-instance_method" title="String#urlencode (method)">#urlencode</a></span>.</p>
 </div></span>
   
 </li>
@@ -3222,6 +3414,222 @@
 </div>
     
       <div class="method_details ">
+  <h3 class="signature " id="htmlescape-instance_method">
+  
+    #<strong>htmlescape</strong>  &#x21d2; <tt><span class='object_link'><a href="" title="String (class)">String</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>HTML escape the string</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Usage: foo &quot;bar&quot; &lt;baz&gt;</span><span class='tstring_end'>&#39;</span></span><span class='period'>.</span><span class='id identifier rubyid_htmlescape'>htmlescape</span> <span class='comment'># =&gt; &quot;Usage: foo &amp;quot;bar&amp;quot; &amp;lt;baz&amp;gt;&quot;</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the HTML escaped string</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+37
+38
+39</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/cgi.rb', line 37</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_htmlescape'>htmlescape</span>
+  <span class='const'>CGI</span><span class='period'>.</span><span class='id identifier rubyid_escapeHTML'>escapeHTML</span> <span class='kw'>self</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="htmlescape!-instance_method">
+  
+    #<strong>htmlescape!</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>HTML escape the string in place as described for <span class='object_link'><a href="#htmlescape-instance_method" title="String#htmlescape (method)">#htmlescape</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+42
+43
+44</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/cgi.rb', line 42</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_htmlescape!'>htmlescape!</span>
+  <span class='id identifier rubyid_replace'>replace</span><span class='lparen'>(</span><span class='id identifier rubyid_htmlescape'>htmlescape</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="htmlunescape-instance_method">
+  
+    #<strong>htmlunescape</strong>  &#x21d2; <tt><span class='object_link'><a href="" title="String (class)">String</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>HTML unescape the string</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Usage: foo &amp;quot;bar&amp;quot; &amp;lt;baz&amp;gt;</span><span class='tstring_end'>&quot;</span></span><span class='period'>.</span><span class='id identifier rubyid_htmlunescape'>htmlunescape</span> <span class='comment'># =&gt; &quot;Usage: foo \&quot;bar\&quot; &lt;baz&gt;&quot;</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the HTML unescaped string</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+50
+51
+52</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/cgi.rb', line 50</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_htmlunescape'>htmlunescape</span>
+  <span class='const'>CGI</span><span class='period'>.</span><span class='id identifier rubyid_unescapeHTML'>unescapeHTML</span> <span class='kw'>self</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="htmlunescape!-instance_method">
+  
+    #<strong>htmlunescape!</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>HTML unescape the string in place as described for <span class='object_link'><a href="#htmlunescape-instance_method" title="String#htmlunescape (method)">#htmlunescape</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+55
+56
+57</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/cgi.rb', line 55</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_htmlunescape!'>htmlunescape!</span>
+  <span class='id identifier rubyid_replace'>replace</span><span class='lparen'>(</span><span class='id identifier rubyid_htmlunescape'>htmlunescape</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
   <h3 class="signature " id="md5-instance_method">
   
     #<strong>md5</strong>  &#x21d2; <tt><span class='object_link'><a href="" title="String (class)">String</a></span></tt> 
@@ -4904,12 +5312,228 @@
 </table>
 </div>
     
+      <div class="method_details ">
+  <h3 class="signature " id="urldecode-instance_method">
+  
+    #<strong>urldecode</strong>  &#x21d2; <tt><span class='object_link'><a href="" title="String (class)">String</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>URL-decode the string</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>%27Stop%21%27+said+Fred</span><span class='tstring_end'>&quot;</span></span><span class='period'>.</span><span class='id identifier rubyid_urldecode'>urldecode</span> <span class='comment'># =&gt; &quot;&#39;Stop!&#39; said Fred&quot;</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the URL-decoded string</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+24
+25
+26</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/cgi.rb', line 24</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_urldecode'>urldecode</span>
+  <span class='const'>CGI</span><span class='period'>.</span><span class='id identifier rubyid_unescape'>unescape</span> <span class='kw'>self</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="urldecode!-instance_method">
+  
+    #<strong>urldecode!</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>URL-decode the string in place as described for <span class='object_link'><a href="#urldecode-instance_method" title="String#urldecode (method)">#urldecode</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+29
+30
+31</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/cgi.rb', line 29</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_urldecode!'>urldecode!</span>
+  <span class='id identifier rubyid_replace'>replace</span><span class='lparen'>(</span><span class='id identifier rubyid_urldecode'>urldecode</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="urlencode-instance_method">
+  
+    #<strong>urlencode</strong>  &#x21d2; <tt><span class='object_link'><a href="" title="String (class)">String</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>URL-encode the string</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>&#39;Stop!&#39; said Fred</span><span class='tstring_end'>&quot;</span></span><span class='period'>.</span><span class='id identifier rubyid_urlencode'>urlencode</span> <span class='comment'># =&gt; &quot;%27Stop%21%27+said+Fred&quot;</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the URL-encoded string</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+11
+12
+13</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/cgi.rb', line 11</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_urlencode'>urlencode</span>
+  <span class='const'>CGI</span><span class='period'>.</span><span class='id identifier rubyid_escape'>escape</span> <span class='kw'>self</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="urlencode!-instance_method">
+  
+    #<strong>urlencode!</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>URL-encode the string in place as described for <span class='object_link'><a href="#urlencode-instance_method" title="String#urlencode (method)">#urlencode</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+16
+17
+18</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/cgi.rb', line 16</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_urlencode!'>urlencode!</span>
+  <span class='id identifier rubyid_replace'>replace</span><span class='lparen'>(</span><span class='id identifier rubyid_urlencode'>urlencode</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
   </div>
 
 </div>
 
       <div id="footer">
-  Generated on Sat Oct  3 12:37:04 2020 by
+  Generated on Wed Nov 11 18:13:42 2020 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.25 (ruby-2.7.1).
 </div>

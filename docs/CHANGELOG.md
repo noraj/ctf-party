@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.3.2]
+
+- new cgi methods:
+  - `urlencode`, `urldecode` & bang version
+  - `htmlescape`, `htmlunescape` & bang version
+
 ## [1.3.1]
 
 - hex: add aliases
