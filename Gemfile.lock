@@ -10,7 +10,7 @@ GEM
     commonmarker (0.21.0)
       ruby-enum (~> 0.5)
     concurrent-ruby (1.1.5)
-    github-markup (3.0.4)
+    github-markup (3.0.5)
     i18n (1.8.2)
       concurrent-ruby (~> 1.0)
     minitest (5.14.3)
