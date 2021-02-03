@@ -47,9 +47,10 @@ myvar.to_b64!
 - digest: `md5`, `sha1`, etc. and bang versions
 - flag: `flag`, `flag!`, `flag?` (apply/check a flag format)
 - rot: `rot`, `rot13` and bang versions
-- hex: `hex2dec`, `dec2hex`, `to_hex`, `from_hex`, `hex2bin`, `bin2hex` and bang versions
+- hex: `hex2dec`, `dec2hex`, `to_hex`, `from_hex`, `str2hex`, `hex2str`, `hex2bin`, `bin2hex` and bang versions
 - case: `randomcase`, `alternatecase` and bang versions
 - cgi: `urlencode`, `urldecode`, `htmlescape`, `htmlunescape` and bang versions
+- bin: `to_bin`, `from_bin`, `str2bin`, `bin2str`, `hex2bin`, `bin2hex` and bang versions
 
 ## References
 

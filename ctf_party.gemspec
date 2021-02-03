@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.name          = 'ctf-party'
   s.version       = Version::VERSION
   s.platform      = Gem::Platform::RUBY
-  s.date          = '2020-07-13'
+  s.date          = '2021-02-03'
   s.summary       = 'A library to enhance and speed up script/exploit writing'\
                     ' for CTF players'
   s.description   = 'A library to enhance and speed up script/exploit writing'\

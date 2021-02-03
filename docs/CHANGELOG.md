@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.3.3]
+
+- new bin methods:
+  - `to_bin`, `from_bin` & bang version
+  - aliases: `str2bin`, `bin2str`
+- dependencies: update
+- rubocop: rules update
+
 ## [1.3.2]
 
 - new cgi methods:
