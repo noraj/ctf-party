@@ -33,6 +33,8 @@ class String
   #   string. Example of values: +0x+, +\x+.
   # @option opts [Symbol] :case Char case of the ouput. Default value +:lower+.
   #   Other valid value +:upper+.
+  # @option opts [Symbol] :padding Minimum size of the hexadecimal display
+  #   (number of characters). Eg. 10 -> 0xA or 0x0A
   # @return [String] the hexadecimal encoded string
   # @example
   #   '255'.dec2hex # => "ff"
@@ -40,8 +42,11 @@ class String
   def dec2hex(opts = {})
     opts[:prefix] ||= ''
     opts[:case] ||= :lower
+    opts[:padding] ||= 1
     # convert
     out = to_i.to_s(16)
+    # padding
+    out = ('0' * (opts[:padding] - 1)) + out if out.size < opts[:padding]
     # char case management
     out = out.upcase if opts[:case] == :upper
     # adding prefix must be done after case change
@@ -208,5 +213,64 @@ class String
   #   a # => "f3"
   def bin2hex!(opts = {})
     replace(bin2hex(opts))
+  end
+
+  # Decode a hexadecimal IP string into a dotted decimal one
+  # @param opts [Hash] optional parameters
+  # @option opts [String] :prefix Prefix of the input. Default value is a void
+  #   string. Example of values: +0x+, +\x+.
+  # @option opts [Symbol] :nibble Display input with high nibble first
+  #   (+:high+ default) or low nibble first (+:low+, used on Unix +/proc/net/tcp+).
+  # @return [String] the dotted decimal IP
+  # @example
+  #   '0100007F'.from_hexip(nibble: :low) # => "127.0.0.1"
+  #   '0x7f000001'.from_hexip(prefix: '0x') # => "127.0.0.1"
+  def from_hexip(opts = {})
+    opts[:prefix] ||= ''
+    opts[:nibble] ||= :high
+    # remove prefix
+    out = sub(opts[:prefix], '')
+    # convert
+    out = out.scan(/.{2}/).map(&:hex2dec)
+    out = out.reverse if opts[:nibble] == :low
+    out.join('.')
+  end
+
+  # Decode a hexadecimal IP string into a dotted decimal one in place as described
+  # for {String#from_hexip}.
+  def from_hexip!(opts = {})
+    replace(from_hexip(opts))
+  end
+
+  # Encode a dotted decimal IP into a hexadecimal one
+  # @param opts [Hash] optional parameters
+  # @option opts [String] :prefix Prefix of the output. Default value is a void
+  #   string. Example of values: +0x+, +\x+.
+  # @option opts [Symbol] :case Char case of the ouput. Default value +:lower+.
+  #   Other valid value +:upper+.
+  # @option opts [Symbol] :nibble Display output with high nibble first
+  #   (+:high+ default) or low nibble first (+:low+, used on Unix +/proc/net/tcp+).
+  # @return [String] the hexadecimal encoded IP
+  # @example
+  #   '127.0.0.1'.to_hexip # => "7f000001"
+  #   '127.0.0.1'.to_hexip(nibble: :low) # => "0100007f"
+  def to_hexip(opts = {})
+    opts[:prefix] ||= ''
+    opts[:case] ||= :lower
+    opts[:nibble] ||= :high
+    # convert
+    out = split('.').map { |x| x.dec2hex(padding: 2) }
+    out = out.reverse if opts[:nibble] == :low
+    out = out.join
+    # char case management
+    out = out.upcase if opts[:case] == :upper
+    # adding prefix must be done after case change
+    return opts[:prefix] + out
+  end
+
+  # Encode a dotted decimal IP into a hexadecimal one in place as described
+  # for {String#to_hexip}.
+  def to_hexip!(opts = {})
+    replace(to_hexip(opts))
   end
 end
