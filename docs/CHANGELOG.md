@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.3.4]
+
+- new hex methods:
+  - `from_hexip`, `to_hexip` & bang version
+- introduce leet method:
+  - `leet` & bang version
+- tests: install `minitest-skip` to have a proper way to skip tests
+
 ## [1.3.3]
 
 - new bin methods:
