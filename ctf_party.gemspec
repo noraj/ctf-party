@@ -36,7 +36,7 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency('bundler', '~> 2.1')
   s.add_development_dependency('commonmarker', '~> 0.20') # for GMF support in YARD
-  s.add_development_dependency('github-markup', '~> 3.0') # for GMF support in YARD
+  s.add_development_dependency('github-markup', '~> 4.0') # for GMF support in YARD
   s.add_development_dependency('minitest', '~> 5')
   s.add_development_dependency('minitest-skip', '~> 0.0')
   s.add_development_dependency('rake', '~> 13.0')
