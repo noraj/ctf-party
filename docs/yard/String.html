@@ -95,7 +95,7 @@
   <dl>
     <dt>Defined in:</dt>
     <dd>lib/ctf_party/cgi.rb<span class="defines">,<br />
-  lib/ctf_party/hex.rb,<br /> lib/ctf_party/rot.rb,<br /> lib/ctf_party/case.rb,<br /> lib/ctf_party/flag.rb,<br /> lib/ctf_party/leet.rb,<br /> lib/ctf_party/base64.rb,<br /> lib/ctf_party/binary.rb,<br /> lib/ctf_party/digest.rb</span>
+  lib/ctf_party/dec.rb,<br /> lib/ctf_party/hex.rb,<br /> lib/ctf_party/rot.rb,<br /> lib/ctf_party/case.rb,<br /> lib/ctf_party/flag.rb,<br /> lib/ctf_party/leet.rb,<br /> lib/ctf_party/base64.rb,<br /> lib/ctf_party/binary.rb,<br /> lib/ctf_party/digest.rb</span>
 </dd>
   </dl>
   
@@ -424,6 +424,54 @@
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#dec2str-instance_method" title="#dec2str (instance method)">#<strong>dec2str</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Alias for <span class='object_link'><a href="#from_dec-instance_method" title="String#from_dec (method)">#from_dec</a></span>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#dec2str!-instance_method" title="#dec2str! (instance method)">#<strong>dec2str!</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Alias for <span class='object_link'><a href="#from_dec!-instance_method" title="String#from_dec! (method)">#from_dec!</a></span>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#flag-instance_method" title="#flag (instance method)">#<strong>flag</strong>  &#x21d2; String </a>
     
 
@@ -584,6 +632,54 @@
   
     <span class="summary_desc"><div class='inline'>
 <p>Decode a binary string in place as described for <span class='object_link'><a href="#from_bin-instance_method" title="String#from_bin (method)">#from_bin</a></span>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#from_dec-instance_method" title="#from_dec (instance method)">#<strong>from_dec</strong>  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Decode a decimal string (decimal to hexadecimal then hexadecimal to string).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#from_dec!-instance_method" title="#from_dec! (instance method)">#<strong>from_dec!</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Decode a decimal string in place as described for <span class='object_link'><a href="#from_dec-instance_method" title="String#from_dec (method)">#from_dec</a></span>.</p>
 </div></span>
   
 </li>
@@ -1504,6 +1600,54 @@
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#str2dec-instance_method" title="#str2dec (instance method)">#<strong>str2dec</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Alias for <span class='object_link'><a href="#to_dec-instance_method" title="String#to_dec (method)">#to_dec</a></span>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#str2dec!-instance_method" title="#str2dec! (instance method)">#<strong>str2dec!</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Alias for <span class='object_link'><a href="#to_dec!-instance_method" title="String#to_dec! (method)">#to_dec!</a></span>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#str2hex-instance_method" title="#str2hex (instance method)">#<strong>str2hex</strong>(opts = {})  &#x21d2; Object </a>
     
 
@@ -1640,6 +1784,54 @@
   
     <span class="summary_desc"><div class='inline'>
 <p>Encode a string into binary in place as described for <span class='object_link'><a href="#to_bin-instance_method" title="String#to_bin (method)">#to_bin</a></span>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_dec-instance_method" title="#to_dec (instance method)">#<strong>to_dec</strong>  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Encode a string into decimal (string to hexadecimal then hexadecimal to decimal).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_dec!-instance_method" title="#to_dec! (instance method)">#<strong>to_dec!</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Encode a string into decimal in place as described for <span class='object_link'><a href="#to_dec-instance_method" title="String#to_dec (method)">#to_dec</a></span>.</p>
 </div></span>
   
 </li>
@@ -2826,6 +3018,88 @@
 </div>
     
       <div class="method_details ">
+  <h3 class="signature " id="dec2str-instance_method">
+  
+    #<strong>dec2str</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Alias for <span class='object_link'><a href="#from_dec-instance_method" title="String#from_dec (method)">#from_dec</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+41
+42
+43</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/dec.rb', line 41</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_dec2str'>dec2str</span>
+  <span class='id identifier rubyid_from_dec'>from_dec</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="dec2str!-instance_method">
+  
+    #<strong>dec2str!</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Alias for <span class='object_link'><a href="#from_dec!-instance_method" title="String#from_dec! (method)">#from_dec!</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+46
+47
+48</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/dec.rb', line 46</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_dec2str!'>dec2str!</span>
+  <span class='id identifier rubyid_replace'>replace</span><span class='lparen'>(</span><span class='id identifier rubyid_dec2str'>dec2str</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
   <h3 class="signature " id="flag-instance_method">
   
     #<strong>flag</strong>  &#x21d2; <tt><span class='object_link'><a href="" title="String (class)">String</a></span></tt> 
@@ -3400,6 +3674,114 @@
 
 <span class='kw'>def</span> <span class='id identifier rubyid_from_bin!'>from_bin!</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_replace'>replace</span><span class='lparen'>(</span><span class='id identifier rubyid_from_bin'>from_bin</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="from_dec-instance_method">
+  
+    #<strong>from_dec</strong>  &#x21d2; <tt><span class='object_link'><a href="" title="String (class)">String</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Decode a decimal string (decimal to hexadecimal then hexadecimal to string)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>1834615104613964215417</span><span class='tstring_end'>&#39;</span></span><span class='period'>.</span><span class='id identifier rubyid_from_dec'>from_dec</span> <span class='comment'># =&gt; &quot;ctf-party&quot;</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the decimal decoded string</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+21
+22
+23</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/dec.rb', line 21</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_from_dec'>from_dec</span>
+  <span class='id identifier rubyid_dec2hex'>dec2hex</span><span class='period'>.</span><span class='id identifier rubyid_hex2str'>hex2str</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="from_dec!-instance_method">
+  
+    #<strong>from_dec!</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Decode a decimal string in place as described for <span class='object_link'><a href="#from_dec-instance_method" title="String#from_dec (method)">#from_dec</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+26
+27
+28</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/dec.rb', line 26</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_from_dec!'>from_dec!</span>
+  <span class='id identifier rubyid_replace'>replace</span><span class='lparen'>(</span><span class='id identifier rubyid_from_dec'>from_dec</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -5809,6 +6191,88 @@
 </div>
     
       <div class="method_details ">
+  <h3 class="signature " id="str2dec-instance_method">
+  
+    #<strong>str2dec</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Alias for <span class='object_link'><a href="#to_dec-instance_method" title="String#to_dec (method)">#to_dec</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+31
+32
+33</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/dec.rb', line 31</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_str2dec'>str2dec</span>
+  <span class='id identifier rubyid_to_dec'>to_dec</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="str2dec!-instance_method">
+  
+    #<strong>str2dec!</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Alias for <span class='object_link'><a href="#to_dec!-instance_method" title="String#to_dec! (method)">#to_dec!</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+36
+37
+38</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/dec.rb', line 36</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_str2dec!'>str2dec!</span>
+  <span class='id identifier rubyid_replace'>replace</span><span class='lparen'>(</span><span class='id identifier rubyid_str2dec'>str2dec</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
   <h3 class="signature " id="str2hex-instance_method">
   
     #<strong>str2hex</strong>(opts = {})  &#x21d2; <tt>Object</tt> 
@@ -6247,6 +6711,114 @@
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_bin!'>to_bin!</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_replace'>replace</span><span class='lparen'>(</span><span class='id identifier rubyid_to_bin'>to_bin</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_dec-instance_method">
+  
+    #<strong>to_dec</strong>  &#x21d2; <tt><span class='object_link'><a href="" title="String (class)">String</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Encode a string into decimal (string to hexadecimal then hexadecimal to decimal)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>noraj</span><span class='tstring_end'>&#39;</span></span><span class='period'>.</span><span class='id identifier rubyid_to_dec'>to_dec</span> <span class='comment'># =&gt; &quot;474316169578&quot;</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the decimal encoded string</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+8
+9
+10</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/dec.rb', line 8</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_to_dec'>to_dec</span>
+  <span class='id identifier rubyid_str2hex'>str2hex</span><span class='period'>.</span><span class='id identifier rubyid_hex2dec'>hex2dec</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_dec!-instance_method">
+  
+    #<strong>to_dec!</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Encode a string into decimal in place as described for <span class='object_link'><a href="#to_dec-instance_method" title="String#to_dec (method)">#to_dec</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+13
+14
+15</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/dec.rb', line 13</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_to_dec!'>to_dec!</span>
+  <span class='id identifier rubyid_replace'>replace</span><span class='lparen'>(</span><span class='id identifier rubyid_to_dec'>to_dec</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -6892,7 +7464,7 @@
 </div>
 
       <div id="footer">
-  Generated on Wed Mar 17 14:54:03 2021 by
+  Generated on Fri Apr  2 17:26:22 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.26 (ruby-2.7.2).
 </div>

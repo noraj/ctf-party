@@ -47,6 +47,7 @@ myvar.to_b64!
 - cgi: `urlencode`, `urldecode`, `htmlescape`, `htmlunescape` and bang versions
 - bin: `to_bin`, `from_bin`, `str2bin`, `bin2str`, `hex2bin`, `bin2hex` and bang versions
 - leet: `leet` and bang version
+- dec: `dec2str`, `str2dec`, `hex2dec`, `dec2hex` and bang version
 
 ## References
 

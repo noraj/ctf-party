@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ctf-party (1.3.4)
+    ctf-party (1.3.5)
 
 GEM
   remote: https://rubygems.org/

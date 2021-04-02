@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.3.5]
+
+- new dec methods:
+  - `to_dec`, `from_dec` & bang version
+  - aliases: `dec2str`, `str2dec`
+
 ## [1.3.4]
 
 - new hex methods:
