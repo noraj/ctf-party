@@ -6,13 +6,13 @@ Gem::Specification.new do |s|
   s.name          = 'ctf-party'
   s.version       = Version::VERSION
   s.platform      = Gem::Platform::RUBY
-  s.summary       = 'A library to enhance and speed up script/exploit writing'\
-                    ' for CTF players'
-  s.description   = 'A library to enhance and speed up script/exploit writing'\
-                    'for CTF players (or security researchers, bug bounty'\
+  s.summary       = 'A CLI tool & library to enhance and speed up script/exploit'\
+                    'writing for CTF players'
+  s.description   = 'A CLI tool & library to enhance and speed up script/exploit'\
+                    'writing for CTF players (or security researchers, bug bounty'\
                     'hunters, pentesters but mostly focused on CTF) by'\
                     'patching the String class to add a short syntax of usual'\
-                    ' code patterns.'
+                    'code patterns.'
   s.authors       = ['Alexandre ZANNI']
   s.email         = 'alexandre.zanni@engineer.com'
   s.homepage      = 'https://noraj.github.io/ctf-party/'
@@ -33,6 +33,8 @@ Gem::Specification.new do |s|
   }
 
   s.required_ruby_version = '~> 2.7'
+
+  s.add_runtime_dependency('docopt', '~> 0.6') # for argument parsing of the CLI tool
 
   s.add_development_dependency('bundler', '~> 2.1')
   s.add_development_dependency('commonmarker', '~> 0.20') # for GMF support in YARD

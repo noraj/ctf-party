@@ -1,0 +1,94 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+# Ruby internal
+require 'pp'
+# Project internal
+require 'ctf_party'
+require 'ctf_party/version'
+# External
+require 'docopt'
+
+cmd_whitelist = {
+  alternatecase: 'Change one characte on two upcase and the other downcase',
+  bin2hex: 'Encode an binary string to a hexadecimal string',
+  bin2str: 'Alias for from_bin',
+  dec2hex: 'Encode an decimal string to a hexadecimal string',
+  dec2str: 'Alias for from_dec',
+  from_b64: 'Decode the string from base64',
+  from_bin: 'Decode a binary string',
+  from_dec: 'Decode a decimal string (decimal to hexadecimal then hexadecimal to string)',
+  from_hex: 'Decode a hexadecimal string',
+  from_hexip: 'Decode a hexadecimal IP string into a dotted decimal one',
+  hex2bin: 'Encode an hexadecimal string to a binary string',
+  hex2dec: 'Encode an hexadecimal string to a decimal string',
+  hex2str: 'Alias for from_hex',
+  htmlescape: 'HTML escape the string',
+  htmlunescape: 'HTML unescape the string',
+  leet: 'Transform into leet speak (l337 5p34k)',
+  md5: 'Calculate the md5 hash of the string',
+  randomcase: 'Change the case of characters randomly',
+  rmd160: 'Calculate the RIPEMD-160 hash of the string',
+  rot13: 'Encrypt / Decrypt the string with Caesar cipher with a shift of 13',
+  sha1: 'Calculate the sha1 hash of the string',
+  sha2: 'Calculate the sha2 hash of the string',
+  sha2_256: 'Alias for sha2 with bitlen of 256',
+  sha2_384: 'Alias for sha2 with bitlen of 384',
+  sha2_512: 'Alias for sha2 with bitlen of 512',
+  str2bin: 'Alias for to_bin',
+  str2dec: 'Alias for to_dec',
+  str2hex: 'Alias for to_hex',
+  to_b64: 'Encode the string into base64',
+  to_bin: 'Encode a string into binary',
+  to_dec: 'Encode a string into decimal (string to hexadecimal then hexadecimal to decimal)',
+  to_hex: 'Encode a string into hexadecimal',
+  to_hexip: 'Encode a dotted decimal IP into a hexadecimal one',
+  urldecode: 'URL-decode the string',
+  urlencode: 'URL-encode the string'
+}
+
+doc = <<~DOCOPT
+  ctf-party by noraj
+
+  Usage:
+    ctf-party <string> <cmd>... [--debug]
+    ctf-party --list-commands [--debug]
+    ctf-party -h | --help
+    ctf-party --version
+
+  Options:
+    -l, --list-commands   List available commands (see https://noraj.github.io/ctf-party/yard/String.html)
+    --debug               Display arguments
+    -h, --help            Show this screen
+    --version             Show version
+
+  Examples:
+    ctf-party 'security' to_hex
+    ctf-party 'NzQ2Zjc0NmY=' from_b64 hex2str str2bin
+DOCOPT
+
+begin
+  args = Docopt.docopt(doc, version: Version::VERSION)
+  # use case 1, using the tool
+  pp args if args['--debug']
+  if args['<string>']
+    wrong_cmd = args['<cmd>'] - cmd_whitelist.keys.map(&:to_s)
+    if wrong_cmd.empty?
+      output = args['<string>']
+      args['<cmd>'].each do |cmd|
+        output = output.public_send(cmd)
+      end
+      puts output
+    else
+      abort "Those commands don't exist: #{wrong_cmd}"
+    end
+  elsif args['--list-commands']
+    cmd_whitelist.each do |k, v|
+      puts "#{k.to_s.ljust(15)}#{v}"
+    end
+  end
+  # use case 2, help: already handled by docopt
+  # use case 3, version: already handled by docopt
+rescue Docopt::Exit => e
+  puts e.message
+end

@@ -1,6 +1,6 @@
 # Usage
 
-## Examples of usage
+## Library
 
 For base64 encoding instead of writing:
 
@@ -58,4 +58,25 @@ For generating a flag respecting a flag format:
 ```ruby
 String.flag = {prefix: 'sigsegv', digest: 'md5'}
 'this_1s_a_fl4g'.flag # => "sigsegv{a5bec9e2a86b6b70d288451eb38dfec8}"
+```
+
+## CLI
+
+Most of the methods are available as commands CLI tool:
+
+```
+$ ctf-party 'security' to_hex
+7365637572697479
+
+$ ctf-party 'NzQ2Zjc0NmY=' from_b64 hex2str str2bin
+01110100011011110111010001101111
+```
+
+## Console
+
+It launches `irb` with the library loaded.
+
+```
+$ ctf_party_console
+irb(main):001:0>
 ```

@@ -14,7 +14,7 @@
 
 ## What it is
 
-A library to enhance and speed up script/exploit writing for CTF players (or
+A CLI tool & library to enhance and speed up script/exploit writing for CTF players (or
 security researchers, bug bounty hunters, pentesters but mostly focused on CTF)
 by patching the String class to add a short syntax of usual code patterns.
 The philosophy is also to keep the library to be pure ruby (no dependencies)
@@ -39,6 +39,16 @@ require 'ctf_party'
 
 myvar = 'string'
 myvar.to_b64!
+```
+
+Most of the methods are available as commands CLI tool:
+
+```
+$ ctf-party 'security' to_hex
+7365637572697479
+
+$ ctf-party 'NzQ2Zjc0NmY=' from_b64 hex2str str2bin
+01110100011011110111010001101111
 ```
 
 ## Features

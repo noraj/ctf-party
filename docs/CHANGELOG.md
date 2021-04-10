@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.4.0]
+
+- `ctf-party` CLI tool release
+
 ## [1.3.5]
 
 - new dec methods:
