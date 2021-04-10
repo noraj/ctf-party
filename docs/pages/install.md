@@ -15,16 +15,16 @@ Gem: [ctf-party](https://rubygems.org/gems/ctf-party)
 From the repository:
 
 ```
-# pacman -S ruby-ctf-party
+# pacman -S ctf-party
 ```
 
 From git:
 
 ```
-# blackman -i ruby-ctf-party
+# blackman -i ctf-party
 ```
 
-PKGBUILD: [ruby-ctf-party](https://github.com/BlackArch/blackarch/blob/master/packages/ruby-ctf-party/PKGBUILD)
+PKGBUILD: [ctf-party](https://github.com/BlackArch/blackarch/blob/master/packages/ctf-party/PKGBUILD)
 
 ### Install from ArchLinux
 
