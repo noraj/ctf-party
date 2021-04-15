@@ -32,7 +32,7 @@ Gem::Specification.new do |s|
     'source_code_uri'   => 'https://github.com/noraj/ctf-party/'
   }
 
-  s.required_ruby_version = ['>= 2.6.0', '< 3.1']
+  s.required_ruby_version = ['>= 2.7.0', '< 3.1']
 
   s.add_runtime_dependency('docopt', '~> 0.6') # for argument parsing of the CLI tool
 
