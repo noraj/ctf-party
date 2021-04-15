@@ -16,9 +16,9 @@ class String
   def rot(opts = {})
     opts[:shift] ||= 13
     alphabet = Array('a'..'z')
-    lowercase = Hash[alphabet.zip(alphabet.rotate(opts[:shift]))]
+    lowercase = alphabet.zip(alphabet.rotate(opts[:shift])).to_h
     alphabet = Array('A'..'Z')
-    uppercasecase = Hash[alphabet.zip(alphabet.rotate(opts[:shift]))]
+    uppercasecase = alphabet.zip(alphabet.rotate(opts[:shift])).to_h
     encrypter = lowercase.merge(uppercasecase)
     chars.map { |c| encrypter.fetch(c, c) }.join
   end

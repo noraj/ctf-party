@@ -1,7 +1,9 @@
 AllCops:
-  TargetRubyVersion: 2.7
+  TargetRubyVersion: 2.6
   NewCops: enable
-
+  Exclude:
+    - 'test/*.rb'
+  SuggestExtensions: false
 # ~~~ Layout ~~~
 Layout/HashAlignment:
   Include:

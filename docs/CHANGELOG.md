@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.4.1] Unreleased
+
+- Support more ruby versions
+- Fix some linting
+
 ## [1.4.0]
 
 - `ctf-party` CLI tool release
