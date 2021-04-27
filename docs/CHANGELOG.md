@@ -1,8 +1,9 @@
 # Changelog
 
-## [1.4.1] Unreleased
+## [1.4.1]
 
 - Support more ruby versions
+- Support Ruby 3
 - Fix some linting
 
 ## [1.4.0]

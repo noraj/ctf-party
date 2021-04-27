@@ -72,7 +72,7 @@
 
 <h2 id="what-it-is">What it is</h2>
 
-<p>A library to enhance and speed up script/exploit writing for CTF players (or
+<p>A CLI tool &amp; library to enhance and speed up script/exploit writing for CTF players (or
 security researchers, bug bounty hunters, pentesters but mostly focused on CTF)
 by patching the String class to add a short syntax of usual code patterns.
 The philosophy is also to keep the library to be pure ruby (no dependencies)
@@ -93,6 +93,15 @@ and not to re-implement what another library is already doing well
 
 <span class='id identifier rubyid_myvar'>myvar</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>string</span><span class='tstring_end'>&#39;</span></span>
 <span class='id identifier rubyid_myvar'>myvar</span><span class='period'>.</span><span class='id identifier rubyid_to_b64!'>to_b64!</span>
+</code></pre>
+
+<p>Most of the methods are available as commands CLI tool:</p>
+
+<pre class="code ruby"><code class="ruby">$ ctf-party &#39;security&#39; to_hex
+7365637572697479
+
+$ ctf-party &#39;NzQ2Zjc0NmY=&#39; from_b64 hex2str str2bin
+01110100011011110111010001101111
 </code></pre>
 
 <h2 id="features">Features</h2>
@@ -120,9 +129,9 @@ and not to re-implement what another library is already doing well
 </div></div>
 
       <div id="footer">
-  Generated on Fri Apr  2 17:26:21 2021 by
+  Generated on Tue Apr 27 11:20:39 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.26 (ruby-2.7.2).
+  0.9.26 (ruby-3.0.1).
 </div>
 
     </div>
