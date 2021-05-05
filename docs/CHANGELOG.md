@@ -4,6 +4,8 @@
 
 - new rot method:
   - `rot_all` return a hash with all rot possibilities
+- new misc method:
+  - `istrip` remove/strip all whitespace including inner ones.
 
 ## [1.4.1]
 
