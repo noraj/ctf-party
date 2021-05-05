@@ -95,7 +95,7 @@
   <dl>
     <dt>Defined in:</dt>
     <dd>lib/ctf_party/cgi.rb<span class="defines">,<br />
-  lib/ctf_party/dec.rb,<br /> lib/ctf_party/hex.rb,<br /> lib/ctf_party/rot.rb,<br /> lib/ctf_party/case.rb,<br /> lib/ctf_party/flag.rb,<br /> lib/ctf_party/leet.rb,<br /> lib/ctf_party/base64.rb,<br /> lib/ctf_party/binary.rb,<br /> lib/ctf_party/digest.rb</span>
+  lib/ctf_party/dec.rb,<br /> lib/ctf_party/hex.rb,<br /> lib/ctf_party/rot.rb,<br /> lib/ctf_party/xor.rb,<br /> lib/ctf_party/case.rb,<br /> lib/ctf_party/flag.rb,<br /> lib/ctf_party/leet.rb,<br /> lib/ctf_party/misc.rb,<br /> lib/ctf_party/base64.rb,<br /> lib/ctf_party/binary.rb,<br /> lib/ctf_party/digest.rb</span>
 </dd>
   </dl>
   
@@ -248,6 +248,102 @@
   
     <span class="summary_desc"><div class='inline'>
 <p>Change one characte on two upcase and the other downcase in place as described for <span class='object_link'><a href="#alternatecase-instance_method" title="String#alternatecase (method)">#alternatecase</a></span>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#alxor-instance_method" title="#alxor (instance method)">#<strong>alxor</strong>(key)  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>ASCII XOR with key, padding left the shortest element.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#alxor!-instance_method" title="#alxor! (instance method)">#<strong>alxor!</strong>(key)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>ASCII XOR with key (padding left) in place as described for <span class='object_link'><a href="#alxor-instance_method" title="String#alxor (method)">#alxor</a></span>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#arxor-instance_method" title="#arxor (instance method)">#<strong>arxor</strong>(key)  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>ASCII XOR with key, padding right the shortest element.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#arxor!-instance_method" title="#arxor! (instance method)">#<strong>arxor!</strong>(key)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>ASCII XOR with key (padding right) in place as described for <span class='object_link'><a href="#arxor-instance_method" title="String#arxor (method)">#arxor</a></span>.</p>
 </div></span>
   
 </li>
@@ -1024,6 +1120,54 @@
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#istrip-instance_method" title="#istrip (instance method)">#<strong>istrip</strong>  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Remove leading and trailing whitespace (like #strip) but also all inner whitespace.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#istrip!-instance_method" title="#istrip! (instance method)">#<strong>istrip!</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Remove all whitespace in place as described for <span class='object_link'><a href="#istrip-instance_method" title="String#istrip (method)">#istrip</a></span>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#leet-instance_method" title="#leet (instance method)">#<strong>leet</strong>  &#x21d2; Object </a>
     
 
@@ -1304,6 +1448,30 @@
   
     <span class="summary_desc"><div class='inline'>
 <p>Alias for <span class='object_link'><a href="#rot!-instance_method" title="String#rot! (method)">#rot!</a></span> with default value ( <tt>rot!(shift: 13)</tt> ).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#rot_all-instance_method" title="#rot_all (instance method)">#<strong>rot_all</strong>  &#x21d2; Hash </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Compute all possibilities with <span class='object_link'><a href="#rot-instance_method" title="String#rot (method)">#rot</a></span>.</p>
 </div></span>
   
 </li>
@@ -1936,6 +2104,54 @@
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#ulxor-instance_method" title="#ulxor (instance method)">#<strong>ulxor</strong>(key)  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>UTF-8 XOR with key, padding left the shortest element.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ulxor!-instance_method" title="#ulxor! (instance method)">#<strong>ulxor!</strong>(key)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>UTF-8 XOR with key (padding left) in place as described for <span class='object_link'><a href="#ulxor-instance_method" title="String#ulxor (method)">#ulxor</a></span>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#urldecode-instance_method" title="#urldecode (instance method)">#<strong>urldecode</strong>  &#x21d2; String </a>
     
 
@@ -2024,6 +2240,54 @@
   
     <span class="summary_desc"><div class='inline'>
 <p>URL-encode the string in place as described for <span class='object_link'><a href="#urlencode-instance_method" title="String#urlencode (method)">#urlencode</a></span>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#urxor-instance_method" title="#urxor (instance method)">#<strong>urxor</strong>(key)  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>UTF-8 XOR with key, padding right the shortest element.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#urxor!-instance_method" title="#urxor! (instance method)">#<strong>urxor!</strong>(key)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>UTF-8 XOR with key (padding right) in place as described for <span class='object_link'><a href="#urxor-instance_method" title="String#urxor (method)">#urxor</a></span>.</p>
 </div></span>
   
 </li>
@@ -2371,6 +2635,304 @@
 
 <span class='kw'>def</span> <span class='id identifier rubyid_alternatecase!'>alternatecase!</span><span class='lparen'>(</span><span class='id identifier rubyid_shift'>shift</span> <span class='op'>=</span> <span class='int'>0</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_replace'>replace</span><span class='lparen'>(</span><span class='id identifier rubyid_alternatecase'>alternatecase</span><span class='lparen'>(</span><span class='id identifier rubyid_shift'>shift</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="alxor-instance_method">
+  
+    #<strong>alxor</strong>(key)  &#x21d2; <tt><span class='object_link'><a href="" title="String (class)">String</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>ASCII XOR with key, padding left the shortest element</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>hello</span><span class='tstring_end'>&#39;</span></span><span class='period'>.</span><span class='id identifier rubyid_alxor'>alxor</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>key</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='comment'># =&gt; &quot;he\a\t\x16&quot;
+</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>key</span><span class='tstring_end'>&#39;</span></span><span class='period'>.</span><span class='id identifier rubyid_alxor'>alxor</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>hello</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='comment'># =&gt; &quot;he\a\t\x16&quot;</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>key</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the element to xor the string with</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the xored string (ASCII)</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/xor.rb', line 30</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_alxor'>alxor</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_b1'>b1</span> <span class='op'>=</span> <span class='id identifier rubyid_force_encoding'>force_encoding</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>UTF-8</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_b2'>b2</span> <span class='op'>=</span> <span class='id identifier rubyid_key'>key</span><span class='period'>.</span><span class='id identifier rubyid_force_encoding'>force_encoding</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>UTF-8</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>The string is not ASCII</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_b1'>b1</span><span class='period'>.</span><span class='id identifier rubyid_ascii_only?'>ascii_only?</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>The key is not ASCII</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_b2'>b2</span><span class='period'>.</span><span class='id identifier rubyid_ascii_only?'>ascii_only?</span>
+
+  <span class='id identifier rubyid_b1'>b1</span> <span class='op'>=</span> <span class='id identifier rubyid_b1'>b1</span><span class='period'>.</span><span class='id identifier rubyid_chars'>chars</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='symbol'>:ord</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_b2'>b2</span> <span class='op'>=</span> <span class='id identifier rubyid_b2'>b2</span><span class='period'>.</span><span class='id identifier rubyid_chars'>chars</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='symbol'>:ord</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_longest'>longest</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_b1'>b1</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='comma'>,</span> <span class='id identifier rubyid_b2'>b2</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_max'>max</span>
+  <span class='id identifier rubyid_b1'>b1</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span> <span class='op'>*</span> <span class='lparen'>(</span><span class='id identifier rubyid_longest'>longest</span> <span class='op'>-</span> <span class='id identifier rubyid_b1'>b1</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='rparen'>)</span> <span class='op'>+</span> <span class='id identifier rubyid_b1'>b1</span>
+  <span class='id identifier rubyid_b2'>b2</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span> <span class='op'>*</span> <span class='lparen'>(</span><span class='id identifier rubyid_longest'>longest</span> <span class='op'>-</span> <span class='id identifier rubyid_b2'>b2</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='rparen'>)</span> <span class='op'>+</span> <span class='id identifier rubyid_b2'>b2</span>
+  <span class='id identifier rubyid_b1'>b1</span><span class='period'>.</span><span class='id identifier rubyid_zip'>zip</span><span class='lparen'>(</span><span class='id identifier rubyid_b2'>b2</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_a'>a</span><span class='comma'>,</span> <span class='id identifier rubyid_b'>b</span><span class='op'>|</span> <span class='lparen'>(</span><span class='id identifier rubyid_a'>a</span> <span class='op'>^</span> <span class='id identifier rubyid_b'>b</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_chr'>chr</span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="alxor!-instance_method">
+  
+    #<strong>alxor!</strong>(key)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>ASCII XOR with key (padding left) in place as described for <span class='object_link'><a href="#alxor-instance_method" title="String#alxor (method)">#alxor</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+45
+46
+47</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/xor.rb', line 45</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_alxor!'>alxor!</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_replace'>replace</span><span class='lparen'>(</span><span class='id identifier rubyid_alxor'>alxor</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="arxor-instance_method">
+  
+    #<strong>arxor</strong>(key)  &#x21d2; <tt><span class='object_link'><a href="" title="String (class)">String</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>ASCII XOR with key, padding right the shortest element</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>hello</span><span class='tstring_end'>&#39;</span></span><span class='period'>.</span><span class='id identifier rubyid_arxor'>arxor</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>key</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='comment'># =&gt; &quot;\x03\x00\x15lo&quot;
+</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>key</span><span class='tstring_end'>&#39;</span></span><span class='period'>.</span><span class='id identifier rubyid_arxor'>arxor</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>hello</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='comment'># =&gt; &quot;\x03\x00\x15lo&quot;</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>key</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the element to xor the string with</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the xored string (ASCII)</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/xor.rb', line 75</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_arxor'>arxor</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_b1'>b1</span> <span class='op'>=</span> <span class='id identifier rubyid_force_encoding'>force_encoding</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>UTF-8</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_b2'>b2</span> <span class='op'>=</span> <span class='id identifier rubyid_key'>key</span><span class='period'>.</span><span class='id identifier rubyid_force_encoding'>force_encoding</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>UTF-8</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>The string is not ASCII</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_b1'>b1</span><span class='period'>.</span><span class='id identifier rubyid_ascii_only?'>ascii_only?</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>The key is not ASCII</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_b2'>b2</span><span class='period'>.</span><span class='id identifier rubyid_ascii_only?'>ascii_only?</span>
+
+  <span class='id identifier rubyid_b1'>b1</span> <span class='op'>=</span> <span class='id identifier rubyid_b1'>b1</span><span class='period'>.</span><span class='id identifier rubyid_chars'>chars</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='symbol'>:ord</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_b2'>b2</span> <span class='op'>=</span> <span class='id identifier rubyid_b2'>b2</span><span class='period'>.</span><span class='id identifier rubyid_chars'>chars</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='symbol'>:ord</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_longest'>longest</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_b1'>b1</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='comma'>,</span> <span class='id identifier rubyid_b2'>b2</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_max'>max</span>
+  <span class='id identifier rubyid_b1'>b1</span> <span class='op'>+=</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span> <span class='op'>*</span> <span class='lparen'>(</span><span class='id identifier rubyid_longest'>longest</span> <span class='op'>-</span> <span class='id identifier rubyid_b1'>b1</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_b2'>b2</span> <span class='op'>+=</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span> <span class='op'>*</span> <span class='lparen'>(</span><span class='id identifier rubyid_longest'>longest</span> <span class='op'>-</span> <span class='id identifier rubyid_b2'>b2</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_b1'>b1</span><span class='period'>.</span><span class='id identifier rubyid_zip'>zip</span><span class='lparen'>(</span><span class='id identifier rubyid_b2'>b2</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_a'>a</span><span class='comma'>,</span> <span class='id identifier rubyid_b'>b</span><span class='op'>|</span> <span class='lparen'>(</span><span class='id identifier rubyid_a'>a</span> <span class='op'>^</span> <span class='id identifier rubyid_b'>b</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_chr'>chr</span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="arxor!-instance_method">
+  
+    #<strong>arxor!</strong>(key)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>ASCII XOR with key (padding right) in place as described for <span class='object_link'><a href="#arxor-instance_method" title="String#arxor (method)">#arxor</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+90
+91
+92</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/xor.rb', line 90</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_arxor!'>arxor!</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_replace'>replace</span><span class='lparen'>(</span><span class='id identifier rubyid_arxor'>arxor</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='rparen'>)</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -4802,6 +5364,115 @@
 </div>
     
       <div class="method_details ">
+  <h3 class="signature " id="istrip-instance_method">
+  
+    #<strong>istrip</strong>  &#x21d2; <tt><span class='object_link'><a href="" title="String (class)">String</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Remove leading and trailing whitespace (like #strip) but also all inner whitespace.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\t\n\v\f\r Hello \t\n\v\f\r World !\t\n\v\f\r </span><span class='tstring_end'>&quot;</span></span><span class='period'>.</span><span class='id identifier rubyid_istrip'>istrip</span> <span class='comment'># =&gt; &quot;HelloWorld!&quot;
+</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>73 74 72 69 70</span><span class='tstring_end'>&#39;</span></span><span class='period'>.</span><span class='id identifier rubyid_istrip'>istrip</span> <span class='comment'># =&gt; &quot;7374726970&quot;</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the whitespace-free string</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10
+11
+12</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/misc.rb', line 10</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_istrip'>istrip</span>
+  <span class='id identifier rubyid_strip'>strip</span><span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\s</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="istrip!-instance_method">
+  
+    #<strong>istrip!</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Remove all whitespace in place as described for <span class='object_link'><a href="#istrip-instance_method" title="String#istrip (method)">#istrip</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+15
+16
+17</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/misc.rb', line 15</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_istrip!'>istrip!</span>
+  <span class='id identifier rubyid_replace'>replace</span><span class='lparen'>(</span><span class='id identifier rubyid_innerstrip'>innerstrip</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
   <h3 class="signature " id="leet-instance_method">
   
     #<strong>leet</strong>  &#x21d2; <tt>Object</tt> 
@@ -5553,6 +6224,73 @@
 
 <span class='kw'>def</span> <span class='id identifier rubyid_rot13!'>rot13!</span>
   <span class='id identifier rubyid_rot!'>rot!</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="rot_all-instance_method">
+  
+    #<strong>rot_all</strong>  &#x21d2; <tt>Hash</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Compute all possibilities with <span class='object_link'><a href="#rot-instance_method" title="String#rot (method)">#rot</a></span></p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>noraj</span><span class='tstring_end'>&#39;</span></span><span class='period'>.</span><span class='id identifier rubyid_rot_all'>rot_all</span> <span class='comment'># =&gt; {1=&gt;&quot;opsbk&quot;, 2=&gt;&quot;pqtcl&quot;, 3=&gt;&quot;qrudm&quot;, ... }</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>All possibilities with the shift index as key and the (de)ciphered text as value</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+53
+54
+55</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/rot.rb', line 53</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_rot_all'>rot_all</span>
+  <span class='lparen'>(</span><span class='int'>1</span><span class='op'>..</span><span class='int'>26</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_each_with_object'>each_with_object</span><span class='lparen'>(</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_i'>i</span><span class='comma'>,</span> <span class='id identifier rubyid_h'>h</span><span class='op'>|</span> <span class='id identifier rubyid_h'>h</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_rot'>rot</span><span class='lparen'>(</span><span class='label'>shift:</span> <span class='id identifier rubyid_i'>i</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -7244,6 +7982,145 @@
 </div>
     
       <div class="method_details ">
+  <h3 class="signature " id="ulxor-instance_method">
+  
+    #<strong>ulxor</strong>(key)  &#x21d2; <tt><span class='object_link'><a href="" title="String (class)">String</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>UTF-8 XOR with key, padding left the shortest element</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>hello</span><span class='tstring_end'>&#39;</span></span><span class='period'>.</span><span class='id identifier rubyid_ulxor'>ulxor</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>key</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='comment'># =&gt; &quot;he\a\t\u0016&quot;
+</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>key</span><span class='tstring_end'>&#39;</span></span><span class='period'>.</span><span class='id identifier rubyid_ulxor'>ulxor</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>hello</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='comment'># =&gt; &quot;he\a\t\u0016&quot;</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>key</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the element to xor the string with</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the xored string (UTF-8)</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10
+11
+12
+13
+14
+15
+16
+17</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/xor.rb', line 10</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_ulxor'>ulxor</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_b1'>b1</span> <span class='op'>=</span> <span class='id identifier rubyid_unpack'>unpack</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>U*</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_b2'>b2</span> <span class='op'>=</span> <span class='id identifier rubyid_key'>key</span><span class='period'>.</span><span class='id identifier rubyid_unpack'>unpack</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>U*</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_longest'>longest</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_b1'>b1</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='comma'>,</span> <span class='id identifier rubyid_b2'>b2</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_max'>max</span>
+  <span class='id identifier rubyid_b1'>b1</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span> <span class='op'>*</span> <span class='lparen'>(</span><span class='id identifier rubyid_longest'>longest</span> <span class='op'>-</span> <span class='id identifier rubyid_b1'>b1</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='rparen'>)</span> <span class='op'>+</span> <span class='id identifier rubyid_b1'>b1</span>
+  <span class='id identifier rubyid_b2'>b2</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span> <span class='op'>*</span> <span class='lparen'>(</span><span class='id identifier rubyid_longest'>longest</span> <span class='op'>-</span> <span class='id identifier rubyid_b2'>b2</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='rparen'>)</span> <span class='op'>+</span> <span class='id identifier rubyid_b2'>b2</span>
+  <span class='id identifier rubyid_b1'>b1</span><span class='period'>.</span><span class='id identifier rubyid_zip'>zip</span><span class='lparen'>(</span><span class='id identifier rubyid_b2'>b2</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_a'>a</span><span class='comma'>,</span> <span class='id identifier rubyid_b'>b</span><span class='op'>|</span> <span class='id identifier rubyid_a'>a</span> <span class='op'>^</span> <span class='id identifier rubyid_b'>b</span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_pack'>pack</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>U*</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ulxor!-instance_method">
+  
+    #<strong>ulxor!</strong>(key)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>UTF-8 XOR with key (padding left) in place as described for <span class='object_link'><a href="#ulxor-instance_method" title="String#ulxor (method)">#ulxor</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+20
+21
+22</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/xor.rb', line 20</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_ulxor!'>ulxor!</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_replace'>replace</span><span class='lparen'>(</span><span class='id identifier rubyid_ulxor'>ulxor</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
   <h3 class="signature " id="urldecode-instance_method">
   
     #<strong>urldecode</strong>  &#x21d2; <tt><span class='object_link'><a href="" title="String (class)">String</a></span></tt> 
@@ -7459,12 +8336,151 @@
 </table>
 </div>
     
+      <div class="method_details ">
+  <h3 class="signature " id="urxor-instance_method">
+  
+    #<strong>urxor</strong>(key)  &#x21d2; <tt><span class='object_link'><a href="" title="String (class)">String</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>UTF-8 XOR with key, padding right the shortest element</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>hello</span><span class='tstring_end'>&#39;</span></span><span class='period'>.</span><span class='id identifier rubyid_urxor'>urxor</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>key</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='comment'># =&gt; &quot;\u0003\u0000\u0015lo&quot;
+</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>key</span><span class='tstring_end'>&#39;</span></span><span class='period'>.</span><span class='id identifier rubyid_urxor'>urxor</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>hello</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='comment'># =&gt; &quot;\u0003\u0000\u0015lo&quot;</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>key</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the element to xor the string with</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the xored string (UTF-8)</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+55
+56
+57
+58
+59
+60
+61
+62</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/xor.rb', line 55</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_urxor'>urxor</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_b1'>b1</span> <span class='op'>=</span> <span class='id identifier rubyid_unpack'>unpack</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>U*</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_b2'>b2</span> <span class='op'>=</span> <span class='id identifier rubyid_key'>key</span><span class='period'>.</span><span class='id identifier rubyid_unpack'>unpack</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>U*</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_longest'>longest</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_b1'>b1</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='comma'>,</span> <span class='id identifier rubyid_b2'>b2</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_max'>max</span>
+  <span class='id identifier rubyid_b1'>b1</span> <span class='op'>+=</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span> <span class='op'>*</span> <span class='lparen'>(</span><span class='id identifier rubyid_longest'>longest</span> <span class='op'>-</span> <span class='id identifier rubyid_b1'>b1</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_b2'>b2</span> <span class='op'>+=</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span> <span class='op'>*</span> <span class='lparen'>(</span><span class='id identifier rubyid_longest'>longest</span> <span class='op'>-</span> <span class='id identifier rubyid_b2'>b2</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_b1'>b1</span><span class='period'>.</span><span class='id identifier rubyid_zip'>zip</span><span class='lparen'>(</span><span class='id identifier rubyid_b2'>b2</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_a'>a</span><span class='comma'>,</span> <span class='id identifier rubyid_b'>b</span><span class='op'>|</span> <span class='id identifier rubyid_a'>a</span> <span class='op'>^</span> <span class='id identifier rubyid_b'>b</span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_pack'>pack</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>U*</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="urxor!-instance_method">
+  
+    #<strong>urxor!</strong>(key)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>UTF-8 XOR with key (padding right) in place as described for <span class='object_link'><a href="#urxor-instance_method" title="String#urxor (method)">#urxor</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+65
+66
+67</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/xor.rb', line 65</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_urxor!'>urxor!</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_replace'>replace</span><span class='lparen'>(</span><span class='id identifier rubyid_urxor'>urxor</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
   </div>
 
 </div>
 
       <div id="footer">
-  Generated on Tue Apr 27 11:20:40 2021 by
+  Generated on Wed May  5 23:26:14 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.26 (ruby-3.0.1).
 </div>

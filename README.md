@@ -62,7 +62,8 @@ $ ctf-party 'NzQ2Zjc0NmY=' from_b64 hex2str str2bin
 - cgi: `urlencode`, `urldecode`, `htmlescape`, `htmlunescape` and bang versions
 - bin: `to_bin`, `from_bin`, `str2bin`, `bin2str`, `hex2bin`, `bin2hex` and bang versions
 - leet: `leet` and bang version
-- dec: `dec2str`, `str2dec`, `hex2dec`, `dec2hex` and bang version
+- dec: `dec2str`, `str2dec`, `hex2dec`, `dec2hex` and bang versions
+- xor: `ulxor`, `alxor`, `urxor`, `arxor` and bang versions
 - misc: `istrip` and bang version
 
 ## References

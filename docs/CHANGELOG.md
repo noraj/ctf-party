@@ -6,6 +6,11 @@
   - `rot_all` return a hash with all rot possibilities
 - new misc method:
   - `istrip` remove/strip all whitespace including inner ones.
+- new xor methods:
+  - `ulxor` UTF-8 XOR (padding left)
+  - `alxor` ASCII XOR (padding left)
+  - `urxor` UTF-8 XOR (padding right)
+  - `arxor` ASCII XOR (padding right)
 
 ## [1.4.1]
 
