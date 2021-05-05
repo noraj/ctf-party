@@ -25,6 +25,7 @@ cmd_whitelist = {
   hex2str: 'Alias for from_hex',
   htmlescape: 'HTML escape the string',
   htmlunescape: 'HTML unescape the string',
+  istrip: 'Remove leading and trailing whitespace but also all inner whitespace',
   leet: 'Transform into leet speak (l337 5p34k)',
   md5: 'Calculate the md5 hash of the string',
   randomcase: 'Change the case of characters randomly',
