@@ -44,4 +44,13 @@ class String
   def rot13!
     rot!
   end
+
+  # Compute all possibilities with {String#rot}
+  # @return [Hash] All possibilities with the shift index as key and the
+  #   (de)ciphered text as value
+  # @example
+  #   'noraj'.rot_all # => {1=>"opsbk", 2=>"pqtcl", 3=>"qrudm", ... }
+  def rot_all
+    (1..26).each_with_object({}) { |i, h| h[i] = rot(shift: i) }
+  end
 end

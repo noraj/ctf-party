@@ -132,6 +132,11 @@ class CTFPartyTest < Minitest::Test
     # skip
   end
 
+  def test_rot_rot_all
+    assert_equal('yzclu', 'noraj'.rot_all[11])
+    assert_equal('noraj', 'noraj'.rot_all[26])
+  end
+
   def test_hex_hex2dec
     assert_equal('255', 'ff'.hex2dec)
     assert_equal('243', '\xf3'.hex2dec(prefix: '\x'))

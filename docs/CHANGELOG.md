@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.5.0]
+
+- new rot method:
+  - `rot_all` return a hash with all rot possibilities
+
 ## [1.4.1]
 
 - Support more ruby versions
