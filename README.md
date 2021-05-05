@@ -7,7 +7,7 @@
 [![GitHub license](https://img.shields.io/github/license/noraj/ctf-party)](https://github.com/noraj/ctf-party/blob/master/LICENSE.txt)
 [![Rawsec's CyberSecurity Inventory](https://inventory.raw.pm/img/badges/Rawsec-inventoried-FF5050_flat.svg)](https://inventory.raw.pm/tools.html#ctf-party)
 
-[![Packaging status](https://repology.org/badge/vertical-allrepos/ruby:ctf-party.svg)](https://repology.org/project/ruby:ctf-party/versions)
+[![Packaging status](https://repology.org/badge/vertical-allrepos/ctf-party.svg)](https://repology.org/project/ctf-party/versions)
 
 ![](https://noraj.github.io/ctf-party/_media/logo.png)
 
