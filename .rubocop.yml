@@ -3,6 +3,7 @@ AllCops:
   Exclude:
     - 'test/*.rb'
   SuggestExtensions: false
+  TargetRubyVersion: '2.7'
 # ~~~ Layout ~~~
 Layout/HashAlignment:
   Include:
@@ -26,6 +27,8 @@ Metrics/MethodLength:
 Metrics/PerceivedComplexity:
   Max: 10
 # ~~~ Naming ~~~
+Naming/InclusiveLanguage:
+  Enabled: false
 Naming/VariableNumber:
   Enabled: false # too much false positive
 # ~~~ Style ~~~
@@ -37,8 +40,6 @@ Style/ClassVars:
   Enabled: false
 Style/Documentation:
   Enabled: false
-Style/FormatStringToken:
-  Enabled: false # https://github.com/rubocop-hq/rubocop/issues/7944
 Style/RedundantReturn:
   Enabled: false
 
