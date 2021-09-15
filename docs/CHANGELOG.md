@@ -1,5 +1,7 @@
 # Changelog
 
+- Fix some linting
+
 ## [1.5.0]
 
 - new rot method:
