@@ -20,7 +20,8 @@ jobs:
     strategy:
       matrix:
         ruby-version: ['3.0', '2.7']
-
+    env:
+      BUNDLE_WITHOUT: docs development # https://bundler.io/v1.5/groups.html
     steps:
     - uses: actions/checkout@v2
     - name: Set up Ruby

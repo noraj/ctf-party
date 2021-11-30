@@ -2,7 +2,7 @@
 
 class String
   # "Encrypt / Decrypt" the string with Caesar cipher. This will shift the
-  # alphabet letters by +n+, where +n+ is the integer key. The same function
+  # alphabet letters by `n`, where `n` is the integer key. The same function
   # is used for encryption / decryption.
   # @param opts [Hash] optional parameters
   # @option opts [Integer] :shift The shift key. Default value: 13.
@@ -35,12 +35,12 @@ class String
     replace(rot(opts))
   end
 
-  # Alias for {String#rot} with default value ( +rot(shift: 13)+ ).
+  # Alias for {String#rot} with default value ( `rot(shift: 13)` ).
   def rot13
     rot
   end
 
-  # Alias for {String#rot!} with default value ( +rot!(shift: 13)+ ).
+  # Alias for {String#rot!} with default value ( `rot!(shift: 13)` ).
   def rot13!
     rot!
   end

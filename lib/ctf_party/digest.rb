@@ -66,32 +66,32 @@ class String
     replace(sha2(opts))
   end
 
-  # Alias for {String#sha2} with default value ( +sha2(bitlen: 256)+ ).
+  # Alias for {String#sha2} with default value ( `sha2(bitlen: 256)` ).
   def sha2_256
     sha2
   end
 
-  # Alias for {String#sha2!} with default value ( +sha2!(bitlen: 256)+ ).
+  # Alias for {String#sha2!} with default value ( `sha2!(bitlen: 256)` ).
   def sha2_256!
     replace(sha2)
   end
 
-  # Alias for {String#sha2} with default value ( +sha2(bitlen: 384)+ ).
+  # Alias for {String#sha2} with default value ( `sha2(bitlen: 384)` ).
   def sha2_384
     sha2(bitlen: 384)
   end
 
-  # Alias for {String#sha2!} with default value ( +sha2!(bitlen: 384)+ ).
+  # Alias for {String#sha2!} with default value ( `sha2!(bitlen: 384)` ).
   def sha2_384!
     replace(sha2(bitlen: 384))
   end
 
-  # Alias for {String#sha2} with default value ( +sha2(bitlen: 512)+ ).
+  # Alias for {String#sha2} with default value ( `sha2(bitlen: 512)` ).
   def sha2_512
     sha2(bitlen: 512)
   end
 
-  # Alias for {String#sha2!} with default value ( +sha2!(bitlen: 512)+ ).
+  # Alias for {String#sha2!} with default value ( `sha2!(bitlen: 512)` ).
   def sha2_512!
     replace(sha2(bitlen: 512))
   end

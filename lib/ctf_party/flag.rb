@@ -21,7 +21,7 @@ class String
   # @option hash [String] :prefix prefix of the flag. Default: none.
   # @option hash [String] :suffix suffix of the flag. Default: none.
   # @option hash [Array<String>] :enclosing the characters used to surround
-  #   the flag. Default are curly braces: +{+, +}+. The array must contain
+  #   the flag. Default are curly braces: `{`, `}`. The array must contain
   #   exactly 2 elements.
   # @option hash [String] :digest the hash algorithm to apply on the flag.
   #   Default: none. Allowed values: md5, sha1, sha2_256, sha2_384, sha2_512,

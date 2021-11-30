@@ -4,7 +4,7 @@ class String
   # Encode an hexadecimal string to a decimal string
   # @param opts [Hash] optional parameters
   # @option opts [String] :prefix Prefix of the input. Default value is a void
-  #   string. Example of values: +0x+, +\x+.
+  #   string. Example of values: `0x`, `\x`.
   # @return [String] the decimal encoded string
   # @example
   #   'ff'.hex2dec # => "255"
@@ -30,9 +30,9 @@ class String
   # Encode an decimal string to a hexadecimal string
   # @param opts [Hash] optional parameters
   # @option opts [String] :prefix Prefix of the output. Default value is a void
-  #   string. Example of values: +0x+, +\x+.
-  # @option opts [Symbol] :case Char case of the ouput. Default value +:lower+.
-  #   Other valid value +:upper+.
+  #   string. Example of values: `0x`, `\x`.
+  # @option opts [Symbol] :case Char case of the output. Default value `:lower`.
+  #   Other valid value `:upper`.
   # @option opts [Symbol] :padding Minimum size of the hexadecimal display
   #   (number of characters). Eg. 10 -> 0xA or 0x0A
   # @return [String] the hexadecimal encoded string
@@ -66,11 +66,11 @@ class String
   # Encode a string into hexadecimal
   # @param opts [Hash] optional parameters
   # @option opts [String] :prefix Prefix of the output. Default value is a void
-  #   string. Example of values: +0x+, +\x+.
-  # @option opts [Symbol] :case Char case of the ouput. Default value +:lower+.
-  #   Other valid value +:upper+.
+  #   string. Example of values: `0x`, `\x`.
+  # @option opts [Symbol] :case Char case of the output. Default value `:lower`.
+  #   Other valid value `:upper`.
   # @option opts [Symbol] :nibble Display output with high nibble first
-  #   (+:high+ default) or low nibble first (+:low+).
+  #   (`:high` default) or low nibble first (`:low`).
   # @return [String] the hexadecimal encoded string
   # @example
   #   'noraj'.to_hex # => "6e6f72616a"
@@ -118,9 +118,9 @@ class String
   # Decode a hexadecimal string
   # @param opts [Hash] optional parameters
   # @option opts [String] :prefix Prefix of the input. Default value is a void
-  #   string. Example of values: +0x+, +\x+.
+  #   string. Example of values: `0x`, `\x`.
   # @option opts [Symbol] :nibble Display input with high nibble first
-  #   (+:high+ default) or low nibble first (+:low+).
+  #   (`:high` default) or low nibble first (`:low`).
   # @return [String] the hexadecimal decoded string
   # @example
   #   "6e6f72616a".from_hex # => "noraj"
@@ -161,7 +161,7 @@ class String
   # Encode an hexadecimal string to a binary string
   # @param opts [Hash] optional parameters
   # @option opts [String] :prefix Prefix of the input. Default value is a void
-  #   string. Example of values: +0x+, +\x+.
+  #   string. Example of values: `0x`, `\x`.
   # @return [String] the binary encoded string
   # @example
   #   'ab'.hex2bin # => "10101011"
@@ -187,9 +187,9 @@ class String
   # Encode an binary string to a hexadecimal string
   # @param opts [Hash] optional parameters
   # @option opts [String] :prefix Prefix of the output. Default value is a void
-  #   string. Example of values: +0x+, +\x+.
-  # @option opts [Symbol] :case Char case of the ouput. Default value +:lower+.
-  #   Other valid value +:upper+.
+  #   string. Example of values: `0x`, `\x`.
+  # @option opts [Symbol] :case Char case of the output. Default value `:lower`.
+  #   Other valid value `:upper`.
   # @return [String] the hexadecimal encoded string
   # @example
   #   '11110011'.bin2hex # => "f3"
@@ -218,9 +218,9 @@ class String
   # Decode a hexadecimal IP string into a dotted decimal one
   # @param opts [Hash] optional parameters
   # @option opts [String] :prefix Prefix of the input. Default value is a void
-  #   string. Example of values: +0x+, +\x+.
+  #   string. Example of values: `0x`, `\x`.
   # @option opts [Symbol] :nibble Display input with high nibble first
-  #   (+:high+ default) or low nibble first (+:low+, used on Unix +/proc/net/tcp+).
+  #   (`:high` default) or low nibble first (`:low`, used on Unix `/proc/net/tcp`).
   # @return [String] the dotted decimal IP
   # @example
   #   '0100007F'.from_hexip(nibble: :low) # => "127.0.0.1"
@@ -245,11 +245,11 @@ class String
   # Encode a dotted decimal IP into a hexadecimal one
   # @param opts [Hash] optional parameters
   # @option opts [String] :prefix Prefix of the output. Default value is a void
-  #   string. Example of values: +0x+, +\x+.
-  # @option opts [Symbol] :case Char case of the ouput. Default value +:lower+.
-  #   Other valid value +:upper+.
+  #   string. Example of values: `0x`, `\x`.
+  # @option opts [Symbol] :case Char case of the output. Default value `:lower`.
+  #   Other valid value `:upper`.
   # @option opts [Symbol] :nibble Display output with high nibble first
-  #   (+:high+ default) or low nibble first (+:low+, used on Unix +/proc/net/tcp+).
+  #   (`:high` default) or low nibble first (`:low`, used on Unix `/proc/net/tcp`).
   # @return [String] the hexadecimal encoded IP
   # @example
   #   '127.0.0.1'.to_hexip # => "7f000001"

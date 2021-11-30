@@ -4,7 +4,7 @@ class String
   # Encode a string into binary
   # @param opts [Hash] optional parameters
   # @option opts [Symbol] :bitnumbering Display output with most significant bit
-  #   first (+:MSB+ default) or least significant bit first (+:LSB+).
+  #   first (`:MSB` default) or least significant bit first (`:LSB`).
   # @return [String] the binary encoded string
   # @example
   #   'binary'.to_bin # => "011000100110100101101110011000010111001001111001"
@@ -41,7 +41,7 @@ class String
   # Decode a binary string
   # @param opts [Hash] optional parameters
   # @option opts [Symbol] :bitnumbering Display input with most significant bit
-  #   first (+:MSB+ default) or least significant bit first (+:LSB+).
+  #   first (`:MSB` default) or least significant bit first (`:LSB`).
   # @return [String] the binary decoded string
   # @example
   #   '011000100110100101101110011000010111001001111001'.from_bin # => "binary"

@@ -2,5 +2,27 @@
 
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in .gemspec
 gemspec
+
+group :runtime, :cli do
+  gem 'docopt', '~> 0.6' # for argument parsing
+end
+
+group :development, :install do
+  gem 'bundler', '~> 2.1'
+end
+
+group :development, :test do
+  gem 'minitest', '~> 5.12'
+  gem 'minitest-skip', '~> 0.0'
+  gem 'rake', '~> 13.0'
+end
+
+group :development, :lint do
+  gem 'rubocop', '~> 1.23'
+end
+
+group :development, :docs do
+  gem 'commonmarker', '~> 0.21' # for markdown support in YARD
+  gem 'yard', ['>= 0.9.27', '< 0.10']
+end

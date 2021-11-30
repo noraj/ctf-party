@@ -1,6 +1,13 @@
 # Changelog
 
+## [unreleased]
+
 - Fix some linting
+- Dependencies:
+  - Update to yard [v0.9.27](https://github.com/lsegal/yard/releases/tag/v0.9.27)
+    - Move from Redcarpet to CommonMarker markdown provider
+    - Move doc syntax from Rdoc to markdown
+  - Move dev dependencies from gemspec to gemfile
 
 ## [1.5.0]
 
