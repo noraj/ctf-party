@@ -2,7 +2,15 @@
 
 ## [unreleased]
 
-- Fix some linting
+- New options:
+  - `dec2hex`, `to_hex`, `bin2hex`, `to_hexip`: Add a `:prefixall` option, allowing to prefix each byte
+- Changes:
+  - `dec2hex`: Change the default value of the `:padding` option to `2`
+- Fixes:
+  - `dec2hex`: Fix `:padding` option behavior
+  - `hex2dec`, `from_hex`, `hex2bin`, `from_hexip`: Fix `:prefix` behavior when there is one prefix per byte
+- Chore:
+  - Fix some linting
 - Dependencies:
   - Update to yard [v0.9.27](https://github.com/lsegal/yard/releases/tag/v0.9.27)
     - Move from Redcarpet to CommonMarker markdown provider
