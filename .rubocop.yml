@@ -14,6 +14,8 @@ Layout/HashAlignment:
 Layout/LineLength:
   Include:
     - 'lib/**/*.rb'
+  Exclude:
+    - 'lib/ctf_party/cgi.rb'
 # ~~~ Lint ~~~
 # ~~~ Metrics ~~~
 Metrics/AbcSize:

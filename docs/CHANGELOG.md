@@ -6,6 +6,9 @@
   - `dec2hex`, `to_hex`, `bin2hex`, `to_hexip`: Add a `:prefixall` option, allowing to prefix each byte
 - Changes:
   - `dec2hex`: Change the default value of the `:padding` option to `2`
+  - `urlencode`, `urldecode`: **BREAKING CHANGE** now use `URI::Parser.new.escape` to get valid URL, use `urlencode_component`, `urldecode_component` to get the old behavior
+- New methods:
+  - `urlencode_component`, `urldecode_component`: URL-encode URL component, have the old `urlencode`, `urldecode` behavior
 - Fixes:
   - `dec2hex`: Fix `:padding` option behavior
   - `hex2dec`, `from_hex`, `hex2bin`, `from_hexip`: Fix `:prefix` behavior when there is one prefix per byte
