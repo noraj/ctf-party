@@ -1,0 +1,13 @@
+# Author: noraj
+version: '3'
+services:
+  ctf-party:
+    image: noraj/ctf-party:2.0.0
+    user: noraj
+    container_name: ctf-party
+    read_only: false
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        CTF_PARTY_VERSION: 2.0.0

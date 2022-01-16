@@ -25,6 +25,6 @@ $ ctf-party 'security' to_hex
 Launch `irb` with the library loaded.
 
 ```
-$ ctf_party_console
+$ ctf-party_console
 irb(main):001:0>
 ```

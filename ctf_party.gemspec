@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version       = Version::VERSION
   s.platform      = Gem::Platform::RUBY
   s.summary       = 'A CLI tool & library to enhance and speed up script/exploit '\
-                    'writing for CTF players'
+                    'writing with string conversion/manipulation'
   s.description   = 'A CLI tool & library to enhance and speed up script/exploit '\
                     'writing for CTF players (or security researchers, bug bounty '\
                     'hunters, pentesters but mostly focused on CTF) by '\

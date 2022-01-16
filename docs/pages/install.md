@@ -2,7 +2,9 @@
 
 ## Production
 
-### Install from rubygems.org
+<!-- tabs:start -->
+
+### **rubygems.org**
 
 ```
 $ gem install ctf-party
@@ -10,7 +12,7 @@ $ gem install ctf-party
 
 Gem: [ctf-party](https://rubygems.org/gems/ctf-party)
 
-### Install from BlackArch
+### **BlackArch**
 
 From the repository:
 
@@ -26,7 +28,7 @@ From git:
 
 PKGBUILD: [ctf-party](https://github.com/BlackArch/blackarch/blob/master/packages/ctf-party/PKGBUILD)
 
-### Install from ArchLinux
+### **ArchLinux**
 
 Manually:
 
@@ -44,17 +46,89 @@ $ pikaur -S ruby-ctf-party
 
 AUR: [ruby-ctf-party](https://aur.archlinux.org/packages/ruby-ctf-party/)
 
+### **Docker (git)**
+
+Without a registry
+
+```
+$ git clone https://github.com/noraj/ctf-party.git
+$ cd ctf-party
+$ docker-compose build
+# alternatively without docker compose
+$ docker build -f Dockerfile -t ctf-party --build-arg ctf-party_VERSION=2.0.0 .
+```
+
+Usage examples:
+
+```
+$ docker-compose run ctf-party ctf-party 'security' to_hex
+$ docker-compose run ctf-party ctf-party_console
+# alternatively without docker compose
+$ docker run -it --rm ctf-party ctf-party 'security' to_hex
+$ docker run -it --rm ctf-party ctf-party_console
+```
+
+### **Docker (Docker Hub)**
+
+host: `docker.io`
+
+```
+# latest
+$ docker pull noraj/ctf-party
+
+# specific tag
+$ docker pull noraj/ctf-party:2.0.0
+```
+
+Repository: [noraj/ctf-party](https://hub.docker.com/r/noraj/ctf-party).
+
+### **Docker (GHCR)**
+
+GHCR = Github Container Registry
+
+host: `ghcr.io`
+
+```
+# latest
+$ docker pull ghcr.io/noraj/ctf-party
+
+# specific tag
+$ docker pull ghcr.io/noraj/ctf-party:2.0.0
+```
+
+Repository: [noraj/ctf-party](https://github.com/noraj/ctf-party/pkgs/container/ctf-party)
+
+### **Docker (ACR)**
+
+ACR = Alibaba Cloud Container Registry
+
+host: `registry-intl.eu-central-1.aliyuncs.com`
+
+```
+# latest
+$ docker pull registry-intl.eu-central-1.aliyuncs.com/noraj/ctf-party
+
+# specific tag
+$ docker pull registry-intl.eu-central-1.aliyuncs.com/noraj/ctf-party:2.0.0
+```
+
+Repository: [the overview page is not public](https://cr.console.aliyun.com/repository/eu-central-1/noraj/ctf-party/details)
+
+<!-- tabs:end -->
+
 ## Development
 
-It's better to use [rbenv](https://github.com/rbenv/rbenv) to have latests version of ruby and to avoid trashing your system ruby.
+It's better to use [ASDM-VM](https://asdf-vm.com/) to have latests version of ruby and to avoid trashing your system ruby.
 
-### Install from rubygems.org
+<!-- tabs:start -->
+
+### **rubygems.org**
 
 ```
 $ gem install --development ctf-party
 ```
 
-### Build from git
+### **git**
 
 Just replace `x.x.x` with the gem version you see after `gem build`.
 
@@ -69,7 +143,9 @@ $ gem install ctf-party-x.x.x.gem
 
 Note: if an automatic install is needed you can get the version with `$ gem build ctf_party.gemspec | grep Version | cut -d' ' -f4`.
 
-### Run the library in irb without installing the gem
+### **No install**
+
+Run the library in irb without installing the gem.
 
 From local file:
 
@@ -80,5 +156,7 @@ $ irb -Ilib -rctf_party
 From the installed gem:
 
 ```
-$ ctf_party_console
+$ ctf-party_console
 ```
+
+<!-- tabs:end -->

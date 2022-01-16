@@ -1,12 +1,13 @@
 # Changelog
 
-## [unreleased]
+## [2.0.0]
 
 - New options:
   - `dec2hex`, `to_hex`, `bin2hex`, `to_hexip`: Add a `:prefixall` option, allowing to prefix each byte
 - Changes:
   - `dec2hex`: Change the default value of the `:padding` option to `2`
   - `urlencode`, `urldecode`: **BREAKING CHANGE** now use `URI::Parser.new.escape` to get valid URL, use `urlencode_component`, `urldecode_component` to get the old behavior
+  - **BREAKING CHANGE** the binary `ctf_party_console` has been renamed to `ctf-party_console`
 - New methods:
   - `urlencode_component`, `urldecode_component`: URL-encode URL component, have the old `urlencode`, `urldecode` behavior
 - Fixes:
@@ -14,6 +15,7 @@
   - `hex2dec`, `from_hex`, `hex2bin`, `from_hexip`: Fix `:prefix` behavior when there is one prefix per byte
 - Chore:
   - Fix some linting
+  - Documentation: Use a new dark theme + use tabs
 - Dependencies:
   - Update to yard [v0.9.27](https://github.com/lsegal/yard/releases/tag/v0.9.27)
     - Move from Redcarpet to CommonMarker markdown provider
