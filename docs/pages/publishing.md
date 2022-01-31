@@ -52,7 +52,10 @@ $ gem push ctf-party-x.x.x.gem
 
 ```
 $ docker build -f Dockerfile -t noraj/ctf-party:x.x.x --build-arg CTF_PARTY_VERSION=x.x.x .
+
 $ docker login docker.io
+
+$ pass show docker-credential-helpers/aHR0cHM6Ly9pbmRleC5kb2NrZXIuaW8vdjEv/USERNAME
 $ docker push docker.io/noraj/ctf-party:x.x.x
 $ docker push docker.io/noraj/ctf-party
 ```

@@ -55,7 +55,7 @@ $ git clone https://github.com/noraj/ctf-party.git
 $ cd ctf-party
 $ docker-compose build
 # alternatively without docker compose
-$ docker build -f Dockerfile -t ctf-party --build-arg ctf-party_VERSION=2.0.0 .
+$ docker build -f Dockerfile -t ctf-party --build-arg ctf-party_VERSION=2.1.0 .
 ```
 
 Usage examples:
@@ -77,7 +77,7 @@ host: `docker.io`
 $ docker pull noraj/ctf-party
 
 # specific tag
-$ docker pull noraj/ctf-party:2.0.0
+$ docker pull noraj/ctf-party:2.1.0
 ```
 
 Repository: [noraj/ctf-party](https://hub.docker.com/r/noraj/ctf-party).
@@ -93,7 +93,7 @@ host: `ghcr.io`
 $ docker pull ghcr.io/noraj/ctf-party
 
 # specific tag
-$ docker pull ghcr.io/noraj/ctf-party:2.0.0
+$ docker pull ghcr.io/noraj/ctf-party:2.1.0
 ```
 
 Repository: [noraj/ctf-party](https://github.com/noraj/ctf-party/pkgs/container/ctf-party)
@@ -109,7 +109,7 @@ host: `registry-intl.eu-central-1.aliyuncs.com`
 $ docker pull registry-intl.eu-central-1.aliyuncs.com/noraj/ctf-party
 
 # specific tag
-$ docker pull registry-intl.eu-central-1.aliyuncs.com/noraj/ctf-party:2.0.0
+$ docker pull registry-intl.eu-central-1.aliyuncs.com/noraj/ctf-party:2.1.0
 ```
 
 Repository: [the overview page is not public](https://cr.console.aliyun.com/repository/eu-central-1/noraj/ctf-party/details)

@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.1.0]
+
+- Chore:
+  - Add support for Ruby 3.1
+  - Update ruby version in Dockerfile
+- Documentation:
+  - Add `pass` unlock step to build docker (DockerHub) for the publishing page
+
 ## [2.0.0]
 
 - New options:
