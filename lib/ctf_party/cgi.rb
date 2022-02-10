@@ -2,6 +2,7 @@
 
 # Ruby standard library
 require 'cgi'
+require 'uri'
 
 class String
   # URL-encode the URL string (RFC2396)
