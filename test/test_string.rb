@@ -158,6 +158,8 @@ class CTFPartyTest < Minitest::Test
     assert_equal('0000000a', '10'.dec2hex(padding: 8))
     assert_equal('0xFF', '255'.dec2hex(prefix: '0x', case: :upper))
     assert_equal('\\x6e\\x6f\\x72\\x61\\x6a', '474316169578'.dec2hex(prefixall: '\\x'))
+    # verify no odd byte cropping issue
+    assert_equal('1f4a9','128169'.dec2hex)
   end
 
   skip def test_hex_dec2hex!

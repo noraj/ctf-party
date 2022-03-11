@@ -59,6 +59,8 @@ class String
     out = ('0' * (opts[:padding] - out.size)) + out if out.size < opts[:padding]
     # char case management
     out = out.upcase if opts[:case] == :upper
+    # so scan is safe, scan(/.{1,2}/) doesn't isolate alone byte in right order
+    out = '0' + out if out.size.odd?
     # adding prefix must be done after case change
     out = out.scan(/.{2}/).map { |x| opts[:prefixall] + x }.join
     return opts[:prefix] + out

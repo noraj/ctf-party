@@ -1,5 +1,10 @@
 # Changelog
 
+## [Unreleased]
+
+- Fix:
+  - dec2hex: fix odd byte cropping issue
+
 ## [2.1.0]
 
 - Chore:
