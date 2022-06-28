@@ -6,15 +6,15 @@ Gem::Specification.new do |s|
   s.name          = 'ctf-party'
   s.version       = Version::VERSION
   s.platform      = Gem::Platform::RUBY
-  s.summary       = 'A CLI tool & library to enhance and speed up script/exploit '\
+  s.summary       = 'A CLI tool & library to enhance and speed up script/exploit ' \
                     'writing with string conversion/manipulation'
-  s.description   = 'A CLI tool & library to enhance and speed up script/exploit '\
-                    'writing for CTF players (or security researchers, bug bounty '\
-                    'hunters, pentesters but mostly focused on CTF) by '\
-                    'patching the String class to add a short syntax of usual '\
-                    'code patterns. Methods for base64, digest (hash), flag, '\
-                    'rot (Caesar), hexadecimal, case, cgi (URL encoding/decoding, '\
-                    'HTML escaping/unescaping), binary, leet (1337), decimal, '\
+  s.description   = 'A CLI tool & library to enhance and speed up script/exploit ' \
+                    'writing for CTF players (or security researchers, bug bounty ' \
+                    'hunters, pentesters but mostly focused on CTF) by ' \
+                    'patching the String class to add a short syntax of usual ' \
+                    'code patterns. Methods for base64, digest (hash), flag, ' \
+                    'rot (Caesar), hexadecimal, case, cgi (URL encoding/decoding, ' \
+                    'HTML escaping/unescaping), binary, leet (1337), decimal, ' \
                     'XOR, whitespace strip.'
   s.authors       = ['Alexandre ZANNI']
   s.email         = 'alexandre.zanni@engineer.com'
