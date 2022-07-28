@@ -111,7 +111,7 @@ begin
   pp args if args['--debug']
   if args['<string>']
     args['<string>'] = $stdin.read.chomp if args['<string>'] == '-'
-    args['<string>'] = File.read(args['<string>']) if args['--file'] and File.exists?(args['<string>'])
+    args['<string>'] = File.read(args['<string>']) if args['--file'] && File.exist?(args['<string>'])
     wrong_cmd = args['<cmd>'] - cmd_whitelist.keys.map(&:to_s)
     if wrong_cmd.empty?
       if args['--row']
