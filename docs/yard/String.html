@@ -6,7 +6,7 @@
 <title>
   Class: String
   
-    &mdash; Documentation by YARD 0.9.27
+    &mdash; Documentation by YARD 0.9.28
   
 </title>
 
@@ -3204,8 +3204,6 @@ Other valid value <code>:upper</code>.</p>
       <pre class="lines">
 
 
-218
-219
 220
 221
 222
@@ -3215,10 +3213,12 @@ Other valid value <code>:upper</code>.</p>
 226
 227
 228
-229</pre>
+229
+230
+231</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ctf_party/hex.rb', line 218</span>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/hex.rb', line 220</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_bin2hex'>bin2hex</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:prefix</span><span class='rbracket'>]</span> <span class='op'>||=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
@@ -3273,12 +3273,12 @@ for <span class='object_link'><a href="#bin2hex-instance_method" title="String#b
       <pre class="lines">
 
 
-237
-238
-239</pre>
+239
+240
+241</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ctf_party/hex.rb', line 237</span>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/hex.rb', line 239</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_bin2hex!'>bin2hex!</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_replace'>replace</span><span class='lparen'>(</span><span class='id identifier rubyid_bin2hex'>bin2hex</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span><span class='rparen'>)</span>
@@ -3533,7 +3533,9 @@ Other valid value <code>:upper</code>.</p>
 62
 63
 64
-65</pre>
+65
+66
+67</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/ctf_party/hex.rb', line 49</span>
@@ -3551,8 +3553,10 @@ Other valid value <code>:upper</code>.</p>
 </span>  <span class='id identifier rubyid_out'>out</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span> <span class='op'>*</span> <span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:padding</span><span class='rbracket'>]</span> <span class='op'>-</span> <span class='id identifier rubyid_out'>out</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span><span class='rparen'>)</span><span class='rparen'>)</span> <span class='op'>+</span> <span class='id identifier rubyid_out'>out</span> <span class='kw'>if</span> <span class='id identifier rubyid_out'>out</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span> <span class='op'>&lt;</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:padding</span><span class='rbracket'>]</span>
   <span class='comment'># char case management
 </span>  <span class='id identifier rubyid_out'>out</span> <span class='op'>=</span> <span class='id identifier rubyid_out'>out</span><span class='period'>.</span><span class='id identifier rubyid_upcase'>upcase</span> <span class='kw'>if</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:case</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='symbol'>:upper</span>
-  <span class='comment'># adding prefix must be done after case change
-</span>  <span class='id identifier rubyid_out'>out</span> <span class='op'>=</span> <span class='id identifier rubyid_out'>out</span><span class='period'>.</span><span class='id identifier rubyid_scan'>scan</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>.{2}</span><span class='regexp_end'>/</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_x'>x</span><span class='op'>|</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:prefixall</span><span class='rbracket'>]</span> <span class='op'>+</span> <span class='id identifier rubyid_x'>x</span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span>
+  <span class='comment'># adding prefix must be done after case change, complex conditional to avoid cropping when odd byte lenght
+</span>  <span class='id identifier rubyid_out'>out</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='id identifier rubyid_out'>out</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span><span class='period'>.</span><span class='id identifier rubyid_odd?'>odd?</span> <span class='op'>?</span> <span class='lbracket'>[</span><span class='id identifier rubyid_out'>out</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rbracket'>]</span> <span class='op'>+</span> <span class='id identifier rubyid_out'>out</span><span class='lbracket'>[</span><span class='int'>1</span><span class='op'>..</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_scan'>scan</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>.{1,2}</span><span class='regexp_end'>/</span></span><span class='rparen'>)</span> <span class='op'>:</span> <span class='id identifier rubyid_out'>out</span><span class='period'>.</span><span class='id identifier rubyid_scan'>scan</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>.{2}</span><span class='regexp_end'>/</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_x'>x</span><span class='op'>|</span>
+    <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:prefixall</span><span class='rbracket'>]</span> <span class='op'>+</span> <span class='id identifier rubyid_x'>x</span>
+  <span class='kw'>end</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span>
   <span class='kw'>return</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:prefix</span><span class='rbracket'>]</span> <span class='op'>+</span> <span class='id identifier rubyid_out'>out</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -3596,12 +3600,12 @@ for <span class='object_link'><a href="#dec2hex-instance_method" title="String#d
       <pre class="lines">
 
 
-73
-74
-75</pre>
+75
+76
+77</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ctf_party/hex.rb', line 73</span>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/hex.rb', line 75</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_dec2hex!'>dec2hex!</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_replace'>replace</span><span class='lparen'>(</span><span class='id identifier rubyid_dec2hex'>dec2hex</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span><span class='rparen'>)</span>
@@ -4477,8 +4481,6 @@ string. Example of values: <code>0x</code>, <code>\x</code>, <code>\\x</code>.</
       <pre class="lines">
 
 
-146
-147
 148
 149
 150
@@ -4487,10 +4489,12 @@ string. Example of values: <code>0x</code>, <code>\x</code>, <code>\\x</code>.</
 153
 154
 155
-156</pre>
+156
+157
+158</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ctf_party/hex.rb', line 146</span>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/hex.rb', line 148</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_from_hex'>from_hex</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:prefix</span><span class='rbracket'>]</span> <span class='op'>||=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
@@ -4544,12 +4548,12 @@ for <span class='object_link'><a href="#from_hex-instance_method" title="String#
       <pre class="lines">
 
 
-169
-170
-171</pre>
+171
+172
+173</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ctf_party/hex.rb', line 169</span>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/hex.rb', line 171</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_from_hex!'>from_hex!</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_replace'>replace</span><span class='lparen'>(</span><span class='id identifier rubyid_from_hex'>from_hex</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span><span class='rparen'>)</span>
@@ -4667,8 +4671,6 @@ string. Example of values: <code>0x</code>, <code>\x</code>, '\x'.</p>
       <pre class="lines">
 
 
-252
-253
 254
 255
 256
@@ -4676,10 +4678,12 @@ string. Example of values: <code>0x</code>, <code>\x</code>, '\x'.</p>
 258
 259
 260
-261</pre>
+261
+262
+263</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ctf_party/hex.rb', line 252</span>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/hex.rb', line 254</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_from_hexip'>from_hexip</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:prefix</span><span class='rbracket'>]</span> <span class='op'>||=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
@@ -4722,12 +4726,12 @@ for <span class='object_link'><a href="#from_hexip-instance_method" title="Strin
       <pre class="lines">
 
 
-265
-266
-267</pre>
+267
+268
+269</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ctf_party/hex.rb', line 265</span>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/hex.rb', line 267</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_from_hexip!'>from_hexip!</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_replace'>replace</span><span class='lparen'>(</span><span class='id identifier rubyid_from_hexip'>from_hexip</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span><span class='rparen'>)</span>
@@ -4832,16 +4836,16 @@ string. Example of values: <code>0x</code>, <code>\x</code>, <code>\\x</code>.</
       <pre class="lines">
 
 
-187
-188
 189
 190
 191
 192
-193</pre>
+193
+194
+195</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ctf_party/hex.rb', line 187</span>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/hex.rb', line 189</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_hex2bin'>hex2bin</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:prefix</span><span class='rbracket'>]</span> <span class='op'>||=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
@@ -4891,12 +4895,12 @@ for <span class='object_link'><a href="#hex2bin-instance_method" title="String#h
       <pre class="lines">
 
 
-201
-202
-203</pre>
+203
+204
+205</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ctf_party/hex.rb', line 201</span>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/hex.rb', line 203</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_hex2bin!'>hex2bin!</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_replace'>replace</span><span class='lparen'>(</span><span class='id identifier rubyid_hex2bin'>hex2bin</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span><span class='rparen'>)</span>
@@ -5101,12 +5105,12 @@ for <span class='object_link'><a href="#hex2dec-instance_method" title="String#h
       <pre class="lines">
 
 
-159
-160
-161</pre>
+161
+162
+163</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ctf_party/hex.rb', line 159</span>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/hex.rb', line 161</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_hex2str'>hex2str</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_from_hex'>from_hex</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
@@ -5141,12 +5145,12 @@ for <span class='object_link'><a href="#hex2dec-instance_method" title="String#h
       <pre class="lines">
 
 
-174
-175
-176</pre>
+176
+177
+178</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ctf_party/hex.rb', line 174</span>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/hex.rb', line 176</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_hex2str!'>hex2str!</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_from_hex!'>from_hex!</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
@@ -5206,12 +5210,12 @@ for <span class='object_link'><a href="#hex2dec-instance_method" title="String#h
       <pre class="lines">
 
 
-71
 72
-73</pre>
+73
+74</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ctf_party/cgi.rb', line 71</span>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/cgi.rb', line 72</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_htmlescape'>htmlescape</span>
   <span class='const'>CGI</span><span class='period'>.</span><span class='id identifier rubyid_escapeHTML'>escapeHTML</span> <span class='kw'>self</span>
@@ -5246,12 +5250,12 @@ for <span class='object_link'><a href="#hex2dec-instance_method" title="String#h
       <pre class="lines">
 
 
-76
 77
-78</pre>
+78
+79</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ctf_party/cgi.rb', line 76</span>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/cgi.rb', line 77</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_htmlescape!'>htmlescape!</span>
   <span class='id identifier rubyid_replace'>replace</span><span class='lparen'>(</span><span class='id identifier rubyid_htmlescape'>htmlescape</span><span class='rparen'>)</span>
@@ -5311,12 +5315,12 @@ for <span class='object_link'><a href="#hex2dec-instance_method" title="String#h
       <pre class="lines">
 
 
-84
 85
-86</pre>
+86
+87</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ctf_party/cgi.rb', line 84</span>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/cgi.rb', line 85</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_htmlunescape'>htmlunescape</span>
   <span class='const'>CGI</span><span class='period'>.</span><span class='id identifier rubyid_unescapeHTML'>unescapeHTML</span> <span class='kw'>self</span>
@@ -5351,12 +5355,12 @@ for <span class='object_link'><a href="#hex2dec-instance_method" title="String#h
       <pre class="lines">
 
 
-89
 90
-91</pre>
+91
+92</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ctf_party/cgi.rb', line 89</span>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/cgi.rb', line 90</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_htmlunescape!'>htmlunescape!</span>
   <span class='id identifier rubyid_replace'>replace</span><span class='lparen'>(</span><span class='id identifier rubyid_htmlunescape'>htmlunescape</span><span class='rparen'>)</span>
@@ -7003,12 +7007,12 @@ and 512 (SHA2-512).</p>
       <pre class="lines">
 
 
-115
-116
-117</pre>
+117
+118
+119</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ctf_party/hex.rb', line 115</span>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/hex.rb', line 117</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_str2hex'>str2hex</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_to_hex'>to_hex</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
@@ -7043,12 +7047,12 @@ and 512 (SHA2-512).</p>
       <pre class="lines">
 
 
-130
-131
-132</pre>
+132
+133
+134</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ctf_party/hex.rb', line 130</span>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/hex.rb', line 132</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_str2hex!'>str2hex!</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_to_hex!'>to_hex!</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
@@ -7655,8 +7659,6 @@ Other valid value <code>:upper</code>.</p>
       <pre class="lines">
 
 
-94
-95
 96
 97
 98
@@ -7673,10 +7675,12 @@ Other valid value <code>:upper</code>.</p>
 109
 110
 111
-112</pre>
+112
+113
+114</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ctf_party/hex.rb', line 94</span>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/hex.rb', line 96</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_hex'>to_hex</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:prefix</span><span class='rbracket'>]</span> <span class='op'>||=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
@@ -7738,12 +7742,12 @@ for <span class='object_link'><a href="#to_hex-instance_method" title="String#to
       <pre class="lines">
 
 
-125
-126
-127</pre>
+127
+128
+129</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ctf_party/hex.rb', line 125</span>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/hex.rb', line 127</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_hex!'>to_hex!</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_replace'>replace</span><span class='lparen'>(</span><span class='id identifier rubyid_to_hex'>to_hex</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span><span class='rparen'>)</span>
@@ -7887,8 +7891,6 @@ Other valid value <code>:upper</code>.</p>
       <pre class="lines">
 
 
-284
-285
 286
 287
 288
@@ -7901,10 +7903,12 @@ Other valid value <code>:upper</code>.</p>
 295
 296
 297
-298</pre>
+298
+299
+300</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ctf_party/hex.rb', line 284</span>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/hex.rb', line 286</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_hexip'>to_hexip</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:prefix</span><span class='rbracket'>]</span> <span class='op'>||=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
@@ -7952,12 +7956,12 @@ for <span class='object_link'><a href="#to_hexip-instance_method" title="String#
       <pre class="lines">
 
 
-302
-303
-304</pre>
+304
+305
+306</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ctf_party/hex.rb', line 302</span>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/hex.rb', line 304</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_hexip!'>to_hexip!</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_replace'>replace</span><span class='lparen'>(</span><span class='id identifier rubyid_to_hexip'>to_hexip</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span><span class='rparen'>)</span>
@@ -8155,12 +8159,12 @@ for <span class='object_link'><a href="#to_hexip-instance_method" title="String#
       <pre class="lines">
 
 
-42
 43
-44</pre>
+44
+45</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ctf_party/cgi.rb', line 42</span>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/cgi.rb', line 43</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_urldecode'>urldecode</span>
   <span class='const'>URI</span><span class='op'>::</span><span class='const'>Parser</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='period'>.</span><span class='id identifier rubyid_unescape'>unescape</span> <span class='kw'>self</span>
@@ -8195,12 +8199,12 @@ for <span class='object_link'><a href="#to_hexip-instance_method" title="String#
       <pre class="lines">
 
 
-47
 48
-49</pre>
+49
+50</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ctf_party/cgi.rb', line 47</span>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/cgi.rb', line 48</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_urldecode!'>urldecode!</span>
   <span class='id identifier rubyid_replace'>replace</span><span class='lparen'>(</span><span class='id identifier rubyid_urldecode'>urldecode</span><span class='rparen'>)</span>
@@ -8263,12 +8267,12 @@ for <span class='object_link'><a href="#to_hexip-instance_method" title="String#
       <pre class="lines">
 
 
-58
 59
-60</pre>
+60
+61</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ctf_party/cgi.rb', line 58</span>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/cgi.rb', line 59</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_urldecode_component'>urldecode_component</span>
   <span class='const'>CGI</span><span class='period'>.</span><span class='id identifier rubyid_unescape'>unescape</span> <span class='kw'>self</span>
@@ -8303,12 +8307,12 @@ for <span class='object_link'><a href="#to_hexip-instance_method" title="String#
       <pre class="lines">
 
 
-63
 64
-65</pre>
+65
+66</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ctf_party/cgi.rb', line 63</span>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/cgi.rb', line 64</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_urldecode_component!'>urldecode_component!</span>
   <span class='id identifier rubyid_replace'>replace</span><span class='lparen'>(</span><span class='id identifier rubyid_urldecode_component'>urldecode_component</span><span class='rparen'>)</span>
@@ -8369,12 +8373,12 @@ for <span class='object_link'><a href="#to_hexip-instance_method" title="String#
       <pre class="lines">
 
 
-12
 13
-14</pre>
+14
+15</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ctf_party/cgi.rb', line 12</span>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/cgi.rb', line 13</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_urlencode'>urlencode</span>
   <span class='const'>URI</span><span class='op'>::</span><span class='const'>Parser</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='period'>.</span><span class='id identifier rubyid_escape'>escape</span> <span class='kw'>self</span>
@@ -8409,12 +8413,12 @@ for <span class='object_link'><a href="#to_hexip-instance_method" title="String#
       <pre class="lines">
 
 
-17
 18
-19</pre>
+19
+20</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ctf_party/cgi.rb', line 17</span>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/cgi.rb', line 18</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_urlencode!'>urlencode!</span>
   <span class='id identifier rubyid_replace'>replace</span><span class='lparen'>(</span><span class='id identifier rubyid_urlencode'>urlencode</span><span class='rparen'>)</span>
@@ -8475,12 +8479,12 @@ for <span class='object_link'><a href="#to_hexip-instance_method" title="String#
       <pre class="lines">
 
 
-26
 27
-28</pre>
+28
+29</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ctf_party/cgi.rb', line 26</span>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/cgi.rb', line 27</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_urlencode_component'>urlencode_component</span>
   <span class='const'>CGI</span><span class='period'>.</span><span class='id identifier rubyid_escape'>escape</span> <span class='kw'>self</span>
@@ -8515,12 +8519,12 @@ for <span class='object_link'><a href="#to_hexip-instance_method" title="String#
       <pre class="lines">
 
 
-31
 32
-33</pre>
+33
+34</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ctf_party/cgi.rb', line 31</span>
+      <pre class="code"><span class="info file"># File 'lib/ctf_party/cgi.rb', line 32</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_urlencode_component!'>urlencode_component!</span>
   <span class='id identifier rubyid_replace'>replace</span><span class='lparen'>(</span><span class='id identifier rubyid_urlencode_component'>urlencode_component</span><span class='rparen'>)</span>
@@ -8670,9 +8674,9 @@ for <span class='object_link'><a href="#to_hexip-instance_method" title="String#
 </div>
 
       <div id="footer">
-  Generated on Mon Jan 31 15:18:40 2022 by
-  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.27 (ruby-3.1.0).
+  Generated on Fri Jul 29 00:03:05 2022 by
+  <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.28 (ruby-3.1.0).
 </div>
 
     </div>

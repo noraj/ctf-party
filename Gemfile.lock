@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ctf-party (2.1.0)
+    ctf-party (2.2.0)
       docopt (~> 0.6)
 
 GEM
