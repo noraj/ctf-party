@@ -10,6 +10,7 @@ require 'ctf_party/version'
 require 'docopt'
 
 cmd_whitelist = {
+  # ctf-party commands
   alternatecase: 'Change one characte on two upcase and the other downcase',
   bin2hex: 'Encode an binary string to a hexadecimal string',
   bin2str: 'Alias for from_bin',
@@ -45,9 +46,31 @@ cmd_whitelist = {
   to_hex: 'Encode a string into hexadecimal',
   to_hexip: 'Encode a dotted decimal IP into a hexadecimal one',
   urldecode: 'URL-decode the string',
-  urlencode: 'URL-encode the string',
   urldecode_component: 'URL-decode the URL component string',
-  urlencode_component: 'URL-encode the URL component string'
+  urlencode: 'URL-encode the string',
+  urlencode_component: 'URL-encode the URL component string',
+  # native string commands
+  bytesize: 'https://rubyapi.org/3.1/o/string#method-i-bytesize',
+  capitalize: 'https://rubyapi.org/3.1/o/string#method-i-capitalize',
+  chomp: 'https://rubyapi.org/3.1/o/string#method-i-chomp',
+  chop: 'https://rubyapi.org/3.1/o/string#method-i-chop',
+  downcase: 'https://rubyapi.org/3.1/o/string#method-i-downcase',
+  dump: 'https://rubyapi.org/3.1/o/string#method-i-dump',
+  inspect: 'https://rubyapi.org/3.1/o/string#method-i-inspect',
+  length: 'https://rubyapi.org/3.1/o/string#method-i-length',
+  lstrip: 'https://rubyapi.org/3.1/o/string#method-i-lstrip',
+  reverse: 'https://rubyapi.org/3.1/o/string#method-i-reverse',
+  rstrip: 'https://rubyapi.org/3.1/o/string#method-i-rstrip',
+  scrub: 'https://rubyapi.org/3.1/o/string#method-i-scrub',
+  shellescape: 'https://rubyapi.org/3.1/o/string#method-i-shellescape',
+  size: 'https://rubyapi.org/3.1/o/string#method-i-size',
+  squeeze: 'https://rubyapi.org/3.1/o/string#method-i-squeeze',
+  strip: 'https://rubyapi.org/3.1/o/string#method-i-strip',
+  succ: 'https://rubyapi.org/3.1/o/string#method-i-succ',
+  swapcase: 'https://rubyapi.org/3.1/o/string#method-i-swapcase',
+  undump: 'https://rubyapi.org/3.1/o/string#method-i-undump',
+  unicode_normalize: 'https://rubyapi.org/3.1/o/string#method-i-unicode_normalize',
+  upcase: 'https://rubyapi.org/3.1/o/string#method-i-upcase'
 }
 
 doc = <<~DOCOPT
