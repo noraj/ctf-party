@@ -45,7 +45,9 @@ cmd_whitelist = {
   to_hex: 'Encode a string into hexadecimal',
   to_hexip: 'Encode a dotted decimal IP into a hexadecimal one',
   urldecode: 'URL-decode the string',
-  urlencode: 'URL-encode the string'
+  urlencode: 'URL-encode the string',
+  urldecode_component: 'URL-decode the URL component string',
+  urlencode_component: 'URL-encode the URL component string'
 }
 
 doc = <<~DOCOPT
@@ -85,7 +87,7 @@ begin
     end
   elsif args['--list-commands']
     cmd_whitelist.each do |k, v|
-      puts "#{k.to_s.ljust(15)}#{v}"
+      puts "#{k.to_s.ljust(25)}#{v}"
     end
   end
   # use case 2, help: already handled by docopt

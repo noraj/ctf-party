@@ -147,10 +147,16 @@ Note: if an automatic install is needed you can get the version with `$ gem buil
 
 Run the library in irb without installing the gem.
 
-From local file:
+From local file (lib):
 
 ```
 $ irb -Ilib -rctf_party
+```
+
+From local file (CLI):
+
+```
+$ ruby -Ilib -rctf_party bin/ctf-party
 ```
 
 From the installed gem:

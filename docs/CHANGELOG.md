@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- CLI:
+  - Add `urlencode_component` and `urldecode_component` to the command whitelist
 - Fix:
   - dec2hex: fix odd byte cropping issue
 
