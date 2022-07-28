@@ -3,6 +3,7 @@
 
 # Ruby internal
 require 'pp'
+require 'shellwords' # for shellescape cmd
 # Project internal
 require 'ctf_party'
 require 'ctf_party/version'
@@ -56,6 +57,7 @@ cmd_whitelist = {
   chop: 'https://rubyapi.org/3.1/o/string#method-i-chop',
   downcase: 'https://rubyapi.org/3.1/o/string#method-i-downcase',
   dump: 'https://rubyapi.org/3.1/o/string#method-i-dump',
+  hex: 'https://rubyapi.org/3.1/o/string#method-i-hex',
   inspect: 'https://rubyapi.org/3.1/o/string#method-i-inspect',
   length: 'https://rubyapi.org/3.1/o/string#method-i-length',
   lstrip: 'https://rubyapi.org/3.1/o/string#method-i-lstrip',
@@ -77,16 +79,18 @@ doc = <<~DOCOPT
   ctf-party v#{Version::VERSION} by noraj
 
   Usage:
-    ctf-party <string> <cmd>... [--debug]
+    ctf-party <string> <cmd>... [--row] [--debug]
     ctf-party --list-commands [--debug]
     ctf-party -h | --help
     ctf-party --version
 
   Parameters:
     <string>              The string to manipulate, read from STDIN if equal to "-"
+    <cmd>                 Command to apply to the string, cf. --list-commands
 
   Options:
     -l, --list-commands   List available commands (see https://noraj.github.io/ctf-party/yard/String.html)
+    -r, --row             Apply the transformation to each row
     --debug               Display arguments
     -h, --help            Show this screen
     --version             Show version
@@ -95,6 +99,8 @@ doc = <<~DOCOPT
     ctf-party 'security' to_hex
     ctf-party 'NzQ2Zjc0NmY=' from_b64 hex2bin
     curl -s https://example.org | ctf-party - htmlescape
+    seq 1 10 | ctf-party - to_b64 --row
+    cut -d : -f 1 /etc/passwd | ctf-party - randomcase --row
 DOCOPT
 
 begin
@@ -102,12 +108,23 @@ begin
   # use case 1, using the tool
   pp args if args['--debug']
   if args['<string>']
-    args['<string>'] = STDIN.read.chomp if args['<string>'] == '-'
+    args['<string>'] = $stdin.read.chomp if args['<string>'] == '-'
     wrong_cmd = args['<cmd>'] - cmd_whitelist.keys.map(&:to_s)
     if wrong_cmd.empty?
-      output = args['<string>']
-      args['<cmd>'].each do |cmd|
-        output = output.public_send(cmd)
+      if args['--row']
+        output = ''
+        args['<string>'].each_line(chomp: true) do |line|
+          output_line = line
+          args['<cmd>'].each do |cmd|
+            output_line = output_line.public_send(cmd)
+          end
+          output += "#{output_line}\n"
+        end
+      else
+        output = args['<string>']
+        args['<cmd>'].each do |cmd|
+          output = output.public_send(cmd)
+        end
       end
       puts output
     else

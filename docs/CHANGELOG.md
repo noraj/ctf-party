@@ -5,7 +5,8 @@
 - CLI:
   - Add `urlencode_component` and `urldecode_component` to the command whitelist
   - Now can read from STDIN
-  - Add some commands from native String class: `bytesize`, `capitalize`, `chomp`, `chop`, `downcase`, `dump`, `inspect`, `length`, `lstrip`, `reverse`, `rstrip`, `scrub`, `shellescape`, `size`, `squeeze`, `strip`, `succ`, `swapcase`, `undump`, `unicode_normalize`, `upcase`
+  - Add some commands from native String class: `bytesize`, `capitalize`, `chomp`, `chop`, `downcase`, `dump`, `hex`, `inspect`, `length`, `lstrip`, `reverse`, `rstrip`, `scrub`, `shellescape`, `size`, `squeeze`, `strip`, `succ`, `swapcase`, `undump`, `unicode_normalize`, `upcase`
+  - Add `--row` option: apply the transformation to each row
 - Fix:
   - dec2hex: fix odd byte cropping issue
 

