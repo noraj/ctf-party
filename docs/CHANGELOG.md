@@ -7,6 +7,7 @@
   - Now can read from STDIN
   - Add some commands from native String class: `bytesize`, `capitalize`, `chomp`, `chop`, `downcase`, `dump`, `hex`, `inspect`, `length`, `lstrip`, `reverse`, `rstrip`, `scrub`, `shellescape`, `size`, `squeeze`, `strip`, `succ`, `swapcase`, `undump`, `unicode_normalize`, `upcase`
   - Add `--row` option: apply the transformation to each row
+  - Add `--file` option: interpret the string as a filename (read from file)
 - Fix:
   - dec2hex: fix odd byte cropping issue
 

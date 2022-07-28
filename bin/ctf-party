@@ -79,7 +79,7 @@ doc = <<~DOCOPT
   ctf-party v#{Version::VERSION} by noraj
 
   Usage:
-    ctf-party <string> <cmd>... [--row] [--debug]
+    ctf-party <string> <cmd>... [--row --file] [--debug]
     ctf-party --list-commands [--debug]
     ctf-party -h | --help
     ctf-party --version
@@ -91,6 +91,7 @@ doc = <<~DOCOPT
   Options:
     -l, --list-commands   List available commands (see https://noraj.github.io/ctf-party/yard/String.html)
     -r, --row             Apply the transformation to each row
+    -f, --file            Interpret the string as a filename, if file doesn't exist it will still be treated as a string
     --debug               Display arguments
     -h, --help            Show this screen
     --version             Show version
@@ -99,8 +100,9 @@ doc = <<~DOCOPT
     ctf-party 'security' to_hex
     ctf-party 'NzQ2Zjc0NmY=' from_b64 hex2bin
     curl -s https://example.org | ctf-party - htmlescape
-    seq 1 10 | ctf-party - to_b64 --row
+    seq 1 10 | ctf-party - dec2hex hex2bin --row
     cut -d : -f 1 /etc/passwd | ctf-party - randomcase --row
+    ctf-party /etc/passwd str2hex --row --file
 DOCOPT
 
 begin
@@ -109,6 +111,7 @@ begin
   pp args if args['--debug']
   if args['<string>']
     args['<string>'] = $stdin.read.chomp if args['<string>'] == '-'
+    args['<string>'] = File.read(args['<string>']) if args['--file'] and File.exists?(args['<string>'])
     wrong_cmd = args['<cmd>'] - cmd_whitelist.keys.map(&:to_s)
     if wrong_cmd.empty?
       if args['--row']

