@@ -51,13 +51,16 @@ cmd_whitelist = {
 }
 
 doc = <<~DOCOPT
-  ctf-party by noraj
+  ctf-party v#{Version::VERSION} by noraj
 
   Usage:
     ctf-party <string> <cmd>... [--debug]
     ctf-party --list-commands [--debug]
     ctf-party -h | --help
     ctf-party --version
+
+  Parameters:
+    <string>              The string to manipulate, read from STDIN if equal to "-"
 
   Options:
     -l, --list-commands   List available commands (see https://noraj.github.io/ctf-party/yard/String.html)
@@ -67,7 +70,8 @@ doc = <<~DOCOPT
 
   Examples:
     ctf-party 'security' to_hex
-    ctf-party 'NzQ2Zjc0NmY=' from_b64 hex2str str2bin
+    ctf-party 'NzQ2Zjc0NmY=' from_b64 hex2bin
+    curl -s https://example.org | ctf-party - htmlescape
 DOCOPT
 
 begin
@@ -75,6 +79,7 @@ begin
   # use case 1, using the tool
   pp args if args['--debug']
   if args['<string>']
+    args['<string>'] = STDIN.read.chomp if args['<string>'] == '-'
     wrong_cmd = args['<cmd>'] - cmd_whitelist.keys.map(&:to_s)
     if wrong_cmd.empty?
       output = args['<string>']
