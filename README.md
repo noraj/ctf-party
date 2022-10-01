@@ -72,4 +72,4 @@ Homepage / Documentation: https://noraj.github.io/ctf-party/
 
 ## Author
 
-Made by Alexandre ZANNI ([@noraj](https://pwn.by/noraj/)).
+Made by Alexandre ZANNI ([@noraj](https://pwn.by/noraj/)). Forked from [Orange-Cyberdefense/ctf-party](https://github.com/Orange-Cyberdefense/ctf-party).
