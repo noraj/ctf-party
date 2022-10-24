@@ -2,7 +2,6 @@
 # frozen_string_literal: true
 
 # Ruby internal
-require 'pp'
 require 'shellwords' # for shellescape cmd
 # Project internal
 require 'ctf_party'
