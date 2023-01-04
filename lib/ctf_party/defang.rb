@@ -20,11 +20,11 @@ class String
     when URI::HTTP, URI::HTTPS, URI::FTP
       uri.scheme = uri.scheme.gsub(/t/i, 'X')
     when URI::WS, URI::WSS
-      uri.scheme.insert(1, 'X')
+      uri.scheme = uri.scheme.dup.insert(1, 'X')
     when URI::LDAP, URI::LDAPS
-      uri.scheme.insert(2, 'X')
+      uri.scheme = uri.scheme.dup.insert(2, 'X')
     when URI::MailTo
-      uri.scheme.insert(4, 'X')
+      uri.scheme = uri.scheme.dup.insert(4, 'X')
     end
     uri.to_s.gsub('.', '[.]')
   end
