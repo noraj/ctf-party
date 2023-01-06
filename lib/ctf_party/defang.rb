@@ -5,9 +5,9 @@ require 'uri'
 
 class String
   def defang_ip
-    if IPAddr.new(self).ipv4?
+    if ipv4?
       gsub('.', '[.]')
-    elsif IPAddr.new(self).ipv6?
+    elsif ipv6?
       gsub(':', '[:]')
     else
       self
@@ -30,7 +30,7 @@ class String
   end
 
   def defang_domain
-    skip
+    gsub('.', '[.]') if domain?
   end
 
   def defang_email
