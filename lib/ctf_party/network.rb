@@ -51,4 +51,26 @@ class String
     true
   end
   # rubocop:enable Metrics/PerceivedComplexity
+
+  # https://stackoverflow.com/questions/22993545/ruby-email-validation-with-regex/75050279#75050279
+  def email?(opts = {})
+    opts[:mode] ||= :rfc5322
+    case opts[:mode]
+    when :strict, :rfc4648
+      %r{\A(?:[a-z0-9!#$%&'*+/=?^_‘{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_‘{|}~-]+)*|
+      "(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|
+      \\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|
+      \[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|
+      [a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|
+      \\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])\z}ix.match?(self)
+    when :light
+      %r{\A[a-z0-9!#$%&'*+/=?^_‘{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_‘{|}~-]+)*@
+      (?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\z}ix.match?(self)
+    when :lightwithlength
+      %r{\A(?=[a-z0-9@.!#$%&'*+/=?^_‘{|}~-]{6,254}\z)
+      (?=[a-z0-9.!#$%&'*+/=?^_‘{|}~-]{1,64}@)[a-z0-9!#$%&'*+/=?^_‘{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_‘{|}~-]+)*@
+      (?:(?=[a-z0-9-]{1,63}\.)[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+
+      (?=[a-z0-9-]{1,63}\z)[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\z}ix.match?(self)
+    end
+  end
 end
