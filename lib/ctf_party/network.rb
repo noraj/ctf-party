@@ -20,8 +20,16 @@ class String
     ipv4? || ipv6?
   end
 
-  def uri?
-    URI::DEFAULT_PARSER.make_regexp(%w[ftp http https ldap ldaps mailto ws wss]).match?(self)
+  # lax = false is still lax
+  def uri?(opts = {})
+    opts[:lax] ||= false
+    strict = URI::DEFAULT_PARSER.make_regexp(%w[ftp http https ldap ldaps mailto ws wss]).match?(self)
+    lax = URI::DEFAULT_PARSER.make_regexp.match?(self)
+    if opts[:lax] == true
+      strict || lax
+    else
+      strict
+    end
   end
 
   # quiet lax
