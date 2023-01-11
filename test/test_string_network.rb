@@ -66,4 +66,53 @@ class CTFPartyTest < Minitest::Test
     assert_equal(true, 'a:'.uri?(lax: true))
     assert_equal(true, 'http:'.uri?)
   end
+
+  def test_network_domain?
+    assert_equal(true, 'pwn.by'.domain?)
+    assert_equal(true, 'inventory.raw.pm'.domain?)
+    assert_equal(true, 'noraj.github.io'.domain?)
+    assert_equal(true, '4programmer.com'.domain?)
+    assert_equal(true, 'arachni-scanner.com'.domain?)
+    assert_equal(true, 'xn--en8h.cf'.domain?)
+    assert_equal(true, '🏳.cf'.domain?)
+    assert_equal(false, "#{'a' * 255}.com".domain?)
+    assert_equal(false, ('a.' * 128).domain?)
+    assert_equal(false, 'notld'.domain?)
+    assert_equal(false, '.startwithadot.org'.domain?)
+    assert_equal(false, "#{'a' * 64}.net".domain?)
+    assert_equal(false, 'a.-b.net'.domain?)
+    assert_equal(false, 'a.c-.net'.domain?)
+    assert_equal(false, 'a..d.net'.domain?)
+    assert_equal(false, "\u{001F}.com".domain?)
+  end
+
+  def test_network_email?
+    overlong = "n#{'o' * 255}raj@pwn.by"
+    alias_ = 'noraj+alias@pwn.by'
+    dot = 'noraj.rawsec@pwn.by'
+    under = '_valid@ruby.org'
+    special = 'valid%$@domain.com'
+    quoted = '"valid"@domain.com'
+    [overlong, alias_, dot, under, special].each do |email|
+      assert_equal(true, email.email?)
+      assert_equal(true, email.email?(mode: :rfc5322))
+      assert_equal(true, email.email?(mode: :strict))
+      assert_equal(true, email.email?(mode: :light))
+    end
+    assert_equal(false, overlong.email?(mode: :lightwithlength))
+    [alias_, dot, under, special].each do |email|
+      assert_equal(true, email.email?(mode: :lightwithlength))
+    end
+    assert_equal(true, quoted.email?)
+    assert_equal(false, quoted.email?(mode: :light))
+    assert_equal(false, quoted.email?(mode: :lightwithlength))
+
+    ['.@toto.fr', '-@z', '++++++++.........@z', 'invalíd@mail.com', 'invalid%$£"@domain.com', 'invalid£@domain.com', 'invali"d@domain.com', '.dot..dot.@example.org', '!#$%’*+-/=?^_`{|}~@example.org'].each do |email|
+      assert_equal(false, email.email?)
+      assert_equal(false, email.email?(mode: :rfc5322))
+      assert_equal(false, email.email?(mode: :strict))
+      assert_equal(false, email.email?(mode: :light))
+      assert_equal(false, email.email?(mode: :lightwithlength))
+    end
+  end
 end
