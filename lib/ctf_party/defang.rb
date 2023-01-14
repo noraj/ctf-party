@@ -17,6 +17,10 @@ class String
     end
   end
 
+  def defang_ip!(opts = {})
+    replace(defang_ip(opts))
+  end
+
   def refang_ip(opts = {})
     opts[:unvalid] ||= false
     re_ipv4 = gsub('[.]', '.')
@@ -30,6 +34,10 @@ class String
     else
       self
     end
+  end
+
+  def refang_ip!(opts = {})
+    replace(refang_ip(opts))
   end
 
   def defang_uri
