@@ -61,6 +61,10 @@ class String
     uri.to_s.gsub('.', '[.]')
   end
 
+  def defang_uri!
+    replace(defang_uri)
+  end
+
   def refang_uri
     if %r{://}.match?(self)
       scheme, remains = split('://', 2)
@@ -79,7 +83,16 @@ class String
       return scheme.concat(":#{remains}")
     end
     remains.gsub!('[.]', '.')
-    scheme.concat("://#{remains}")
+    if %r{://}.match?(self)
+      scheme.concat("://#{remains}")
+    else
+      scheme.concat(":#{remains}")
+    end
+
+  end
+
+  def refang_uri!
+    replace(refang_uri)
   end
 
   def defang_domain(opts = {})
