@@ -131,13 +131,21 @@ class String
     end
   end
 
+  def defang_email!(opts = {})
+    replace(defang_email(opts))
+  end
+
   def refang_email(opts = {})
     opts[:unvalid] ||= false
     re_email = gsub('[.]', '.').gsub('[@]', '@')
-    if re_email.domain? || opts[:unvalid] == true
+    if re_email.email? || opts[:unvalid] == true
       re_email
     else
       self
     end
+  end
+
+  def refang_email!(opts = {})
+    replace(refang_email(opts))
   end
 end

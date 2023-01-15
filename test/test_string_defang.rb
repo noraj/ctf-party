@@ -132,4 +132,50 @@ class CTFPartyTest < Minitest::Test
     mystr.refang_domain!
     assert_equal('noraj.github.io', mystr)
   end
+
+  def test_defang_defang_email
+    overlong = "n#{'o' * 255}raj@pwn.by"
+    alias_ = 'noraj+alias@pwn.by'
+    dot = 'noraj.rawsec@pwn.by'
+    under = '_valid@ruby.org'
+    special = 'valid%$@domain.com'
+    quoted = '"valid"@domain.com'
+    assert_equal("n#{'o' * 255}raj[@]pwn[.]by", overlong.defang_email)
+    assert_equal('noraj+alias[@]pwn[.]by', alias_.defang_email)
+    assert_equal('noraj[.]rawsec[@]pwn[.]by', dot.defang_email)
+    assert_equal('_valid[@]ruby[.]org', under.defang_email)
+    assert_equal('valid%$[@]domain[.]com', special.defang_email)
+    assert_equal('"valid"[@]domain[.]com', quoted.defang_email)
+    ['.@toto.fr', '-@z', '++++++++.........@z', 'invalíd@mail.com', 'invalid%$£"@domain.com', 'invalid£@domain.com', 'invali"d@domain.com', '.dot..dot.@example.org', '!#$%’*+-/=?^_`{|}~@example.org'].each do |email|
+      assert_equal(email, email.defang_email)
+    end
+    assert_equal('[.][@]toto[.]fr', '.@toto.fr'.defang_email(unvalid: true))
+  end
+
+  def test_defang_defang_email!
+    mystr = 'invalid£@domain.com'
+    mystr.defang_email!(unvalid: true)
+    assert_equal('invalid£[@]domain[.]com', mystr)
+  end
+
+  def test_defang_refang_email
+    overlong = "n#{'o' * 255}raj@pwn.by"
+    alias_ = 'noraj+alias@pwn.by'
+    dot = 'noraj.rawsec@pwn.by'
+    under = '_valid@ruby.org'
+    special = 'valid%$@domain.com'
+    quoted = '"valid"@domain.com'
+    [overlong, alias_, dot, under, special, quoted].each do |email|
+      assert_equal(email, email.defang_email.refang_email)
+    end
+    ['.@toto.fr', '-@z', '++++++++.........@z', 'invalíd@mail.com', 'invalid%$£"@domain.com', 'invalid£@domain.com', 'invali"d@domain.com', '.dot..dot.@example.org', '!#$%’*+-/=?^_`{|}~@example.org'].each do |email|
+      assert_equal(email, email.defang_email(unvalid: true).refang_email(unvalid: true))
+    end
+  end
+
+  def test_defang_refang_email!
+    mystr = 'invalid£[@]domain[.]com'
+    mystr.refang_email!(unvalid: true)
+    assert_equal('invalid£@domain.com', mystr)
+  end
 end
