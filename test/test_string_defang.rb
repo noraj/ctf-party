@@ -80,4 +80,56 @@ class CTFPartyTest < Minitest::Test
     mystr.refang_uri!
     assert_equal('https://writeup.raw.pm/', mystr)
   end
+
+  def test_defang_defang_domain
+    assert_equal('pwn[.]by', 'pwn.by'.defang_domain)
+    assert_equal('inventory[.]raw[.]pm', 'inventory.raw.pm'.defang_domain)
+    assert_equal('4programmer[.]com', '4programmer.com'.defang_domain)
+    assert_equal('arachni-scanner[.]com', 'arachni-scanner.com'.defang_domain)
+    assert_equal('xn--en8h[.]cf', 'xn--en8h.cf'.defang_domain)
+    assert_equal('🏳[.]cf', '🏳.cf'.defang_domain)
+    assert_equal("#{'a' * 255}.com", "#{'a' * 255}.com".defang_domain)
+    assert_equal("#{'a.' * 128}.com", "#{'a.' * 128}.com".defang_domain)
+    assert_equal('notld', 'notld'.defang_domain)
+    assert_equal('.startwithadot.org', '.startwithadot.org'.defang_domain)
+    assert_equal("#{'a' * 64}.net", "#{'a' * 64}.net".defang_domain)
+    assert_equal('a.-b.net', 'a.-b.net'.defang_domain)
+    assert_equal('a.c-.net', 'a.c-.net'.defang_domain)
+    assert_equal('a..d.net', 'a..d.net'.defang_domain)
+    assert_equal("\u{001F}.com", "\u{001F}.com".defang_domain)
+    assert_equal('[.]startwithadot[.]org', '.startwithadot.org'.defang_domain(unvalid: true))
+    assert_equal('a[.][.]d[.]net', 'a..d.net'.defang_domain(unvalid: true))
+  end
+
+  def test_defang_defang_domain!
+    mystr = 'noraj.github.io'
+    mystr.defang_domain!
+    assert_equal('noraj[.]github[.]io', mystr)
+  end
+
+  def test_defang_refang_domain
+    assert_equal('pwn.by', 'pwn[.]by'.refang_domain)
+    assert_equal('inventory.raw.pm', 'inventory[.]raw[.]pm'.refang_domain)
+    assert_equal('4programmer.com', '4programmer[.]com'.refang_domain)
+    assert_equal('arachni-scanner.com', 'arachni-scanner[.]com'.refang_domain)
+    assert_equal('xn--en8h.cf', 'xn--en8h[.]cf'.refang_domain)
+    assert_equal('🏳.cf', '🏳[.]cf'.refang_domain)
+    assert_equal("#{'a' * 255}.com", "#{'a' * 255}.com".refang_domain)
+    assert_equal("#{'a.' * 128}.com", "#{'a.' * 128}.com".refang_domain)
+    assert_equal('notld', 'notld'.refang_domain)
+    assert_equal('.startwithadot.org', '.startwithadot.org'.refang_domain)
+    assert_equal("#{'a' * 64}.net", "#{'a' * 64}.net".refang_domain)
+    assert_equal('a.-b.net', 'a.-b.net'.refang_domain)
+    assert_equal('a.c-.net', 'a.c-.net'.refang_domain)
+    assert_equal('a..d.net', 'a..d.net'.refang_domain)
+    assert_equal("\u{001F}.com", "\u{001F}.com".refang_domain)
+    assert_equal('.startwithadot.org', '[.]startwithadot[.]org'.refang_domain(unvalid: true))
+    assert_equal('a..d.net', 'a[.][.]d[.]net'.refang_domain(unvalid: true))
+  end
+
+  def test_defang_refang_domain!
+    mystr = 'noraj[.]github[.]io'
+    mystr.refang_domain!
+    assert_equal('noraj.github.io', mystr)
+  end
 end

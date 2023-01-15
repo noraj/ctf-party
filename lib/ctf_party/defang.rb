@@ -104,6 +104,10 @@ class String
     end
   end
 
+  def defang_domain!(opts = {})
+    replace(defang_domain(opts))
+  end
+
   def refang_domain(opts = {})
     opts[:unvalid] ||= false
     re_domain = gsub('[.]', '.')
@@ -112,6 +116,10 @@ class String
     else
       self
     end
+  end
+
+  def refang_domain!(opts = {})
+    replace(refang_domain(opts))
   end
 
   def defang_email(opts = {})

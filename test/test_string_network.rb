@@ -76,7 +76,7 @@ class CTFPartyTest < Minitest::Test
     assert_equal(true, 'xn--en8h.cf'.domain?)
     assert_equal(true, '🏳.cf'.domain?)
     assert_equal(false, "#{'a' * 255}.com".domain?)
-    assert_equal(false, ('a.' * 128).domain?)
+    assert_equal(false, "#{'a.' * 128}.com".domain?)
     assert_equal(false, 'notld'.domain?)
     assert_equal(false, '.startwithadot.org'.domain?)
     assert_equal(false, "#{'a' * 64}.net".domain?)
