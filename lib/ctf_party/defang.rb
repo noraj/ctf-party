@@ -4,6 +4,15 @@ require 'ipaddr'
 require 'uri'
 
 class String
+  # Defang the string if it is an IP address
+  # @param opts [Hash] optional parameters
+  # @option opts [Symbol] :unvalid Default value: `false`.
+  #   If `unvalid: false`, only valid IP address will be defanged.
+  #   If `unvalid: true`, everything is defanged.
+  # @return [String] the defanged string if it is a valid IP address or itself else.
+  # @example
+  #   '1.1.1.1'.defang_ip # => 1[.]1[.]1[.]1
+  #   '2606:4700:4700::1111'.defang_ip # => '2606[:]4700[:]4700[:][:]1111'
   def defang_ip(opts = {})
     opts[:unvalid] ||= false
     if ipv4?
@@ -17,6 +26,12 @@ class String
     end
   end
 
+  # Defang the string in place, if it is an IP address, as described for {String#defang_ip}.
+  # @return [nil]
+  # @example
+  #   my_str = '127.0.0.1'
+  #   my_str.defang_ip!
+  #   my_str # => 127[.]0[.]0[.]1
   def defang_ip!(opts = {})
     replace(defang_ip(opts))
   end
