@@ -130,7 +130,7 @@ $ gem install --development ctf-party
 
 ### **git**
 
-Just replace `x.x.x` with the gem version you see after `gem build`.
+Just replace `2.3.0` with the gem version you see after `gem build`.
 
 ```
 $ git clone https://github.com/noraj/ctf-party.git ctf-party
@@ -138,7 +138,7 @@ $ cd ctf-party
 $ gem install bundler
 $ bundler install
 $ gem build ctf_party.gemspec
-$ gem install ctf-party-x.x.x.gem
+$ gem install ctf-party-2.3.0.gem
 ```
 
 Note: if an automatic install is needed you can get the version with `$ gem build ctf_party.gemspec | grep Version | cut -d' ' -f4`.

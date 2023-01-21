@@ -21,7 +21,7 @@ $ bundle exec yard doc
 Create an **annotated git tag**:
 
 ```
-$ git tag -a vx.x.x
+$ git tag -a v2.3.0
 ```
 
 Push the changes including the tags:
@@ -41,7 +41,7 @@ $ bundle exec rake build
 Push the new gem release on **RubyGems** See https://guides.rubygems.org/publishing/.
 
 ```
-$ gem push ctf-party-x.x.x.gem
+$ gem push ctf-party-2.3.0.gem
 ```
 
 ## Docker container registries
@@ -51,12 +51,12 @@ $ gem push ctf-party-x.x.x.gem
 ### **Docker Hub**
 
 ```
-$ docker build -f Dockerfile -t noraj/ctf-party:x.x.x --build-arg CTF_PARTY_VERSION=x.x.x .
+$ docker build -f Dockerfile -t noraj/ctf-party:2.3.0 --build-arg CTF_PARTY_VERSION=2.3.0 .
 
 $ docker login docker.io
 
 $ pass show docker-credential-helpers/aHR0cHM6Ly9pbmRleC5kb2NrZXIuaW8vdjEv/USERNAME
-$ docker push docker.io/noraj/ctf-party:x.x.x
+$ docker push docker.io/noraj/ctf-party:2.3.0
 $ docker push docker.io/noraj/ctf-party
 ```
 
@@ -65,13 +65,13 @@ $ docker push docker.io/noraj/ctf-party
 GHCR = Github Container Registry
 
 ```
-$ docker build -f Dockerfile -t ghcr.io/noraj/ctf-party:x.x.x --build-arg CTF_PARTY_VERSION=x.x.x .
+$ docker build -f Dockerfile -t ghcr.io/noraj/ctf-party:2.3.0 --build-arg CTF_PARTY_VERSION=2.3.0 .
 
 $ export CR_PAT=YOUR_TOKEN
 $ echo $CR_PAT | docker login ghcr.io -u USERNAME --password-stdin
 
 $ pass show docker-credential-helpers/Z2hjci5pbw==/USERNAME
-$ docker push ghcr.io/noraj/ctf-party:x.x.x
+$ docker push ghcr.io/noraj/ctf-party:2.3.0
 $ docker push ghcr.io/noraj/ctf-party
 ```
 
@@ -80,12 +80,12 @@ $ docker push ghcr.io/noraj/ctf-party
 ACR = Alibaba Cloud Container Registry
 
 ```
-$ docker build -f Dockerfile -t registry-intl.eu-central-1.aliyuncs.com/noraj/ctf-party:x.x.x --build-arg CTF_PARTY_VERSION=x.x.x .
+$ docker build -f Dockerfile -t registry-intl.eu-central-1.aliyuncs.com/noraj/ctf-party:2.3.0 --build-arg CTF_PARTY_VERSION=2.3.0 .
 
 $ docker login registry-intl.eu-central-1.aliyuncs.com
 
 $ pass show docker-credential-helpers/cmVnaXN0cnktaW50bC5ldS1jZW50cmFsLTEuYWxpeXVuY3MuY29t/USERNAME
-$ docker push registry-intl.eu-central-1.aliyuncs.com/noraj/ctf-party:x.x.x
+$ docker push registry-intl.eu-central-1.aliyuncs.com/noraj/ctf-party:2.3.0
 $ docker push registry-intl.eu-central-1.aliyuncs.com/noraj/ctf-party
 ```
 
