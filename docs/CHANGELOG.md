@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.3.0]
+
+- New defang methods:
+  - `defang_ip` & `refang_ip` & bang version
+  - `defang_domain` & `refang_domain` & bang version
+  - `defang_uri` & `refang_uri` & bang version
+  - `defang_email` & `refang_email` & bang version
+- New network methods:
+  - `ipv4?`, `ipv6?`, `ip?`, `uri?`, `domain?`, `email?`
+- Chore:
+  - Add support for Ruby 3.2
+
 ## [2.2.0]
 
 - CLI:
