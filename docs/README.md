@@ -60,6 +60,8 @@ $ ctf-party 'NzQ2Zjc0NmY=' from_b64 hex2str str2bin
 - dec: `dec2str`, `str2dec`, `hex2dec`, `dec2hex` and bang versions
 - xor: `ulxor`, `alxor`, `urxor`, `arxor` and bang versions
 - misc: `istrip` and bang version
+- defang: `defang_ip`, `defang_uri`, `defang_domain`, `defang_email`, `refang_ip`, etc. and bang versions
+- network: `ipv4?`, `ipv6?`, `ip?`, `uri?`, `domain?`, `email?`
 
 ## References
 

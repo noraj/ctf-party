@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
                     'code patterns. Methods for base64, digest (hash), flag, ' \
                     'rot (Caesar), hexadecimal, case, cgi (URL encoding/decoding, ' \
                     'HTML escaping/unescaping), binary, leet (1337), decimal, ' \
-                    'XOR, whitespace strip.'
+                    'XOR, whitespace strip, IP/URI/domain/email defang/refang.'
   s.authors       = ['Alexandre ZANNI']
   s.email         = 'alexandre.zanni@engineer.com'
   s.homepage      = 'https://noraj.github.io/ctf-party/'
