@@ -115,7 +115,7 @@ DOCOPT
 begin
   args = Docopt.docopt(doc, version: Version::VERSION)
   # use case 1, using the tool
-  pp args if args['--debug']
+  puts args if args['--debug']
   if args['<string>']
     args['<string>'] = $stdin.read.chomp if args['<string>'] == '-'
     args['<string>'] = File.read(args['<string>']) if args['--file'] && File.exist?(args['<string>'])
