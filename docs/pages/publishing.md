@@ -51,13 +51,15 @@ $ gem push ctf-party-2.3.0.gem
 ### **Docker Hub**
 
 ```
-$ docker build -f Dockerfile -t noraj/ctf-party:2.3.0 --build-arg CTF_PARTY_VERSION=2.3.0 .
+$ export CTF_PARTY_VERSION=2.3.0
+$ docker build -f Dockerfile -t noraj/ctf-party:$CTF_PARTY_VERSION --build-arg CTF_PARTY_VERSION=$CTF_PARTY_VERSION .
+$ docker build -f Dockerfile -t noraj/ctf-party:latest --build-arg CTF_PARTY_VERSION=$CTF_PARTY_VERSION .
 
 $ docker login docker.io
 
 $ pass show docker-credential-helpers/aHR0cHM6Ly9pbmRleC5kb2NrZXIuaW8vdjEv/USERNAME
-$ docker push docker.io/noraj/ctf-party:2.3.0
-$ docker push docker.io/noraj/ctf-party
+$ docker push docker.io/noraj/ctf-party:$CTF_PARTY_VERSION
+$ docker push docker.io/noraj/ctf-party:latest
 ```
 
 ### **Github (GHCR)**
@@ -65,14 +67,16 @@ $ docker push docker.io/noraj/ctf-party
 GHCR = Github Container Registry
 
 ```
-$ docker build -f Dockerfile -t ghcr.io/noraj/ctf-party:2.3.0 --build-arg CTF_PARTY_VERSION=2.3.0 .
+$ export CTF_PARTY_VERSION=2.3.0
+$ docker build -f Dockerfile -t ghcr.io/noraj/ctf-party:$CTF_PARTY_VERSION --build-arg CTF_PARTY_VERSION=$CTF_PARTY_VERSION .
+$ docker build -f Dockerfile -t ghcr.io/noraj/ctf-party:latest --build-arg CTF_PARTY_VERSION=$CTF_PARTY_VERSION .
 
 $ export CR_PAT=YOUR_TOKEN
 $ echo $CR_PAT | docker login ghcr.io -u USERNAME --password-stdin
 
 $ pass show docker-credential-helpers/Z2hjci5pbw==/USERNAME
-$ docker push ghcr.io/noraj/ctf-party:2.3.0
-$ docker push ghcr.io/noraj/ctf-party
+$ docker push ghcr.io/noraj/ctf-party:$CTF_PARTY_VERSION
+$ docker push ghcr.io/noraj/ctf-party:latest
 ```
 
 ### **Alibaba Cloud (ACR)**
@@ -80,13 +84,15 @@ $ docker push ghcr.io/noraj/ctf-party
 ACR = Alibaba Cloud Container Registry
 
 ```
-$ docker build -f Dockerfile -t registry-intl.eu-central-1.aliyuncs.com/noraj/ctf-party:2.3.0 --build-arg CTF_PARTY_VERSION=2.3.0 .
+$ export CTF_PARTY_VERSION=2.3.0
+$ docker build -f Dockerfile -t registry-intl.eu-central-1.aliyuncs.com/noraj/ctf-party:$CTF_PARTY_VERSION --build-arg CTF_PARTY_VERSION=$CTF_PARTY_VERSION .
+$ docker build -f Dockerfile -t registry-intl.eu-central-1.aliyuncs.com/noraj/ctf-party:latest --build-arg CTF_PARTY_VERSION=$CTF_PARTY_VERSION .
 
 $ docker login registry-intl.eu-central-1.aliyuncs.com
 
 $ pass show docker-credential-helpers/cmVnaXN0cnktaW50bC5ldS1jZW50cmFsLTEuYWxpeXVuY3MuY29t/USERNAME
-$ docker push registry-intl.eu-central-1.aliyuncs.com/noraj/ctf-party:2.3.0
-$ docker push registry-intl.eu-central-1.aliyuncs.com/noraj/ctf-party
+$ docker push registry-intl.eu-central-1.aliyuncs.com/noraj/ctf-party:$CTF_PARTY_VERSION
+$ docker push registry-intl.eu-central-1.aliyuncs.com/noraj/ctf-party:latest
 ```
 
 ### **Quay.io**
