@@ -89,4 +89,18 @@ $ docker push registry-intl.eu-central-1.aliyuncs.com/noraj/ctf-party:2.3.0
 $ docker push registry-intl.eu-central-1.aliyuncs.com/noraj/ctf-party
 ```
 
+### **Quay.io**
+
+```
+$ export CTF_PARTY_VERSION=2.3.0
+$ docker build -f Dockerfile -t quay.io/noraj/ctf-party:$CTF_PARTY_VERSION --build-arg CTF_PARTY_VERSION=$CTF_PARTY_VERSION .
+$ docker build -f Dockerfile -t quay.io/noraj/ctf-party:latest --build-arg CTF_PARTY_VERSION=$CTF_PARTY_VERSION .
+
+$ docker login quay.io
+
+$ pass show docker-credential-helpers/cXVheS5pbw==/USERNAME
+$ docker push quay.io/noraj/ctf-party:$CTF_PARTY_VERSION
+$ docker push quay.io/noraj/ctf-party:latest
+```
+
 <!-- tabs:end -->

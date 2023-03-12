@@ -114,6 +114,20 @@ $ docker pull registry-intl.eu-central-1.aliyuncs.com/noraj/ctf-party:2.3.0
 
 Repository: [the overview page is not public](https://cr.console.aliyun.com/repository/eu-central-1/noraj/ctf-party/details)
 
+### **Docker (Quay)**
+
+host: `quay.io`
+
+```
+# latest
+$ docker pull quay.io/noraj/ctf-party
+
+# specific tag
+$ docker pull quay.io/noraj/ctf-party:2.3.0
+```
+
+Repository: [noraj/ctf-party](https://quay.io/repository/noraj/ctf-party?tab=info)
+
 <!-- tabs:end -->
 
 ## Development
