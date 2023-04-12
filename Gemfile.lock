@@ -21,7 +21,7 @@ GEM
     rake (13.0.6)
     regexp_parser (2.7.0)
     rexml (3.2.5)
-    rubocop (1.49.0)
+    rubocop (1.50.0)
       json (~> 2.3)
       parallel (~> 1.10)
       parser (>= 3.2.0.0)
@@ -48,7 +48,7 @@ DEPENDENCIES
   minitest (~> 5.18)
   minitest-skip (~> 0.0)
   rake (~> 13.0)
-  rubocop (~> 1.49)
+  rubocop (~> 1.50)
   yard (>= 0.9.27, < 0.10)
 
 BUNDLED WITH
