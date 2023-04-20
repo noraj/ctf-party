@@ -1,5 +1,10 @@
 # Changelog
 
+## [3.0.0 - Unreleased]
+
+- **Breaking changes**
+  - **Drop Ruby 2.7 support** because there is no `URI:WS` and `URI:WSS` used for `defang_uri` and anyway [official support has ended too](https://www.ruby-lang.org/en/downloads/branches/)
+
 ## [2.3.0]
 
 - New defang methods:
