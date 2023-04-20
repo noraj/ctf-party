@@ -43,7 +43,13 @@ class CTFPartyTest < Minitest::Test
     assert_equal('hxxp://noraj[.]neverssl[.]com/online/', 'http://noraj.neverssl.com/online/'.defang_uri)
     assert_equal('hxxps://pwn[.]by/noraj/?id=42&countre=France#awesome', 'https://pwn.by/noraj/?id=42&countre=France#awesome'.defang_uri)
     assert_equal('ldxap://ldap[.]example[.]org/cn=John%20Doe,dc=example,dc=org','ldap://ldap.example.org/cn=John%20Doe,dc=example,dc=org'.defang_uri)
-    assert_equal('ldxaps:///dc=example,dc=org??sub?(givenName=John)', 'ldaps:///dc=example,dc=org??sub?(givenName=John)'.defang_uri)
+    unless RUBY_VERSION[..2] == '3.0' # probably because this is not backported https://github.com/ruby/ruby/pull/7260
+      # special case with implied address and port
+      assert_equal('ldxaps:///dc=example,dc=org??sub?(givenName=John)', 'ldaps:///dc=example,dc=org??sub?(givenName=John)'.defang_uri)
+    else
+      # full set
+      assert_equal('ldxaps://ds[.]example[.]com:389/dc=example,dc=com?givenName,sn,cn?sub?(uid=john[.]doe)', 'ldaps://ds.example.com:389/dc=example,dc=com?givenName,sn,cn?sub?(uid=john.doe)'.defang_uri)
+    end
     assert_equal('mailxto:noraj[@]rubyfu[.]net?subject=Hack the planet&cc=contact[@]rubyfu[.]net&bcc=love[@]rubyfu[.]net&body=Bonjour', 'mailto:noraj@rubyfu.net?subject=Hack the planet&cc=contact@rubyfu.net&bcc=love@rubyfu.net&body=Bonjour'.defang_uri)
     assert_equal('wxs://example[.]org/chat', 'ws://example.org/chat'.defang_uri)
     assert_equal('wxss://javascript[.]info/article/websocket/demo/hello', 'wss://javascript.info/article/websocket/demo/hello'.defang_uri)
@@ -63,7 +69,12 @@ class CTFPartyTest < Minitest::Test
     http = 'http://noraj.neverssl.com/online/'
     https = 'https://pwn.by/noraj/?id=42&countre=France#awesome'
     ldap = 'ldap://ldap.example.org/cn=John%20Doe,dc=example,dc=org'
-    ldaps = 'ldaps:///dc=example,dc=org??sub?(givenName=John)'
+    unless RUBY_VERSION[..2] == '3.0' # probably because this is not backported https://github.com/ruby/ruby/pull/7260
+      # special case with implied address and port
+      ldaps = 'ldaps:///dc=example,dc=org??sub?(givenName=John)'
+    else
+      ldaps = 'ldaps://ds.example.com:389/dc=example,dc=com?givenName,sn,cn?sub?(uid=john.doe)'
+    end
     mailto = 'mailto:noraj@rubyfu.net?subject=Hack the planet&cc=contact@rubyfu.net&bcc=love@rubyfu.net&body=Bonjour'
     ws = 'ws://example.org/chat'
     wss = 'wss://javascript.info/article/websocket/demo/hello'
