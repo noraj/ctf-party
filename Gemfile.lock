@@ -21,7 +21,7 @@ GEM
     rake (13.0.6)
     regexp_parser (2.8.0)
     rexml (3.2.5)
-    rubocop (1.51.0)
+    rubocop (1.52.0)
       json (~> 2.3)
       parallel (~> 1.10)
       parser (>= 3.2.0.0)
@@ -31,7 +31,7 @@ GEM
       rubocop-ast (>= 1.28.0, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 2.4.0, < 3.0)
-    rubocop-ast (1.28.1)
+    rubocop-ast (1.29.0)
       parser (>= 3.2.1.0)
     ruby-progressbar (1.13.0)
     unicode-display_width (2.4.2)
@@ -48,7 +48,7 @@ DEPENDENCIES
   minitest (~> 5.18)
   minitest-skip (~> 0.0)
   rake (~> 13.0)
-  rubocop (~> 1.51)
+  rubocop (~> 1.52)
   yard (>= 0.9.27, < 0.10)
 
 BUNDLED WITH
