@@ -106,25 +106,52 @@ class CTFPartyTest < Minitest::Test
     # skip
   end
 
-  def test_hex_from_hexip
+  def test_hex_from_hexipv4
     ip = '127.0.0.1'
-    assert_equal(ip, '0100007F'.from_hexip(nibble: :low))
-    assert_equal(ip, '0x7f000001'.from_hexip(prefix: '0x'))
-    assert_equal(ip, '\\x7f\\x00\\x00\\x01'.from_hexip(prefix: '\\x'))
+    assert_equal(ip, '0100007F'.from_hexipv4(nibble: :low))
+    assert_equal(ip, '0x7f000001'.from_hexipv4(prefix: '0x'))
+    assert_equal(ip, '\\x7f\\x00\\x00\\x01'.from_hexipv4(prefix: '\\x'))
+  end
+
+  skip def test_hex_from_hexipv4!
+    # skip
+  end
+
+  def test_hex_from_hexip
+    # skip, alias of from_hexipv4
   end
 
   skip def test_hex_from_hexip!
+    # skip, alias of from_hexipv4!
+  end
+
+  def test_hex_to_hexipv4
+    ip = '127.0.0.1'
+    assert_equal('7f000001', ip.to_hexipv4)
+    assert_equal('0100007f', ip.to_hexipv4(nibble: :low))
+    assert_equal('\\x7f\\x00\\x00\\x01', ip.to_hexipv4(prefixall: '\\x'))
+  end
+
+  skip def test_hex_to_hexipv4!
     # skip
   end
 
   def test_hex_to_hexip
-    ip = '127.0.0.1'
-    assert_equal('7f000001', ip.to_hexip)
-    assert_equal('0100007f', ip.to_hexip(nibble: :low))
-    assert_equal('\\x7f\\x00\\x00\\x01', ip.to_hexip(prefixall: '\\x'))
+    # skip, alias of to_hexipv4
   end
 
   skip def test_hex_to_hexip!
+    # skip, alias of to_hexipv4!
+  end
+
+  def test_hex_from_hexipv6
+    ip = '[fe80::5054:ff:fe1d:adb6]'
+    assert_equal(ip, '000080FE00000000FF005450B6AD1DFE'.from_hexipv6)
+    assert_equal(ip, '0x000080FE00000000FF005450B6AD1DFE'.from_hexipv6(prefix: '0x'))
+    assert_equal('[::]', '00000000000000000000000000000000'.from_hexipv6)
+  end
+
+  skip def test_hex_from_hexipv6!
     # skip
   end
 end
