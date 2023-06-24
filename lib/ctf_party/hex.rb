@@ -248,10 +248,10 @@ class String
   #   (`:high` default) or low nibble first (`:low`, used on Unix `/proc/net/tcp`).
   # @return [String] the dotted decimal IP
   # @example
-  #   '0100007F'.from_hexip(nibble: :low) # => "127.0.0.1"
-  #   '0x7f000001'.from_hexip(prefix: '0x') # => "127.0.0.1"
-  #   '\\x7f\\x00\\x00\\x01'.from_hexip(prefix: '\\x') # => "127.0.0.1"
-  def from_hexip(opts = {})
+  #   '0100007F'.from_hexipv4(nibble: :low) # => "127.0.0.1"
+  #   '0x7f000001'.from_hexipv4(prefix: '0x') # => "127.0.0.1"
+  #   '\\x7f\\x00\\x00\\x01'.from_hexipv4(prefix: '\\x') # => "127.0.0.1"
+  def from_hexipv4(opts = {})
     opts[:prefix] ||= ''
     opts[:nibble] ||= :high
     # remove prefix
@@ -262,11 +262,15 @@ class String
     out.join('.')
   end
 
+  alias from_hexip from_hexipv4
+
   # Decode a hexadecimal IP string into a dotted decimal one in place as described
-  # for {String#from_hexip}.
-  def from_hexip!(opts = {})
-    replace(from_hexip(opts))
+  # for {String#from_hexipv4}.
+  def from_hexipv4!(opts = {})
+    replace(from_hexipv4(opts))
   end
+
+  alias from_hexip! from_hexipv4!
 
   # Encode a dotted decimal IP into a hexadecimal one
   # @param opts [Hash] optional parameters
@@ -280,10 +284,10 @@ class String
   #   (`:high` default) or low nibble first (`:low`, used on Unix `/proc/net/tcp`).
   # @return [String] the hexadecimal encoded IP
   # @example
-  #   '127.0.0.1'.to_hexip # => "7f000001"
-  #   '127.0.0.1'.to_hexip(nibble: :low) # => "0100007f"
-  #   '127.0.0.1'.to_hexip(prefixall: '\\x') # => "\\x7f\\x00\\x00\\x01"
-  def to_hexip(opts = {})
+  #   '127.0.0.1'.to_hexipv4 # => "7f000001"
+  #   '127.0.0.1'.to_hexipv4(nibble: :low) # => "0100007f"
+  #   '127.0.0.1'.to_hexipv4(prefixall: '\\x') # => "\\x7f\\x00\\x00\\x01"
+  def to_hexipv4(opts = {})
     opts[:prefix] ||= ''
     opts[:prefixall] ||= ''
     opts[:case] ||= :lower
@@ -299,9 +303,13 @@ class String
     return opts[:prefix] + out
   end
 
+  alias to_hexip to_hexipv4
+
   # Encode a dotted decimal IP into a hexadecimal one in place as described
-  # for {String#to_hexip}.
-  def to_hexip!(opts = {})
-    replace(to_hexip(opts))
+  # for {String#to_hexipv4}.
+  def to_hexipv4!(opts = {})
+    replace(to_hexipv4(opts))
   end
+
+  alias to_hexip! to_hexipv4!
 end
