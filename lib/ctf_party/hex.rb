@@ -240,7 +240,7 @@ class String
     replace(bin2hex(opts))
   end
 
-  # Decode a hexadecimal IP string into a dotted decimal one
+  # Decode a hexadecimal IPv4 string into a dotted decimal one
   # @param opts [Hash] optional parameters
   # @option opts [String] :prefix Prefix of the input. Default value is a void
   #   string. Example of values: `0x`, `\x`, '\\x'.
@@ -264,7 +264,7 @@ class String
 
   alias from_hexip from_hexipv4
 
-  # Decode a hexadecimal IP string into a dotted decimal one in place as described
+  # Decode a hexadecimal IPv4 string into a dotted decimal one in place as described
   # for {String#from_hexipv4}.
   def from_hexipv4!(opts = {})
     replace(from_hexipv4(opts))
@@ -272,7 +272,34 @@ class String
 
   alias from_hexip! from_hexipv4!
 
-  # Encode a dotted decimal IP into a hexadecimal one
+  # Decode a hexadecimal IPv6 string into a the double-dotted hexadecimal format
+  # @param opts [Hash] optional parameters
+  # @option opts [String] :prefix Prefix of the input. Default value is a void
+  #   string. Example of values: `0x`, `\x`, '\\x'.
+  # @return [String] the double-dotted hexadecimal format
+  # @example
+  #   '000080FE00000000FF005450B6AD1DFE'.from_hexipv6 # => "[fe80::5054:ff:fe1d:adb6]"
+  #   '0x000080FE00000000FF005450B6AD1DFE'.from_hexipv6(prefix: '0x') # => "[fe80::5054:ff:fe1d:adb6]"
+  #   '00000000000000000000000000000000'.from_hexipv6 # => "[::]"
+  def from_hexipv6(opts = {})
+    opts[:prefix] ||= ''
+    # remove prefix
+    out = gsub(opts[:prefix], '')
+    # convert
+    out = out.scan(/.{2}/).reverse.join
+    out = out.scan(/.{8}/).reverse.join
+    out = out.scan(/.{4}/).map { |x| x.sub(/^0+/, '') }.join(':')
+    out = out.sub(/:{3,}/, '::').downcase
+    "[#{out}]"
+  end
+
+  # Decode a hexadecimal IPv6 string into a the double-dotted hexadecimal format in place as described
+  # for {String#from_hexipv6}.
+  def from_hexipv6!(opts = {})
+    replace(from_hexipv6(opts))
+  end
+
+  # Encode a dotted decimal IPv4 into a hexadecimal one
   # @param opts [Hash] optional parameters
   # @option opts [String] :prefix Prefix of the output. Default value is a void
   #   string. Example of values: `0x`, `\x`.
@@ -305,7 +332,7 @@ class String
 
   alias to_hexip to_hexipv4
 
-  # Encode a dotted decimal IP into a hexadecimal one in place as described
+  # Encode a dotted decimal IPv4 into a hexadecimal one in place as described
   # for {String#to_hexipv4}.
   def to_hexipv4!(opts = {})
     replace(to_hexipv4(opts))
