@@ -60,7 +60,7 @@ class CTFPartyTest < Minitest::Test
   def test_hex_hex2bin
     assert_equal('10101011', 'ab'.hex2bin)
     assert_equal('11110011', '\xf3'.hex2bin(prefix: '\x'))
-    assert_equal('110111001101111011100100110000101101010', '\\x6e\\x6f\\x72\\x61\\x6a'.hex2bin(prefix: '\\x'))
+    assert_equal('0110111001101111011100100110000101101010', '\\x6e\\x6f\\x72\\x61\\x6a'.hex2bin(prefix: '\\x'))
   end
 
   skip def test_hex_hex2bin!

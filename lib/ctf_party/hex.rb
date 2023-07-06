@@ -191,7 +191,10 @@ class String
     # remove prefix
     out = gsub(opts[:prefix], '')
     # convert
-    return out.to_i(16).to_s(2)
+    out = out.to_i(16).to_s(2)
+    # padding
+    out = "0#{out}" if out.size.odd?
+    return out
   end
 
   # Encode an hexadecimal string to a binary string in place as described
