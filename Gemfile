@@ -8,6 +8,10 @@ group :runtime, :cli do
   gem 'docopt', '~> 0.6' # for argument parsing
 end
 
+group :runtime, :all do
+  gem 'uri', '~> 0.12.1' # for argument parsing
+end
+
 group :development, :install do
   gem 'bundler', '~> 2.1'
 end

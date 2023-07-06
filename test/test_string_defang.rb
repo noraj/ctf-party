@@ -69,12 +69,7 @@ class CTFPartyTest < Minitest::Test
     http = 'http://noraj.neverssl.com/online/'
     https = 'https://pwn.by/noraj/?id=42&countre=France#awesome'
     ldap = 'ldap://ldap.example.org/cn=John%20Doe,dc=example,dc=org'
-    unless RUBY_VERSION[..2] == '3.0' # probably because this is not backported https://github.com/ruby/ruby/pull/7260
-      # special case with implied address and port
-      ldaps = 'ldaps:///dc=example,dc=org??sub?(givenName=John)'
-    else
-      ldaps = 'ldaps://ds.example.com:389/dc=example,dc=com?givenName,sn,cn?sub?(uid=john.doe)'
-    end
+    ldaps = 'ldaps://ds.example.com:389/dc=example,dc=com?givenName,sn,cn?sub?(uid=john.doe)'
     mailto = 'mailto:noraj@rubyfu.net?subject=Hack the planet&cc=contact@rubyfu.net&bcc=love@rubyfu.net&body=Bonjour'
     ws = 'ws://example.org/chat'
     wss = 'wss://javascript.info/article/websocket/demo/hello'

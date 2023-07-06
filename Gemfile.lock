@@ -3,6 +3,7 @@ PATH
   specs:
     ctf-party (2.3.0)
       docopt (~> 0.6)
+      uri (~> 0.12.1)
 
 GEM
   remote: https://rubygems.org/
@@ -39,6 +40,7 @@ GEM
       parser (>= 3.2.1.0)
     ruby-progressbar (1.13.0)
     unicode-display_width (2.4.2)
+    uri (0.12.1)
     yard (0.9.34)
 
 PLATFORMS
@@ -53,6 +55,7 @@ DEPENDENCIES
   minitest-skip (~> 0.0)
   rake (~> 13.0)
   rubocop (~> 1.54)
+  uri (~> 0.12.1)
   yard (>= 0.9.27, < 0.10)
 
 BUNDLED WITH

@@ -39,4 +39,5 @@ Gem::Specification.new do |s|
   s.required_ruby_version = ['>= 3.0.0', '< 4.0']
 
   s.add_runtime_dependency('docopt', '~> 0.6')
+  s.add_runtime_dependency('uri', '~> 0.12.1')
 end
