@@ -57,10 +57,10 @@ $ ctf-party 'NzQ2Zjc0NmY=' from_b64 hex2str str2bin
 - digest: `md5`, `sha1`, etc. and bang versions
 - flag: `flag`, `flag!`, `flag?` (apply/check a flag format)
 - rot: `rot`, `rot13`, `rot_all` and bang versions
-- hex: `hex2dec`, `dec2hex`, `to_hex`, `from_hex`, `str2hex`, `hex2str`, `hex2bin`, `bin2hex`, `from_hexip`, `to_hexip` and bang versions
+- hex: `hex2dec`, `dec2hex`, `to_hex`, `from_hex`, `str2hex`, `hex2str`, `hex2bin`, `bin2hex`, `from_hexip`, `to_hexip`, etc. and bang versions
 - case: `randomcase`, `alternatecase` and bang versions
 - cgi: `urlencode`, `urlencode_component`, `urldecode`, `urldecode_component`, `htmlescape`, `htmlunescape` and bang versions
-- bin: `to_bin`, `from_bin`, `str2bin`, `bin2str`, `hex2bin`, `bin2hex` and bang versions
+- bin: `to_bin`, `from_bin`, `str2bin`, `bin2str`, `hex2bin`, `bin2hex`, etc. and bang versions
 - leet: `leet` and bang version
 - dec: `dec2str`, `str2dec`, `hex2dec`, `dec2hex` and bang versions
 - xor: `ulxor`, `alxor`, `urxor`, `arxor` and bang versions

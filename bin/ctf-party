@@ -12,8 +12,10 @@ require 'docopt'
 cmd_whitelist = {
   # ctf-party commands
   alternatecase: 'Change one characte on two upcase and the other downcase',
+  bin2dec: 'Convert a binary string to decimal',
   bin2hex: 'Encode an binary string to a hexadecimal string',
   bin2str: 'Alias for from_bin',
+  dec2bin: 'Convert a decimal string to binary',
   dec2hex: 'Encode an decimal string to a hexadecimal string',
   dec2str: 'Alias for from_dec',
   defang_domain: 'Defang domain name',

@@ -8,7 +8,9 @@
 - Changes:
   - Renamed `from_hexip` to `from_hexipv4` and created an aliases `from_hexip` for `from_hexipv4`. Same for `to_hexipv4` and bang methods.
   - add options support for all decimal methods and aliases
-- New methods: `from_hexipv6` and `from_hexipv6!`
+- New methods:
+  - `from_hexipv6` and `from_hexipv6!`
+  - `bin2dec` and `dec2bin`
 - Fix:
   - bin2hex: fix odd byte cropping issue
 

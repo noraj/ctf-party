@@ -74,4 +74,32 @@ class String
   def bin2str!(opts = {})
     from_bin!(opts)
   end
+
+  # Convert a binary string to decimal (binary to hexadecimal then hexadecimal to decimal)
+  # @param opts [Hash] optional parameters (see {String#bin2hex} and {String#hex2dec})
+  # @return [String] the decimal encoded string
+  # @example
+  #   '011000100110100101101110011000010111001001111001'.bin2dec # => "108204962968185"
+  def bin2dec(opts = {})
+    bin2hex(opts).hex2dec(opts)
+  end
+
+  # Convert a binary string to decimal in place as described for {String#bin2dec}.
+  def bin2dec!(opts = {})
+    replace(bin2dec(opts))
+  end
+
+  # Convert a decimal string to binary (decimal to hexadecimal then hexadecimal to binary)
+  # @param opts [Hash] optional parameters (see {String#dec2hex} and {String#hex2bin})
+  # @return [String] the binary encoded string
+  # @example
+  #   '474316169578'.dec2bin # => "0110111001101111011100100110000101101010"
+  def dec2bin(opts = {})
+    dec2hex(opts).hex2bin(opts)
+  end
+
+  # Convert a decimal string to binary in place as described for {String#dec2bin}.
+  def dec2bin!(opts = {})
+    replace(dec2bin(opts))
+  end
 end

@@ -47,4 +47,20 @@ class CTFPartyTest < Minitest::Test
   skip def test_bin_bin2str!
     # skip
   end
+
+  def test_bin_bin2dec
+    assert_equal('108204962968185', '011000100110100101101110011000010111001001111001'.bin2dec)
+  end
+
+  skip def test_bin_bin2dec!
+    # skip
+  end
+
+  def test_bin_dec2bin
+    assert_equal('0110111001101111011100100110000101101010', '474316169578'.dec2bin)
+  end
+
+  skip def test_bin_dec2bin!
+    # skip
+  end
 end
