@@ -69,6 +69,7 @@ class CTFPartyTest < Minitest::Test
 
   def test_hex_bin2hex
     assert_equal('f3', '11110011'.bin2hex)
+    assert_equal('2', '0010'.bin2hex)
     assert_equal('0xF3', '11110011'.bin2hex(prefix: '0x', case: :upper))
     assert_equal('\\x6e\\x6f\\x72\\x61\\x6a', '0110111001101111011100100110000101101010'.bin2hex(prefixall: '\\x'))
   end

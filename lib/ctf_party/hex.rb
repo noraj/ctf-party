@@ -59,7 +59,7 @@ class String
     out = ('0' * (opts[:padding] - out.size)) + out if out.size < opts[:padding]
     # char case management
     out = out.upcase if opts[:case] == :upper
-    # adding prefix must be done after case change, complex conditional to avoid cropping when odd byte lenght
+    # adding prefix must be done after case change, complex conditional to avoid cropping when odd byte length
     out = (out.size.odd? ? [out[0]] + out[1..].scan(/.{1,2}/) : out.scan(/.{2}/)).map do |x|
       opts[:prefixall] + x
     end.join
@@ -225,8 +225,10 @@ class String
     out = to_i(2).to_s(16)
     # char case management
     out = out.upcase if opts[:case] == :upper
-    # adding prefix must be done after case change
-    out = out.scan(/.{2}/).map { |x| opts[:prefixall] + x }.join
+    # adding prefix must be done after case change, complex conditional to avoid cropping when odd byte length
+    out = (out.size.odd? ? [out[0]] + out[1..].scan(/.{1,2}/) : out.scan(/.{2}/)).map do |x|
+      opts[:prefixall] + x
+    end.join
     return opts[:prefix] + out
   end
 
