@@ -83,7 +83,7 @@ class CTFPartyTest < Minitest::Test
     assert_equal('6e6f72616a', '6e6f72616a'.from_hex.to_hex)
     assert_equal('10', '10'.dec2hex.hex2dec)
     assert_equal('0a', 'a'.hex2dec.dec2hex)
-    assert_equal('110111001101111011100100110000101101010', '0110111001101111011100100110000101101010'.bin2hex.hex2bin)
+    assert_equal('110111001101111011100100110000101101010', '110111001101111011100100110000101101010'.bin2hex.hex2bin(even: 0))
     assert_equal('6e6f72616a', '6e6f72616a'.hex2bin.bin2hex)
     assert_equal('7f000001', '7f000001'.from_hexip.to_hexip)
     assert_equal('127.0.0.1', '127.0.0.1'.to_hexip.from_hexip)

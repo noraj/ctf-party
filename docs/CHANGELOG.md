@@ -4,12 +4,11 @@
 
 - **Breaking changes**
   - **Drop Ruby 2.7 support** because there is no `URI:WS` and `URI:WSS` used for `defang_uri` and anyway [official support has ended too](https://www.ruby-lang.org/en/downloads/branches/)
+  - `hex2bin` now returns even number of chars (pad with `0`) by default and add an option to disable it.
 - Changes:
   - Renamed `from_hexip` to `from_hexipv4` and created an aliases `from_hexip` for `from_hexipv4`. Same for `to_hexipv4` and bang methods.
-- New methods: `from_hexipv6` and `from_hexipv6!`
-- Changes:
   - add options support for all decimal methods and aliases
-  - `hex2bin` now always returns even number of chars (pad with `0`)
+- New methods: `from_hexipv6` and `from_hexipv6!`
 - Fix:
   - bin2hex: fix odd byte cropping issue
 

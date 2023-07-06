@@ -181,6 +181,8 @@ class String
   # @param opts [Hash] optional parameters
   # @option opts [String] :prefix Prefix of the input. Default value is a void
   #   string. Example of values: `0x`, `\x`, `\\x`.
+  # @option opts [Integer] :even Returns an even number of chars (pad with `0`). Default value is a 1.
+  #   `0` for false and `1` for true.
   # @return [String] the binary encoded string
   # @example
   #   'ab'.hex2bin # => "10101011"
@@ -188,12 +190,13 @@ class String
   #   '\\x6e\\x6f\\x72\\x61\\x6a'.hex2bin(prefix: '\\x') # => "110111001101111011100100110000101101010"
   def hex2bin(opts = {})
     opts[:prefix] ||= ''
+    opts[:even] ||= 1
     # remove prefix
     out = gsub(opts[:prefix], '')
     # convert
     out = out.to_i(16).to_s(2)
     # padding
-    out = "0#{out}" if out.size.odd?
+    out = "0#{out}" if out.size.odd? && opts[:even] == 1
     return out
   end
 
