@@ -9,7 +9,7 @@ group :runtime, :cli do
 end
 
 group :runtime, :all do
-  gem 'uri', '~> 0.12.1' # for argument parsing
+  gem 'uri', '~> 0.12.2' # for argument parsing
 end
 
 group :development, :install do
