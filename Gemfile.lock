@@ -13,7 +13,7 @@ GEM
     docopt (0.6.1)
     json (2.6.3)
     language_server-protocol (3.17.0.3)
-    minitest (5.18.1)
+    minitest (5.19.0)
     minitest-skip (0.0.3)
       minitest (~> 5.0)
     parallel (1.23.0)
@@ -51,7 +51,7 @@ DEPENDENCIES
   commonmarker (~> 0.23)
   ctf-party!
   docopt (~> 0.6)
-  minitest (~> 5.18)
+  minitest (~> 5.19)
   minitest-skip (~> 0.0)
   rake (~> 13.0)
   rubocop (~> 1.55)
