@@ -5,12 +5,15 @@
 - **Breaking changes**
   - **Drop Ruby 2.7 support** because there is no `URI:WS` and `URI:WSS` used for `defang_uri` and anyway [official support has ended too](https://www.ruby-lang.org/en/downloads/branches/)
   - `hex2bin` now returns even number of chars (pad with `0`) by default and add an option to disable it.
+  - `urlencode_component` & `urldecode_component` were renamed to `urlencode_data` & `urldecode_data`, `urlencode_component` & `urldecode_component` are now new functions
 - Changes:
   - Renamed `from_hexip` to `from_hexipv4` and created an aliases `from_hexip` for `from_hexipv4`. Same for `to_hexipv4` and bang methods.
   - add options support for all decimal methods and aliases
 - New methods:
   - `from_hexipv6` and `from_hexipv6!`
   - `bin2dec` and `dec2bin`
+  - `urlencode_component` (see **breaking change**, the old `urlencode_component` was renamed `urlencode_data`)
+  - `urldecode_component` (see **breaking change**, the old `urldecode_component` was renamed `urldecode_data`)
 - Fix:
   - bin2hex: fix odd byte cropping issue
 

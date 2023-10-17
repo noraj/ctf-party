@@ -10,6 +10,7 @@ GEM
   specs:
     ast (2.4.2)
     base64 (0.1.1)
+    cgi (0.3.6)
     commonmarker (0.23.10)
     docopt (0.6.1)
     json (2.6.3)
@@ -50,6 +51,7 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 2.1)
+  cgi (~> 0.3.3)
   commonmarker (~> 0.23)
   ctf-party!
   docopt (~> 0.6)

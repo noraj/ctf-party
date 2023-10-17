@@ -16,14 +16,14 @@ class CTFPartyTest < Minitest::Test
     # skip
   end
 
-  def test_cgi_urlencode_component
+  def test_cgi_urlencode_data
     my_url = 'http://vulnerable.site/search.aspx?txt="><script>alert(/Rubyfu/.source)</script>'
     my_url_component = "'Stop!' said Fred"
-    assert_equal("http%3A%2F%2Fvulnerable.site%2Fsearch.aspx%3Ftxt%3D%22%3E%3Cscript%3Ealert%28%2FRubyfu%2F.source%29%3C%2Fscript%3E", my_url.urlencode_component)
-    assert_equal("%27Stop%21%27+said+Fred", my_url_component.urlencode_component)
+    assert_equal("http%3A%2F%2Fvulnerable.site%2Fsearch.aspx%3Ftxt%3D%22%3E%3Cscript%3Ealert%28%2FRubyfu%2F.source%29%3C%2Fscript%3E", my_url.urlencode_data)
+    assert_equal("%27Stop%21%27+said+Fred", my_url_component.urlencode_data)
   end
 
-  skip def test_cgi_urlencode_component!
+  skip def test_cgi_urlencode_data!
     # skip
   end
 
@@ -42,18 +42,18 @@ class CTFPartyTest < Minitest::Test
     # skip
   end
 
-  def test_cgi_urldecode_component
+  def test_cgi_urldecode_data
     my_url = 'http://vulnerable.site/search.aspx?txt=%22%3E%3Cscript%3Ealert(/Rubyfu/.source)%3C/script%3E'
     my_url2 = 'http%3A%2F%2Fvulnerable.site%2Fsearch.aspx%3Ftxt%3D%22%3E%3Cscript%3Ealert%28%2FRubyfu%2F.source%29%3C%2Fscript%3E'
     my_url_component = "'Stop!'%20said%20Fred"
     my_url_component2 = '%27Stop%21%27+said+Fred'
-    assert_equal('http://vulnerable.site/search.aspx?txt="><script>alert(/Rubyfu/.source)</script>', my_url.urldecode_component)
-    assert_equal('http://vulnerable.site/search.aspx?txt="><script>alert(/Rubyfu/.source)</script>', my_url2.urldecode_component)
-    assert_equal("'Stop!' said Fred", my_url_component.urldecode_component)
-    assert_equal("'Stop!' said Fred", my_url_component2.urldecode_component)
+    assert_equal('http://vulnerable.site/search.aspx?txt="><script>alert(/Rubyfu/.source)</script>', my_url.urldecode_data)
+    assert_equal('http://vulnerable.site/search.aspx?txt="><script>alert(/Rubyfu/.source)</script>', my_url2.urldecode_data)
+    assert_equal("'Stop!' said Fred", my_url_component.urldecode_data)
+    assert_equal("'Stop!' said Fred", my_url_component2.urldecode_data)
   end
 
-  skip def test_cgi_urldecode_component!
+  skip def test_cgi_urldecode_data!
     # skip
   end
 
@@ -72,6 +72,28 @@ class CTFPartyTest < Minitest::Test
   end
 
   skip def test_cgi_htmlunescape!
+    # skip
+  end
+
+  def test_cgi_urlencode_component
+    my_url = 'http://vulnerable.site/search.aspx?txt="><script>alert(/Rubyfu/.source)</script>'
+    my_data = "'Stop!' said Fred"
+    assert_equal('http%3A%2F%2Fvulnerable.site%2Fsearch.aspx%3Ftxt%3D%22%3E%3Cscript%3Ealert%28%2FRubyfu%2F.source%29%3C%2Fscript%3E', my_url.urlencode_component)
+    assert_equal('%27Stop%21%27%20said%20Fred', my_data.urlencode_component)
+  end
+
+  skip def test_cgi_urlencode_component!
+    # skip
+  end
+
+  def test_cgi_urldecode_component
+    my_url = 'http%3A%2F%2Fvulnerable.site%2Fsearch.aspx%3Ftxt%3D%22%3E%3Cscript%3Ealert%28%2FRubyfu%2F.source%29%3C%2Fscript%3E'
+    my_data = '%27Stop%21%27%20said%20Fred'
+    assert_equal('http://vulnerable.site/search.aspx?txt="><script>alert(/Rubyfu/.source)</script>', my_url.urldecode_component)
+    assert_equal("'Stop!' said Fred", my_data.urldecode_component)
+  end
+
+  skip def test_cgi_urldecode_component!
     # skip
   end
 end
