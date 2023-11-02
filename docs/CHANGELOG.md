@@ -16,6 +16,7 @@
   - `urldecode_component` (see **breaking change**, the old `urldecode_component` was renamed `urldecode_data`)
 - Fix:
   - bin2hex: fix odd byte cropping issue
+  - fix documentation for base64
 
 ## [2.3.0]
 

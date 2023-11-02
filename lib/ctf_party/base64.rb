@@ -6,9 +6,9 @@ require 'base64'
 class String
   # Encode the string into base64
   # @param opts [Hash] optional parameters
-  # @option opts [Symbol] :mode Default value: `:strict`.
-  #   Other values are `:strict` (`:rfc4648`) or `:urlsafe`.
-  # @see https://ruby-doc.org/stdlib-2.6.5/libdoc/base64/rdoc/Base64.html
+  # @option opts [Symbol] :mode Default value: `:strict` (`:rfc4648`).
+  #   Other values are `:rfc2045` or `:urlsafe`.
+  # @see https://ruby-doc.org/3.2.2/stdlibs/base64/Base64.html
   # @return [String] the Base64 encoded string
   # @example
   #   'Super lib!'.to_b64 # => "U3VwZXIgbGliIQ=="
@@ -32,9 +32,9 @@ class String
 
   # Decode the string from base64
   # @param opts [Hash] optional parameters
-  # @option opts [Symbol] :mode Default value: `:strict`.
-  #   Other values are `:strict` (`:rfc4648`) or `:urlsafe`.
-  # @see https://ruby-doc.org/stdlib-2.6.5/libdoc/base64/rdoc/Base64.html
+  # @option opts [Symbol] :mode Default value: `:strict` (`:rfc4648`).
+  #   Other values are `:rfc2045` or `:urlsafe`.
+  # @see https://ruby-doc.org/3.2.2/stdlibs/base64/Base64.html
   # @return [String] the Base64 decoded string
   # @example
   #   'UnVieQ=='.from_b64 # => "Ruby"
@@ -58,9 +58,9 @@ class String
 
   # Is the string encoded in base64?
   # @param opts [Hash] optional parameters
-  # @option opts [Symbol] :mode Default value: `:strict`.
-  #   Other values are `:strict` (`:rfc4648`) or `:urlsafe`.
-  # @see https://ruby-doc.org/stdlib-2.6.5/libdoc/base64/rdoc/Base64.html
+  # @option opts [Symbol] :mode Default value: `:strict` (`:rfc4648`).
+  #   Other values are `:rfc2045` or `:urlsafe`.
+  # @see https://ruby-doc.org/3.2.2/stdlibs/base64/Base64.html
   # @return [Boolean] `true` if the string is a valid base64 string, `false`
   #   else.
   # @example
