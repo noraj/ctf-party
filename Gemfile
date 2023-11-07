@@ -10,7 +10,7 @@ end
 
 group :runtime, :all do
   gem 'cgi', '~> 0.3.3' # url decode / html escape
-  gem 'uri', '~> 0.12.2' # for argument parsing
+  gem 'uri', '~> 0.13.0' # for argument parsing
 end
 
 group :development, :install do
