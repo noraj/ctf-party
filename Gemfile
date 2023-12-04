@@ -24,7 +24,7 @@ group :development, :test do
 end
 
 group :development, :lint do
-  gem 'rubocop', '~> 1.57'
+  gem 'rubocop', '~> 1.58'
 end
 
 group :development, :docs do
