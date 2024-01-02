@@ -1,6 +1,6 @@
 # Changelog
 
-## [3.0.0 - Unreleased]
+## [3.0.0]
 
 - **Breaking changes**
   - **Drop Ruby 2.7 support** because there is no `URI:WS` and `URI:WSS` used for `defang_uri` and anyway [official support has ended too](https://www.ruby-lang.org/en/downloads/branches/)
@@ -14,6 +14,8 @@
   - `bin2dec` and `dec2bin`
   - `urlencode_component` (see **breaking change**, the old `urlencode_component` was renamed `urlencode_data`)
   - `urldecode_component` (see **breaking change**, the old `urldecode_component` was renamed `urldecode_data`)
+- Chore:
+  - Add support for Ruby 3.3 (up to Ruby < 4.0)
 - Fix:
   - bin2hex: fix odd byte cropping issue
   - fix documentation for base64
