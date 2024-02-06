@@ -18,7 +18,7 @@ group :development, :install do
 end
 
 group :development, :test do
-  gem 'minitest', '~> 5.21'
+  gem 'minitest', '~> 5.22'
   gem 'minitest-skip', '~> 0.0'
   gem 'rake', '~> 13.1'
 end
