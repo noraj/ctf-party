@@ -33,6 +33,7 @@ Gem::Specification.new do |s|
     'documentation_uri'     => 'https://noraj.github.io/ctf-party/',
     'homepage_uri'          => 'https://noraj.github.io/ctf-party/',
     'source_code_uri'       => 'https://github.com/noraj/ctf-party/',
+    'funding_uri'           => 'https://github.com/sponsors/noraj',
     'rubygems_mfa_required' => 'true'
   }
 
