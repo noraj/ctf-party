@@ -47,4 +47,6 @@ Style/Documentation:
   Enabled: false
 Style/RedundantReturn:
   Enabled: false
-
+# it's style!
+Gemspec/AddRuntimeDependency:
+  Enabled: false # https://github.com/rubocop/rubocop/pull/13030#discussion_r1674791776
