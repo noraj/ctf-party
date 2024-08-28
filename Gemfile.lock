@@ -43,7 +43,7 @@ GEM
     ruby-progressbar (1.13.0)
     strscan (3.1.0)
     unicode-display_width (2.5.0)
-    uri (0.13.0)
+    uri (0.13.1)
     yard (0.9.36)
 
 PLATFORMS
@@ -59,7 +59,7 @@ DEPENDENCIES
   minitest-skip (~> 0.0)
   rake (~> 13.2)
   rubocop (~> 1.65)
-  uri (~> 0.13.0)
+  uri (~> 0.13.1)
   yard (>= 0.9.27, < 0.10)
 
 BUNDLED WITH
