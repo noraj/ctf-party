@@ -80,17 +80,6 @@ class String
       puts e
       return gsub('.', '[.]')
     end
-    begin
-      # temporary fix until backport for ruby 3.0 https://github.com/ruby/ruby/pull/7260
-      # rubocop:disable Lint/Void
-      URI::WS
-      URI::WSS
-      # rubocop:enable Lint/Void
-    rescue NameError => e
-      puts e
-      require 'uri/ws'
-      require 'uri/wss'
-    end
     case uri
     when URI::HTTP, URI::HTTPS, URI::FTP
       uri.scheme = uri.scheme.gsub(/t/i, 'x')
