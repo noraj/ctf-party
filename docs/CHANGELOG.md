@@ -1,5 +1,12 @@
 # Changelog
 
+## [unreleased]
+
+- **Breaking changes**
+  - **Drop Ruby 3.0 support** ([EOL](https://www.ruby-lang.org/en/downloads/branches/))
+- Chore:
+  - Add support for Ruby 3.4
+
 ## [3.0.0]
 
 - **Breaking changes**

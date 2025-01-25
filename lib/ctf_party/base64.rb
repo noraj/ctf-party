@@ -14,8 +14,7 @@ class String
   #   'Super lib!'.to_b64 # => "U3VwZXIgbGliIQ=="
   def to_b64(opts = {})
     opts[:mode] ||= :strict
-    return Base64.strict_encode64(self) if opts[:mode] == :strict ||
-                                           opts[:mode] == :rfc4648
+    return Base64.strict_encode64(self) if %i[strict rfc4648].include?(opts[:mode])
     return Base64.encode64(self) if opts[:mode] == :rfc2045
     return Base64.urlsafe_encode64(self) if opts[:mode] == :urlsafe
   end
@@ -40,8 +39,7 @@ class String
   #   'UnVieQ=='.from_b64 # => "Ruby"
   def from_b64(opts = {})
     opts[:mode] ||= :strict
-    return Base64.strict_decode64(self) if opts[:mode] == :strict ||
-                                           opts[:mode] == :rfc4648
+    return Base64.strict_decode64(self) if %i[strict rfc4648].include?(opts[:mode])
     return Base64.decode64(self) if opts[:mode] == :rfc2045
     return Base64.urlsafe_decode64(self) if opts[:mode] == :urlsafe
   end

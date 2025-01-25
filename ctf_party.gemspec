@@ -37,8 +37,9 @@ Gem::Specification.new do |s|
     'rubygems_mfa_required' => 'true'
   }
 
-  s.required_ruby_version = ['>= 3.0.0', '< 4.0']
+  s.required_ruby_version = ['>= 3.1.0', '< 4.0']
 
+  s.add_runtime_dependency('base64', '~> 0.2.0')
   s.add_runtime_dependency('docopt', '~> 0.6')
-  s.add_runtime_dependency('uri', '>= 0.12.1', '< 0.14.0')
+  s.add_runtime_dependency('uri', '~> 1.0', '>= 1.0.2')
 end

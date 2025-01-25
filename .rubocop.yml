@@ -6,7 +6,7 @@ AllCops:
   Exclude:
     - 'test/*.rb'
   SuggestExtensions: false
-  TargetRubyVersion: '3.0'
+  TargetRubyVersion: '3.1'
 # ~~~ Layout ~~~
 Layout/HashAlignment:
   Include:

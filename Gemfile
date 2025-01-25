@@ -9,8 +9,9 @@ group :runtime, :cli do
 end
 
 group :runtime, :all do
+  gem 'base64', '~> 0.2.0' # for base64 encoding
   gem 'cgi', '~> 0.4.1' # url decode / html escape
-  gem 'uri', '~> 0.13.1' # for argument parsing
+  gem 'uri', '~> 1.0', '>= 1.0.2' # for url parsing
 end
 
 group :development, :install do
@@ -28,6 +29,8 @@ group :development, :lint do
 end
 
 group :development, :docs do
-  gem 'commonmarker', '~> 0.23' # for markdown support in YARD
-  gem 'yard', ['>= 0.9.27', '< 0.10']
+  gem 'commonmarker', '~> 2.0' # for markdown support in YARD
+  # gem 'yard', ['>= 0.9.27', '< 0.10']
+  # https://github.com/lsegal/yard/issues/1528
+  gem 'yard', github: 'ParadoxV5/yard', ref: '9e869c940859570b07b81c5eadd6070e76f6291e', branch: 'commonmarker-1.0'
 end

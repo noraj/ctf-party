@@ -11,7 +11,7 @@ class String
   #   'http://vulnerable.site/search.aspx?txt="><script>alert(/Rubyfu/.source)</script>'.urlencode # => "http://vulnerable.site/search.aspx?txt=%22%3E%3Cscript%3Ealert(/Rubyfu/.source)%3C/script%3E"
   #   "'Stop!' said Fred".urlencode # => "'Stop!'%20said%20Fred"
   def urlencode
-    URI::Parser.new.escape self
+    URI::RFC2396_PARSER.escape self
   end
 
   # URL-encode the string in place as described for {String#urlencode}.
@@ -41,7 +41,7 @@ class String
   #   "'Stop!'%20said%20Fred".urldecode # => "'Stop!' said Fred"
   #   '%27Stop%21%27+said+Fred'.urldecode # => "'Stop!'+said+Fred"
   def urldecode
-    URI::Parser.new.unescape self
+    URI::RFC2396_PARSER.unescape self
   end
 
   # URL-decode the string in place as described for {String#urldecode}.

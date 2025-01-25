@@ -35,22 +35,22 @@ class String
     ipv4? || ipv6?
   end
 
-  # Is the string a valid URI?
+  # Is the string a valid (RFC 2396) URI?
   # @param opts [Hash] optional parameters
   # @option opts [Symbol] :lax Default value: `false`.
   #   When `lax: false`, only URI matching common protocols (ftp http https ldap ldaps mailto ws wss) are recognized,
   #   but is still a bit lax (eg. `http://` is seen as valid).
   #   When `lax: true`, the parser will accept more types of URI (gopher magnet matrix), but will be very lax and accept
   #   nearly anything including `:`.
-  # @return [Boolean] `true` if the string is a valid URI, `false` else.
+  # @return [Boolean] `true` if the string is a valid (RFC 2396) URI, `false` else.
   # @example
   #   'ftp://ftp.ruby-lang.org/pub/ruby/3.2/ruby-3.2.0.tar.xz'.uri? # => true
   #   'a:'.uri? # => false
   #   'a:'.uri?(lax: true) # => true
   def uri?(opts = {})
     opts[:lax] ||= false
-    strict = URI::DEFAULT_PARSER.make_regexp(%w[ftp http https ldap ldaps mailto ws wss]).match?(self)
-    lax = URI::DEFAULT_PARSER.make_regexp.match?(self)
+    strict = URI::RFC2396_PARSER.make_regexp(%w[ftp http https ldap ldaps mailto ws wss]).match?(self)
+    lax = URI::RFC2396_PARSER.make_regexp.match?(self)
     if opts[:lax] == true
       strict || lax
     else
