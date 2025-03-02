@@ -2,6 +2,8 @@
 
 ## [unreleased]
 
+## [4.0.0]
+
 - **Breaking changes**
   - **Drop Ruby 3.0 support** ([EOL](https://www.ruby-lang.org/en/downloads/branches/))
 - Chore:

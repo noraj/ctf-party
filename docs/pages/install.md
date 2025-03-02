@@ -55,7 +55,7 @@ git clone https://github.com/noraj/ctf-party.git
 cd ctf-party
 docker-compose build
 # alternatively without docker compose
-docker build -f Dockerfile -t ctf-party --build-arg ctf-party_VERSION=3.0.0 .
+docker build -f Dockerfile -t ctf-party --build-arg ctf-party_VERSION=4.0.0 .
 ```
 
 Usage examples:
@@ -77,7 +77,7 @@ host: `docker.io`
 docker pull noraj/ctf-party
 
 # specific tag
-docker pull noraj/ctf-party:3.0.0
+docker pull noraj/ctf-party:4.0.0
 ```
 
 Repository: [noraj/ctf-party](https://hub.docker.com/r/noraj/ctf-party).
@@ -93,7 +93,7 @@ host: `ghcr.io`
 docker pull ghcr.io/noraj/ctf-party
 
 # specific tag
-docker pull ghcr.io/noraj/ctf-party:3.0.0
+docker pull ghcr.io/noraj/ctf-party:4.0.0
 ```
 
 Repository: [noraj/ctf-party](https://github.com/noraj/ctf-party/pkgs/container/ctf-party)
@@ -109,7 +109,7 @@ host: `registry-intl.eu-central-1.aliyuncs.com`
 docker pull registry-intl.eu-central-1.aliyuncs.com/noraj/ctf-party
 
 # specific tag
-docker pull registry-intl.eu-central-1.aliyuncs.com/noraj/ctf-party:3.0.0
+docker pull registry-intl.eu-central-1.aliyuncs.com/noraj/ctf-party:4.0.0
 ```
 
 Repository: [the overview page is not public](https://cr.console.aliyun.com/repository/eu-central-1/noraj/ctf-party/details)
@@ -123,7 +123,7 @@ host: `quay.io`
 docker pull quay.io/noraj/ctf-party
 
 # specific tag
-docker pull quay.io/noraj/ctf-party:3.0.0
+docker pull quay.io/noraj/ctf-party:4.0.0
 ```
 
 Repository: [noraj/ctf-party](https://quay.io/repository/noraj/ctf-party?tab=info)
@@ -144,7 +144,7 @@ $ gem install --development ctf-party
 
 ### **git**
 
-Just replace `3.0.0` with the gem version you see after `gem build`.
+Just replace `4.0.0` with the gem version you see after `gem build`.
 
 ```bash
 git clone https://github.com/noraj/ctf-party.git ctf-party
@@ -152,7 +152,7 @@ cd ctf-party
 gem install bundler
 bundler install
 gem build ctf_party.gemspec
-gem install ctf-party-3.0.0.gem
+gem install ctf-party-4.0.0.gem
 ```
 
 Note: if an automatic install is needed you can get the version with `$ gem build ctf_party.gemspec | grep Version | cut -d' ' -f4`.
