@@ -1,8 +1,8 @@
 
 ## Quick install
 
-```
-$ gem install ctf-party
+```bash
+gem install ctf-party
 ```
 
 ## Library

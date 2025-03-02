@@ -8,6 +8,8 @@
   - Add support for Ruby 3.4
 - Changes:
   - Add a `padding:` option to `hex2dec`
+- Documentation:
+  - Add bash syntax highlight support
 
 ## [3.0.0]
 
