@@ -6,10 +6,11 @@
   - **Drop Ruby 3.0 support** ([EOL](https://www.ruby-lang.org/en/downloads/branches/))
 - Chore:
   - Add support for Ruby 3.4
+  - Change the way version is included. Insted of including a module `Version`, directly add the `VERSION` constant in the `CTFParty` module. It could avoid namespace collision with that kind of generic name.
 - Changes:
   - Add a `padding:` option to `hex2dec`
 - Documentation:
-  - Add bash syntax highlight support
+  - Use syntax highlight for shell commands without output
 
 ## [3.0.0]
 

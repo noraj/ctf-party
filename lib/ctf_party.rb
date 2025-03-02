@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'ctf_party/version'
 # Project internal
 require 'ctf_party/base64'
 require 'ctf_party/binary'

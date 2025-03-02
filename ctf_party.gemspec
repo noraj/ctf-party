@@ -4,7 +4,7 @@ require_relative 'lib/ctf_party/version'
 
 Gem::Specification.new do |s|
   s.name          = 'ctf-party'
-  s.version       = Version::VERSION
+  s.version       = CTFParty::VERSION
   s.platform      = Gem::Platform::RUBY
   s.summary       = 'A CLI tool & library to enhance and speed up script/exploit ' \
                     'writing with string conversion/manipulation'
