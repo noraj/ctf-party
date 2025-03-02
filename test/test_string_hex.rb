@@ -10,6 +10,8 @@ class CTFPartyTest < Minitest::Test
     assert_equal('243', '\xf3'.hex2dec(prefix: '\x'))
     assert_equal('474316169578', '6e6f72616a'.hex2dec)
     assert_equal('474316169578', '\\x6e\\x6f\\x72\\x61\\x6a'.hex2dec(prefix: '\\x'))
+    assert_equal('065', '41'.hex2dec(padding: 3))
+    assert_equal('65', '41'.hex2dec(padding: 2))
   end
 
   skip def test_hex_hex2dec!

@@ -6,6 +6,8 @@
   - **Drop Ruby 3.0 support** ([EOL](https://www.ruby-lang.org/en/downloads/branches/))
 - Chore:
   - Add support for Ruby 3.4
+- Changes:
+  - Add a `padding:` option to `hex2dec`
 
 ## [3.0.0]
 

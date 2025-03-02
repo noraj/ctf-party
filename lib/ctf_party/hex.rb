@@ -5,18 +5,25 @@ class String
   # @param opts [Hash] optional parameters
   # @option opts [String] :prefix Prefix of the input. Default value is a void
   #   string. Example of values: `0x`, `\x`, `\\x`.
+  # @option opts [Symbol] :padding Minimum size of the decimal display
+  #   (number of characters) for the output. Default is no padding.
   # @return [String] the decimal encoded string
   # @example
   #   'ff'.hex2dec # => "255"
   #   '\xf3'.hex2dec(prefix: '\x') # => "243"
   #   '6e6f72616a'.hex2dec # => "474316169578"
   #   '\\x6e\\x6f\\x72\\x61\\x6a'.hex2dec(prefix: '\\x') # => "474316169578"
+  #   '41'.hex2dec(padding: 3) # => "065"
   def hex2dec(opts = {})
     opts[:prefix] ||= ''
+    opts[:padding] ||= 0
     # remove prefix
     out = gsub(opts[:prefix], '')
     # convert
-    return out.hex.to_s
+    out = out.hex.to_s
+    # padding
+    out = ('0' * (opts[:padding] - out.size)) + out if out.size < opts[:padding]
+    return out
   end
 
   # Encode an hexadecimal string to a decimal string in place as described
@@ -29,7 +36,7 @@ class String
     replace(hex2dec(opts))
   end
 
-  # Encode an decimal string to a hexadecimal string
+  # Encode a decimal string to a hexadecimal string
   # @param opts [Hash] optional parameters
   # @option opts [String] :prefix Prefix of the output. Default value is a void
   #   string. Example of values: `0x`, `\x`.
@@ -66,7 +73,7 @@ class String
     return opts[:prefix] + out
   end
 
-  # Encode an decimal string to a hexadecimal string in place as described
+  # Encode a decimal string to a hexadecimal string in place as described
   # for {String#dec2hex}.
   # @example
   #   a = '255'
