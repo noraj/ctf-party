@@ -2,9 +2,9 @@
 
 ## Server locally
 
-```
-$ npm i docsify-cli -g
-$ docsify serve docs
+```bash
+npm i docsify-cli -g
+docsify serve docs
 ```
 
 ## Library doc
@@ -17,14 +17,14 @@ You can consult it online [here](https://noraj.github.io/ctf-party/yard/).
 
 For developers who only want to use the library.
 
-```
-$ bundle exec yard doc
+```bash
+bundle exec yard doc
 ```
 
 ### Building locally: for developer
 
-For developers who want to participate to the development.
+For developers who want to participate in the development.
 
-```
-$ bundle exec yard doc --yardopts .yardopts-dev
+```bash
+bundle exec yard doc --yardopts .yardopts-dev
 ```

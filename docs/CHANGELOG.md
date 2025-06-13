@@ -4,8 +4,15 @@
 
 ## [4.0.1](https://github.com/noraj/ctf-party/releases/tag/v4.0.1)
 
-Fixes:
+- Fixes:
   - Fix version loading in the binary
+- Docs:
+  - No duplicate README (cover page only)
+  - Changelog version with release links
+  - Switch links on cover page
+  - Better navbar titles
+  - Move features from README to documentation
+  - Add library doc link to features
 
 ## [4.0.0](https://github.com/noraj/ctf-party/releases/tag/v4.0.0)
 
@@ -26,7 +33,7 @@ Fixes:
   - `hex2bin` now returns even number of chars (pad with `0`) by default and add an option to disable it.
   - `urlencode_component` & `urldecode_component` were renamed to `urlencode_data` & `urldecode_data`, `urlencode_component` & `urldecode_component` are now new functions
 - Changes:
-  - Renamed `from_hexip` to `from_hexipv4` and created an aliase `from_hexip` for `from_hexipv4`. Same for `to_hexipv4` and bang methods.
+  - Renamed `from_hexip` to `from_hexipv4` and created an alias `from_hexip` for `from_hexipv4`. Same for `to_hexipv4` and bang methods.
   - Add options support for all decimal methods and aliases
 - New methods:
   - `from_hexipv6` and `from_hexipv6!`

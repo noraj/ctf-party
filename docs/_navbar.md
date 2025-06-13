@@ -1,3 +1,3 @@
 - [Home](/)
-- [Doc](https://noraj.github.io/ctf-party/yard/)
-- [Source](https://github.com/noraj/ctf-party/)
+- [Library documentation](https://noraj.github.io/ctf-party/yard/)
+- [Source Code](https://github.com/noraj/ctf-party/)

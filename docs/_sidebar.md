@@ -3,6 +3,7 @@
   - [Quick start](pages/quick-start.md)
   - [Installation](pages/install.md)
   - [Usage](pages/usage.md)
+  - [Features](pages/features.md)
 
 - Guide
 
