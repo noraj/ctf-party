@@ -5,7 +5,7 @@
 ## [4.0.1](https://github.com/noraj/ctf-party/releases/tag/v4.0.1)
 
 - Fixes:
-  - Fix version loading in the binary
+  - Fix version loading in the binary (to reflect 4.0.0 change)
 - Docs:
   - No duplicate README (cover page only)
   - Changelog version with release links

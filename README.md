@@ -17,11 +17,8 @@
 A CLI tool & library to enhance and speed up script/exploit writing for CTF players (or
 security researchers, bug bounty hunters, pentesters but mostly focused on CTF)
 by patching the String class to add a short syntax of usual code patterns.
-The philosophy is also to keep the library to be pure ruby (no dependencies)
-and not to re-implement what another library is already doing well
-(eg. [xorcist] for xor).
-
-[xorcist]:https://github.com/fny/xorcist
+The philosophy is also to keep the library to be pure native ruby (no dependencies)
+and not to re-implement what another library is already doing well.
 
 For example instead of writing:
 
