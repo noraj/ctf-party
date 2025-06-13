@@ -2,27 +2,32 @@
 
 ## [unreleased]
 
-## [4.0.0]
+## [4.0.1](https://github.com/noraj/ctf-party/releases/tag/v4.0.1)
+
+Fixes:
+  - Fix version loading in the binary
+
+## [4.0.0](https://github.com/noraj/ctf-party/releases/tag/v4.0.0)
 
 - **Breaking changes**
   - **Drop Ruby 3.0 support** ([EOL](https://www.ruby-lang.org/en/downloads/branches/))
 - Chore:
   - Add support for Ruby 3.4
-  - Change the way version is included. Insted of including a module `Version`, directly add the `VERSION` constant in the `CTFParty` module. It could avoid namespace collision with that kind of generic name.
+  - Change the way version is included. Instead of including a module `Version`, directly add the `VERSION` constant in the `CTFParty` module. It could avoid namespace collision with that kind of generic name.
 - Changes:
   - Add a `padding:` option to `hex2dec`
 - Documentation:
   - Use syntax highlight for shell commands without output
 
-## [3.0.0]
+## [3.0.0](https://github.com/noraj/ctf-party/releases/tag/v3.0.0)
 
 - **Breaking changes**
   - **Drop Ruby 2.7 support** because there is no `URI:WS` and `URI:WSS` used for `defang_uri` and anyway [official support has ended too](https://www.ruby-lang.org/en/downloads/branches/)
   - `hex2bin` now returns even number of chars (pad with `0`) by default and add an option to disable it.
   - `urlencode_component` & `urldecode_component` were renamed to `urlencode_data` & `urldecode_data`, `urlencode_component` & `urldecode_component` are now new functions
 - Changes:
-  - Renamed `from_hexip` to `from_hexipv4` and created an aliases `from_hexip` for `from_hexipv4`. Same for `to_hexipv4` and bang methods.
-  - add options support for all decimal methods and aliases
+  - Renamed `from_hexip` to `from_hexipv4` and created an aliase `from_hexip` for `from_hexipv4`. Same for `to_hexipv4` and bang methods.
+  - Add options support for all decimal methods and aliases
 - New methods:
   - `from_hexipv6` and `from_hexipv6!`
   - `bin2dec` and `dec2bin`
@@ -34,7 +39,7 @@
   - bin2hex: fix odd byte cropping issue
   - fix documentation for base64
 
-## [2.3.0]
+## [2.3.0](https://github.com/noraj/ctf-party/releases/tag/v2.3.0)
 
 - New defang methods:
   - `defang_ip` & `refang_ip` & bang version
@@ -46,7 +51,7 @@
 - Chore:
   - Add support for Ruby 3.2
 
-## [2.2.0]
+## [2.2.0](https://github.com/noraj/ctf-party/releases/tag/v2.2.0)
 
 - CLI:
   - Add `urlencode_component` and `urldecode_component` to the command whitelist
@@ -57,7 +62,7 @@
 - Fix:
   - dec2hex: fix odd byte cropping issue
 
-## [2.1.0]
+## [2.1.0](https://github.com/noraj/ctf-party/releases/tag/v2.1.0)
 
 - Chore:
   - Add support for Ruby 3.1
@@ -65,7 +70,7 @@
 - Documentation:
   - Add `pass` unlock step to build docker (DockerHub) for the publishing page
 
-## [2.0.0]
+## [2.0.0](https://github.com/noraj/ctf-party/releases/tag/v2.0.0)
 
 - New options:
   - `dec2hex`, `to_hex`, `bin2hex`, `to_hexip`: Add a `:prefixall` option, allowing to prefix each byte
@@ -87,7 +92,7 @@
     - Move doc syntax from Rdoc to markdown
   - Move dev dependencies from gemspec to gemfile
 
-## [1.5.0]
+## [1.5.0](https://github.com/noraj/ctf-party/releases/tag/v1.5.0)
 
 - new rot method:
   - `rot_all` return a hash with all rot possibilities
@@ -99,23 +104,23 @@
   - `urxor` UTF-8 XOR (padding right)
   - `arxor` ASCII XOR (padding right)
 
-## [1.4.1]
+## [1.4.1](https://github.com/noraj/ctf-party/releases/tag/v1.4.1)
 
 - Support more ruby versions
 - Support Ruby 3
 - Fix some linting
 
-## [1.4.0]
+## [1.4.0](https://github.com/noraj/ctf-party/releases/tag/v1.4.0)
 
 - `ctf-party` CLI tool release
 
-## [1.3.5]
+## [1.3.5](https://github.com/noraj/ctf-party/releases/tag/v1.3.5)
 
 - new dec methods:
   - `to_dec`, `from_dec` & bang version
   - aliases: `dec2str`, `str2dec`
 
-## [1.3.4]
+## [1.3.4](https://github.com/noraj/ctf-party/releases/tag/v1.3.4)
 
 - new hex methods:
   - `from_hexip`, `to_hexip` & bang version
@@ -123,7 +128,7 @@
   - `leet` & bang version
 - tests: install `minitest-skip` to have a proper way to skip tests
 
-## [1.3.3]
+## [1.3.3](https://github.com/noraj/ctf-party/releases/tag/v1.3.3)
 
 - new bin methods:
   - `to_bin`, `from_bin` & bang version
@@ -131,33 +136,33 @@
 - dependencies: update
 - rubocop: rules update
 
-## [1.3.2]
+## [1.3.2](https://github.com/noraj/ctf-party/releases/tag/v1.3.2)
 
 - new cgi methods:
   - `urlencode`, `urldecode` & bang version
   - `htmlescape`, `htmlunescape` & bang version
 
-## [1.3.1]
+## [1.3.1](https://github.com/noraj/ctf-party/releases/tag/v1.3.1)
 
 - hex: add aliases
   - `str2hex` for `to_hex`, idem for bang version
   - `hex2str` for `from_hex`, idem for bang version
 
-## [1.3.0]
+## [1.3.0](https://github.com/noraj/ctf-party/releases/tag/v1.3.0)
 
 - new case methods:
   - normal: `randomcase`, `alternatecase`
   - in-place: `randomcase!`, `alternatecase!`
 
-## [1.2.1]
+## [1.2.1](https://github.com/noraj/ctf-party/releases/tag/v1.2.1)
 
 - lib: code lint
-- repo: From from [Orange-Cyberdefense/rabid](https://github.com/Orange-Cyberdefense/rabid) to [noraj/rabid](https://github.com/noraj/rabid/)
+- repo: Fork from [Orange-Cyberdefense/rabid](https://github.com/Orange-Cyberdefense/rabid) to [noraj/rabid](https://github.com/noraj/rabid/)
 - dependencies: update
 - rubocop: new rules for new cops
 - deprecation: now requires ruby 2.7+ instead of 2.4+
 
-## [1.2.0]
+## [1.2.0](https://github.com/noraj/ctf-party/releases/tag/v1.2.0)
 
 - new hexadecimal methods:
   - normal: `hex2bin`, `bin2hex`
@@ -168,7 +173,7 @@
 - Updated dependencies
 - Updated rubocop rules
 
-## [1.1.0]
+## [1.1.0](https://github.com/noraj/ctf-party/releases/tag/v1.1.0)
 
 **Features**
 
@@ -186,6 +191,6 @@
 - Updated dependencies
 - Updated rubocop rules
 
-## [1.0.0]
+## [1.0.0](https://github.com/noraj/ctf-party/releases/tag/v1.0.0)
 
 - Initial version
