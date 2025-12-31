@@ -19,7 +19,7 @@ GEM
   specs:
     ast (2.4.3)
     base64 (0.2.0)
-    cgi (0.4.2)
+    cgi (0.5.1)
     commonmarker (2.1.0)
       rb_sys (~> 0.9)
     commonmarker (2.1.0-x86_64-linux)
@@ -69,7 +69,7 @@ PLATFORMS
 DEPENDENCIES
   base64 (~> 0.2.0)
   bundler (~> 2.1)
-  cgi (~> 0.4.1)
+  cgi (~> 0.5.1)
   commonmarker (~> 2.0)
   ctf-party!
   docopt (~> 0.6)
