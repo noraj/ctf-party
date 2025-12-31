@@ -37,7 +37,7 @@ GEM
     prism (1.4.0)
     racc (1.8.1)
     rainbow (3.1.1)
-    rake (13.2.1)
+    rake (13.3.1)
     rake-compiler-dock (1.9.1)
     rb_sys (0.9.111)
       rake-compiler-dock (= 1.9.1)
@@ -75,7 +75,7 @@ DEPENDENCIES
   docopt (~> 0.6)
   minitest (~> 5.25)
   minitest-skip (~> 0.0)
-  rake (~> 13.2)
+  rake (~> 13.3)
   rubocop (~> 1.75)
   uri (~> 1.0)
   yard!
