@@ -60,7 +60,7 @@ GEM
     unicode-display_width (3.1.4)
       unicode-emoji (~> 4.0, >= 4.0.4)
     unicode-emoji (4.0.4)
-    uri (1.0.4)
+    uri (1.1.1)
 
 PLATFORMS
   ruby
@@ -77,7 +77,7 @@ DEPENDENCIES
   minitest-skip (~> 0.0)
   rake (~> 13.2)
   rubocop (~> 1.75)
-  uri (~> 1.0)
+  uri (~> 1.1)
   yard!
 
 BUNDLED WITH
