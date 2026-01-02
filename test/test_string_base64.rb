@@ -1,7 +1,6 @@
 # frozen_string_literal: false
 
-require 'minitest/autorun'
-require 'ctf_party'
+require_relative 'test_helper'
 
 class CTFPartyTest < Minitest::Test
   def test_base64_to_b64

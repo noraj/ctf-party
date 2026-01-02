@@ -1,8 +1,6 @@
 # frozen_string_literal: false
 
-require 'minitest/autorun'
-require 'minitest/skip_dsl'
-require 'ctf_party'
+require_relative 'test_helper'
 
 class CTFPartyTest < Minitest::Test
   def test_leet_leet
