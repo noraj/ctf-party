@@ -28,7 +28,7 @@ bundle exec yard doc
 Create an **annotated git tag**:
 
 ```bash
-git tag -a v4.0.0
+git tag -a v5.0.0
 ```
 
 Push the changes including the tags:
@@ -48,7 +48,7 @@ bundle exec rake build
 Push the new gem release on **RubyGems** See https://guides.rubygems.org/publishing/.
 
 ```bash
-gem push ctf-party-4.0.0.gem
+gem push ctf-party-5.0.0.gem
 ```
 
 ## Docker container registries
@@ -58,7 +58,7 @@ gem push ctf-party-4.0.0.gem
 ### **Docker Hub**
 
 ```bash
-export CTF_PARTY_VERSION=4.0.0
+export CTF_PARTY_VERSION=5.0.0
 docker build -f Dockerfile -t noraj/ctf-party:$CTF_PARTY_VERSION --build-arg CTF_PARTY_VERSION=$CTF_PARTY_VERSION .
 docker build -f Dockerfile -t noraj/ctf-party:latest --build-arg CTF_PARTY_VERSION=$CTF_PARTY_VERSION .
 
@@ -74,7 +74,7 @@ docker push docker.io/noraj/ctf-party:latest
 GHCR = Github Container Registry
 
 ```bash
-export CTF_PARTY_VERSION=4.0.0
+export CTF_PARTY_VERSION=5.0.0
 docker build -f Dockerfile -t ghcr.io/noraj/ctf-party:$CTF_PARTY_VERSION --build-arg CTF_PARTY_VERSION=$CTF_PARTY_VERSION .
 docker build -f Dockerfile -t ghcr.io/noraj/ctf-party:latest --build-arg CTF_PARTY_VERSION=$CTF_PARTY_VERSION .
 
@@ -91,7 +91,7 @@ docker push ghcr.io/noraj/ctf-party:latest
 ACR = Alibaba Cloud Container Registry
 
 ```bash
-export CTF_PARTY_VERSION=4.0.0
+export CTF_PARTY_VERSION=5.0.0
 docker build -f Dockerfile -t registry-intl.eu-central-1.aliyuncs.com/noraj/ctf-party:$CTF_PARTY_VERSION --build-arg CTF_PARTY_VERSION=$CTF_PARTY_VERSION .
 docker build -f Dockerfile -t registry-intl.eu-central-1.aliyuncs.com/noraj/ctf-party:latest --build-arg CTF_PARTY_VERSION=$CTF_PARTY_VERSION .
 
@@ -105,7 +105,7 @@ docker push registry-intl.eu-central-1.aliyuncs.com/noraj/ctf-party:latest
 ### **Quay.io**
 
 ```bash
-export CTF_PARTY_VERSION=4.0.0
+export CTF_PARTY_VERSION=5.0.0
 docker build -f Dockerfile -t quay.io/noraj/ctf-party:$CTF_PARTY_VERSION --build-arg CTF_PARTY_VERSION=$CTF_PARTY_VERSION .
 docker build -f Dockerfile -t quay.io/noraj/ctf-party:latest --build-arg CTF_PARTY_VERSION=$CTF_PARTY_VERSION .
 

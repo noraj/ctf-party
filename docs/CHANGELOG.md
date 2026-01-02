@@ -2,6 +2,13 @@
 
 ## [unreleased]
 
+## [5.0.0](https://github.com/noraj/ctf-party/releases/tag/v5.0.0)
+
+- **Breaking changes**
+  - **Drop Ruby 3.1 support** ([EOL](https://www.ruby-lang.org/en/downloads/branches/))
+- Chore:
+  - Add support for Ruby 4.0
+
 ## [4.0.1](https://github.com/noraj/ctf-party/releases/tag/v4.0.1)
 
 - Fixes:

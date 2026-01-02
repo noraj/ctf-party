@@ -10,16 +10,18 @@ end
 
 group :runtime, :all do
   gem 'base64', '~> 0.2.0' # for base64 encoding
-  gem 'cgi', '~> 0.4.1' # url decode / html escape
+  gem 'cgi', '~> 0.4' # url decode / html escape
   gem 'uri', '~> 1.1' # for url parsing
 end
 
 group :development, :install do
-  gem 'bundler', '~> 2.1'
+  gem 'bundler', '~> 4.0'
 end
 
 group :development, :test do
   gem 'minitest', '~> 5.27'
+  # minitest-skip 0.0.3 does not support minitest 6.x
+  # https://github.com/ivantsepp/minitest-skip/pull/6
   gem 'minitest-skip', '~> 0.0'
   gem 'rake', '~> 13.3'
 end
