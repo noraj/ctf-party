@@ -39,7 +39,7 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = ['>= 3.2.0', '< 5.0']
 
-  s.add_runtime_dependency('base64', '~> 0.2.0')
+  s.add_runtime_dependency('base64', '>= 0.2', '< 0.4')
   s.add_runtime_dependency('cgi', '~> 0.4')
   s.add_runtime_dependency('docopt', '~> 0.6')
   s.add_runtime_dependency('uri', '~> 1.1')

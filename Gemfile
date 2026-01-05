@@ -9,7 +9,7 @@ group :runtime, :cli do
 end
 
 group :runtime, :all do
-  gem 'base64', '~> 0.2.0' # for base64 encoding
+  gem 'base64', '~> 0.3.0' # for base64 encoding
   gem 'cgi', '~> 0.4' # url decode / html escape
   gem 'uri', '~> 1.1' # for url parsing
 end
