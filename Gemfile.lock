@@ -8,11 +8,11 @@ GIT
 
 GIT
   remote: https://github.com/ivantsepp/minitest-skip.git
-  revision: 59bfa1d46792fc3a2502f62730918a9b501487a4
+  revision: 51d252b943237e8431e1dc7c99a804ded6ddf672
   branch: noraj-patch-1
   specs:
-    minitest-skip (0.0.3)
-      minitest (>= 5.0)
+    minitest-skip (1.0.0)
+      minitest (~> 6.0)
 
 PATH
   remote: .
