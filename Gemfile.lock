@@ -72,7 +72,7 @@ DEPENDENCIES
   base64 (~> 0.3.0)
   bundler (~> 4.0)
   cgi (~> 0.4)
-  commonmarker (~> 2.0)
+  commonmarker (~> 2.6)
   ctf-party!
   docopt (~> 0.6)
   minitest (~> 6.0)
