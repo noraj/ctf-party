@@ -6,14 +6,6 @@ GIT
   specs:
     yard (0.9.36)
 
-GIT
-  remote: https://github.com/ivantsepp/minitest-skip.git
-  revision: 51d252b943237e8431e1dc7c99a804ded6ddf672
-  branch: noraj-patch-1
-  specs:
-    minitest-skip (1.0.0)
-      minitest (~> 6.0)
-
 PATH
   remote: .
   specs:
@@ -29,15 +21,17 @@ GEM
     ast (2.4.3)
     base64 (0.2.0)
     cgi (0.5.1)
-    commonmarker (2.6.0)
+    commonmarker (2.6.1)
       rb_sys (~> 0.9)
-    commonmarker (2.6.0-x86_64-linux)
+    commonmarker (2.6.1-x86_64-linux)
     docopt (0.6.1)
     json (2.18.0)
     language_server-protocol (3.17.0.5)
     lint_roller (1.1.0)
     minitest (6.0.1)
       prism (~> 1.5)
+    minitest-skip (1.0.0)
+      minitest (~> 6.0)
     parallel (1.27.0)
     parser (3.3.10.0)
       ast (~> 2.4.1)
@@ -46,9 +40,9 @@ GEM
     racc (1.8.1)
     rainbow (3.1.1)
     rake (13.3.1)
-    rake-compiler-dock (1.10.0)
-    rb_sys (0.9.123)
-      rake-compiler-dock (= 1.10.0)
+    rake-compiler-dock (1.11.0)
+    rb_sys (0.9.124)
+      rake-compiler-dock (= 1.11.0)
     regexp_parser (2.11.3)
     rubocop (1.82.1)
       json (~> 2.3)
@@ -82,7 +76,7 @@ DEPENDENCIES
   ctf-party!
   docopt (~> 0.6)
   minitest (~> 6.0)
-  minitest-skip!
+  minitest-skip (~> 1.0)
   rake (~> 13.3)
   rubocop (~> 1.75)
   uri (~> 1.1)

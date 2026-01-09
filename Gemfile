@@ -19,12 +19,8 @@ group :development, :install do
 end
 
 group :development, :test do
-  # gem 'minitest', '~> 5.0'
   gem 'minitest', '~> 6.0'
-  # minitest-skip 0.0.3 does not support minitest 6.x
-  # https://github.com/ivantsepp/minitest-skip/pull/6
-  # gem 'minitest-skip', '~> 0.0'
-  gem 'minitest-skip', github: 'ivantsepp/minitest-skip', branch: 'noraj-patch-1'
+  gem 'minitest-skip', '~> 1.0'
   gem 'rake', '~> 13.3'
 end
 
