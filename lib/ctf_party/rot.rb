@@ -51,6 +51,6 @@ class String
   # @example
   #   'noraj'.rot_all # => {1=>"opsbk", 2=>"pqtcl", 3=>"qrudm", ... }
   def rot_all
-    (1..26).each_with_object({}) { |i, h| h[i] = rot(shift: i) }
+    (1..26).to_h { |i| [i, rot(shift: i)] }
   end
 end
