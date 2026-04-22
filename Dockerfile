@@ -1,5 +1,5 @@
 # Official verified image
-FROM ruby:4.0.2-alpine3.23
+FROM ruby:4.0.3-alpine3.23
 
 # Metadata
 LABEL org.opencontainers.image.title="ctf-party" \
