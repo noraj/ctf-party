@@ -37,7 +37,7 @@ Gem::Specification.new do |s|
     'rubygems_mfa_required' => 'true'
   }
 
-  s.required_ruby_version = ['>= 3.2.0', '< 5.0']
+  s.required_ruby_version = ['>= 3.3.0', '< 5.0']
 
   s.add_runtime_dependency('base64', '>= 0.2', '< 0.4')
   s.add_runtime_dependency('cgi', '~> 0.4')

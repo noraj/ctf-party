@@ -2,6 +2,11 @@
 
 ## [unreleased]
 
+- **Breaking change**:
+  - Drop support for Ruby 3.2
+    - Ruby 3.2 is ([EOL](https://www.ruby-lang.org/en/downloads/branches/))
+    - parallel-2.1.0 requires ruby version >= 3.3
+
 ## [5.0.0](https://github.com/noraj/ctf-party/releases/tag/v5.0.0)
 
 - **Breaking changes**
