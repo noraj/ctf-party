@@ -65,7 +65,7 @@ class String
   # @example
   #   'pwn.by'.domain? # => true
   #   'a.-b.net'.domain? # => false
-  # rubocop:disable Metrics/PerceivedComplexity
+  # rubocop:disable-next Metrics/PerceivedComplexity
   def domain?
     return false unless size.between?(1, 255) # max. domain length
 
@@ -90,7 +90,6 @@ class String
     # do not check for trailing dot
     true
   end
-  # rubocop:enable Metrics/PerceivedComplexity
 
   # Is the string a valid email address?
   # @param opts [Hash] optional parameters
